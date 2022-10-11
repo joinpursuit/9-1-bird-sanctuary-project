@@ -53,9 +53,9 @@ Here is a video of what your app could look like with no CSS:&nbsp;
 1. I can see 0% discount listed as text when I have 3 or more birds in my cart (2.5pts)
 1. I can see 10% discount reflected in the price when I have more than three birds in my cart. (5pts)
 1. I can see a series of bonuses based on the number of items I have in my cart (10pts)
-1. I can use a form with a first name, last name, email and zip code to checkout my cart (10pts)
+1. I can use a checkout form with a first name, last name, email and zip code to submit my purchase (10pts)
 1. I can see an alert for successful purchase when I submit a purchase (5pts)
-1. I can reset my cart when I submit my purchase from my form (10pts)
+1. I can see my cart reset to 0 and empty out when I submit my purchase from my form (10pts)
 1. I can delete a bird from my cart (5pts)
 
 ## Acceptance criteria and tests
