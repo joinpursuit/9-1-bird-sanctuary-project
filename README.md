@@ -41,7 +41,8 @@ The following demo has been styled for clarity.
 
 1. I can see a section of cards with birds, that have a name, image, amount and adopt button (15pts)
 1. I can add birds to the shopping cart pushing the adopt button (10pts)
-1. I can only add a bird once to the shopping cart (5pts)
+1. I can only add a bird once to the shopping cart (2.5pts)
+1. If I try to add the same bird I see an alert that says: 'You have already added this bird to the cart' (2.5pts)
 1. I can see a total cost of the birds in my cart (10pts)
 1. I can see 10% discount listed as text when I have 3 or more birds in my cart (10pts)
 1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart (10pts)
