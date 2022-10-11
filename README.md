@@ -20,7 +20,7 @@
 
 This challenge is designed to assess the React skills you have gained so far.
 
-You will be graded based on the number of completed functioning User Stories (see below).
+You will be graded based on the number of completed, functioning User Stories (see below).
 
 **You will not be graded on CSS. It is not required in this project**
 
