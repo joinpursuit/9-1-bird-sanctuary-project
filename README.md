@@ -55,7 +55,7 @@ Here is a video of what your app could look like with no CSS:&nbsp;
 1. I can see a series of bonuses based on the number of items I have in my cart (10pts)
 1. I can use a checkout form with a first name, last name, email and zip code to submit my purchase (10pts)
 1. I can see an alert for successful purchase when I submit a purchase (5pts)
-1. I can see my cart reset to 0 and empty out when I submit my purchase from my form (10pts)
+1. I can see my cart fully reset when I submit my purchase from my form (10pts)
 1. I can delete a bird from my cart (5pts)
 
 ## Acceptance criteria and tests
@@ -99,10 +99,10 @@ The bonuses come from `src/data/bonusItems.js` and should be imported into App.j
 
 ### Checkout.js
 
+- The Checkout component has a class name of `Checkout`
 - I can complete the inputs in the checkout form for first name, last name, email, and zip code
-- When I complete the form with valid inputs and click `Submit`, an alert tells me the purchase was successful.
-  - Alert text should be: `You have adopted birds. Thank you!`
-- When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
+- When I complete the form with valid inputs and click `Submit`, an alert tells me: `You have adopted birds. Thank you!`
+- When I close the alert box, the cart component fully resets (no birds, no discount, total = 0, no bonus items listed)
 
 ## Help and tips
 
