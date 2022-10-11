@@ -89,7 +89,7 @@ The bird data comes from `src/data/birds.js` and should be imported into App.js 
 - When there is a 10% discount, it is reflected in the price
 - When my total is of the appropriate amount, I will receive bonuses that will be listed in the Cart
 
-#### Cart Bonuses
+#### Cart Bonuses Section
 
 The bonuses come from `src/data/bonusItems.js` and should be imported into App.js and passed to the proper children.
 
