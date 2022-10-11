@@ -68,7 +68,7 @@ Your React app should be made up of a minimum of 3 components:
 - Checkout.js
 - Cart.js
 
-### Cards.js (bird cards)
+### Cards.js (Bird cards)
 
 The bird data comes from `src/data/birds.js` and should be imported into App.js and passed to the proper children.
 
