@@ -41,13 +41,14 @@ The following demo has been styled for clarity.
 
 1. I can see a section of cards with birds, that have a name, image, amount and adopt button (15pts)
 1. I can add birds to the shopping cart pushing the adopt button (10pts)
+1. I can only add a bird once to the shopping cart (5pts)
 1. I can see a total cost of the birds in my cart (10pts)
 1. I can see 10% discount listed as text when I have 3 or more birds in my cart (10pts)
 1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart (10pts)
 1. I can see a series of bonuses based on the number of items I have in my cart (10pts)
 1. I can use a form with a first name, last name, email and zip code to checkout my cart (10pts)
+1. I can see an alert for successful purchase when I submit a purchase (5pts)
 1. I can reset my cart when I submit my purchase from my form (10pts)
-1. I can see an alert for successful purchase when I submit a purchase (10pts)
 1. I can delete a bird from my cart (5pts)
 
 ## Acceptance criteria and tests
@@ -92,7 +93,7 @@ The bonuses come from `src/data/bonusItems.js` and should be imported into App.j
 ### Checkout.js
 
 - I can complete the inputs in the checkout form for first name, last name, email, and zip code
-- When I complete the form with valid input and click `Submit`, an alert tells me the purchase was successful.
+- When I complete the form with valid inputs and click `Submit`, an alert tells me the purchase was successful.
   - Alert text should be: `You have adopted birds. Thank you!`
 - When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
