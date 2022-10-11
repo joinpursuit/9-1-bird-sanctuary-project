@@ -37,15 +37,16 @@ The following demo has been styled for clarity.
 
 ![demo gif](./assets/bird-sanctuary.gif)
 
-## User Stories
+## User Stories and Points
 
-1. I can see a section of cards with birds, that have a name, image, amount and adopt button (15pts)
-1. I can add birds to the shopping cart pushing the adopt button (10pts)
-1. I can only add a bird once to the shopping cart (2.5pts)
-1. If I try to add the same bird I see an alert that says: 'You have already added this bird to the cart' (2.5pts)
+1. I can see a section of cards with birds, that have a name, image, amount and adopt button (20pts)
+1. I can add birds to the shopping cart by pushing the adopt button (10pts)
+1. I can only add the same bird once to the shopping cart (2.5pts)
+1. If I try to add the same bird again I see an alert that says: 'You have already added this bird to the cart' (2.5pts)
 1. I can see a total cost of the birds in my cart (10pts)
-1. I can see 10% discount listed as text when I have 3 or more birds in my cart (10pts)
-1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart (10pts)
+1. I can see 10% discount listed as text when I have 3 or more birds in my cart (2.5pts)
+1. I can see 0% discount listed as text when I have 3 or more birds in my cart (2.5pts)
+1. I can see 10% discount reflected in the price when I have more than three birds in my cart. (5pts)
 1. I can see a series of bonuses based on the number of items I have in my cart (10pts)
 1. I can use a form with a first name, last name, email and zip code to checkout my cart (10pts)
 1. I can see an alert for successful purchase when I submit a purchase (5pts)
