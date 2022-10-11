@@ -35,11 +35,11 @@ The following demo has been styled for clarity.
 
 ![demo gif](./assets/bird-sanctuary.gif)
 
-Here is a deployed version of the application. Use it to feel and notice the functionality of the application
+Here is a deployed version of the application. Use it to feel and notice the functionality of the application:<br>
 [Deployed version](https://main--mellow-tartufo-57470d.netlify.app/)
 
-**CSS is not required and you willl not be given points for CSS**
-Here is a video of what your app could look like with no CSS
+**CSS is not required and you willl not be given points for CSS**<br>
+Here is a video of what your app could look like with no CSS:<br>
 [App Video No CSS](https://drive.google.com/file/d/1-jMymrRjOEIrCzdN81R_u-8VPMkP_g3Q/view?usp=sharing)
 
 ## User Stories and Points
