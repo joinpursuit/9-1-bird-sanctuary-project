@@ -20,11 +20,11 @@
 
 This challenge is designed to assess the React skills you have gained so far.
 
-There are 7 features that need to be implemented. Each completed function (passes all the tests) will be worth 1 point.
+There are 7 features that need to be implemented.
 
-A minium of 5 points must be attained in order to pass this assessment.
+You will be graded based on the number of completed functioning features.
 
-You may receive partial credit (0.5 points) for code that is close to passing the tests, but does not pass all the tests.
+**You will not be graded on CSS. It is not required in this project**
 
 ## Assessment Details
 
@@ -79,7 +79,7 @@ Your React app should be made up of a minimum of 3 components:
 - When there is a 10% discount, it is reflected in the price
 - When my total is of the appropriate amount, I will receive bonuses that will be listed in the Cart
 
-#### Cart Bonusesa
+#### Cart Bonuses
 
 The bonuses come from `src/data/bonusItems.js` and should be imported into App.js and passed to the proper children.
 
