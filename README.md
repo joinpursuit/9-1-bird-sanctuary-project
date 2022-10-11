@@ -39,16 +39,16 @@ The following demo has been styled for clarity.
 
 ## User Stories
 
-1. I can see a section of cards with birds, that have a name, image, amount and adopt button.
-1. I can add birds to the shopping cart pushing the adopt button.
-1. I can see a total cost of the birds in my cart.
-1. I can see 10% discount listed as text when I have 3 or more birds in my cart
-1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart
-1. I can see a series of bonuses based on the number of items I have in my cart
-1. I can use a form to checkout my cart
-1. I can reset my cart when I submit my purchase from my form
-1. I can see an alert for successful purchase when I submit a purchase
-1. I can delete a bird from my cart
+1. I can see a section of cards with birds, that have a name, image, amount and adopt button. 15pts
+1. I can add birds to the shopping cart pushing the adopt button. 10pts
+1. I can see a total cost of the birds in my cart. 10pts
+1. I can see 10% discount listed as text when I have 3 or more birds in my cart 10pts
+1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart 10pts
+1. I can see a series of bonuses based on the number of items I have in my cart 10pts
+1. I can use a form with a first name, last name, email and zip code to checkout my cart 10pts
+1. I can reset my cart when I submit my purchase from my form 10pts
+1. I can see an alert for successful purchase when I submit a purchase 10pts
+1. I can delete a bird from my cart 5pts
 
 ## Acceptance criteria and tests
 
