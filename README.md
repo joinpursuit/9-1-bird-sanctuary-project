@@ -30,7 +30,7 @@ You will be graded based on the number of completed functioning features.
 
 Create a bird sanctuary donation app that meets the user stories below.
 
-**The birds are in the array in `src/data/birds.js` and the bonus items are in `src/data/bonusItems.js`. Import these in your `App.js` component and pass them to your child components as needed. Use these items and do not change any information in the array, or else the tests will fail.**
+The birds are in the array in `src/data/birds.js` and the bonus items are in `src/data/bonusItems.js`. Import these in your `App.js` component and pass them to your child components as needed. **Use these items and do not change any information in the array, or else the tests will fail.**
 
 The following demo has been styled for clarity.
 **You do not need to style this app.**
@@ -45,8 +45,8 @@ The following demo has been styled for clarity.
 1. I can see 10% discount listed as text when I have 3 or more birds in my cart
 1. I can see a 10% discount reflected in the price when I have 3 or more birds in my cart
 1. I can see a series of bonuses based on the number of items I have in my cart
-1. I can use a form to checkout my cart.
-1. I can reset my cart when I submit my purchase
+1. I can use a form to checkout my cart
+1. I can reset my cart when I submit my purchase from my form
 1. I can see an alert for successful purchase when I submit a purchase
 1. I can delete a bird from my cart
 
