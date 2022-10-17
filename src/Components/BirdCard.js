@@ -1,3 +1,5 @@
+import "./BirdCard.css";
+
 export default function BirdCard({ bird }) {
   return (
     <li className="birdCard" key={bird.id}>
