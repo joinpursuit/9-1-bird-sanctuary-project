@@ -26,13 +26,17 @@ const Cards = ({birdData}) => {
      const li = document.querySelectorAll("li")
      li.forEach((list) => {
      sum += Number(list.textContent.replace(/\D/g,'')) 
+     if(li.length >= 3)
      return (
+        document.querySelector("h4").textContent = `Total: $${sum *.90}`
+     )
+     else (
         document.querySelector("h4").textContent = `Total: $${sum}`
      )
      })
  }
 
- 
+
 return (
     <section className="card">
         {birdData.map(({name , amount, id, img}) => {

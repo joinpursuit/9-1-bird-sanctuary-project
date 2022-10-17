@@ -10,6 +10,9 @@ const Cart = () => {
             <p>Discount:</p>
             <ol></ol>
             <p>Your donations have qualitfied you for the following items:</p>
+            <ul>
+                
+            </ul>
         </section>
     )
 }
