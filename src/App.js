@@ -1,6 +1,12 @@
+import { useState } from "react";
+import birdData from "./data/birds";
 import "./App.css";
 
 function App() {
+  const [birds, setBirds] = useState([...birdData]);
+  const [cost, setCost] = useState(0);
+  const [discount, setDiscount] = useState(0);
+
   return (
     <>
       <div className="header">
