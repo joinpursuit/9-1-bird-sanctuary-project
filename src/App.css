@@ -1,0 +1,39 @@
+.App {
+    background-color: white;
+    display:grid;
+    text-align: center;
+    grid-row: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+img{
+    max-width: 200px;
+    height:200px;
+}
+
+button{
+    color: purple;
+}
+
+h1 {
+    text-align: center;
+
+}
+main {
+    width:fit-content;
+    padding: 2%;
+}
+
+.Cart{
+    border: groove purple;
+    margin-bottom: 5px;
+}
+
+#checkout{
+    border: groove purple;
+}
+
+.hidden {
+    visibility: hidden;
+}
