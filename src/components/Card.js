@@ -1,17 +1,4 @@
-export default function Card({
-  bird,
-  birdsCart,
-  setBirdsCart,
-  total,
-  setTotal,
-  discount,
-}) {
-  const updateTotal = () =>
-    setTotal(
-      //   discount ? (total + bird.amount) * (100 - discount) /100 : total + bird.amount
-      total + bird.amount
-    );
-
+export default function Card({ bird, birdsCart, setBirdsCart }) {
   return (
     <div className="card">
       <h3>{bird.name}</h3>
@@ -22,7 +9,6 @@ export default function Card({
         onClick={() => {
           if (!birdsCart.find((e) => e.id === bird.id)) {
             setBirdsCart([...birdsCart, bird]);
-            updateTotal();
           } else {
             alert("You have already added this bird to the cart");
           }

@@ -1,13 +1,6 @@
 import Card from "./Card";
 
-export default function Cards({
-  birdData,
-  birdsCart,
-  setBirdsCart,
-  total,
-  setTotal,
-  discount,
-}) {
+export default function Cards({ birdData, birdsCart, setBirdsCart }) {
   return (
     <div className="birds">
       <ul>
@@ -18,9 +11,6 @@ export default function Cards({
               bird={bird}
               birdsCart={birdsCart}
               setBirdsCart={setBirdsCart}
-              total={total}
-              setTotal={setTotal}
-              discount={discount}
             />
           );
         })}
