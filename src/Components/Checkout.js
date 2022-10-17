@@ -12,20 +12,38 @@ function Checkout(props) {
 
         }
     )
-
-    // function for gathering all for inputs and updating UserInput
-   // Function for handling UserInput -> onChange match .name prop to key in userInput, so updates that key in object
+    
+    // Function for handling UserInput -> onChange match name prop to key in userInput, so updates that key in object
     function handleUserInput(e) {
         const value = e.target.value
         setUserInput({...userInput, [e.target.name] : value})
-       
+    }
+
+    // function for form reset (needs access to cart data/ states to reset values on submit as well)
+    function resetCheckoutForm() {
+        setUserInput(
+            {
+                first: "",
+                last: "",
+                email: "",
+                zip: ""
+    
+            }
+        )
+    }
+
+    // handleSubmit function for form
+    function handleSubmit(e) {
+        e.preventDefault()
+        alert(`You have adopted birds. Thank you!`)
+        resetCheckoutForm()
     }
 
     return (
         <div className='Checkout'>
             <h6>Checkout</h6>
 
-            <form>
+            <form onSubmit={(event) => {handleSubmit(event)}}>
 
                 <label htmlFor='firstName'>First Name</label>
                 <input
@@ -59,9 +77,11 @@ function Checkout(props) {
                 type = "number"
                 id = "zip"
                 value= {userInput.zip}
-                name= "zipcode"
+                name= "zip"
                 onChange = {(event) => {handleUserInput(event)}}
                 />
+
+                <button type= 'submit'>SUBMIT</button>
                 
             </form>
             
