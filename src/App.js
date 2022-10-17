@@ -3,6 +3,7 @@ import { useState } from "react";
 import birdData from "./data/birds";
 import Cards from "./Components/Cards";
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 
 
 
@@ -35,7 +36,9 @@ const [birdsArr, setBirdsArr] = useState(birdData)
         <>
           <Cart />
         </>
-        <div>checkout</div>
+        <>
+          <Checkout />
+        </>
       </aside>
       
     </div>
