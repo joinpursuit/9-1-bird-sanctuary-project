@@ -6,11 +6,19 @@ import Checkout from "./Checkout";
 import Cart from "./Cart";
 
 function App() {
-  const [birds, setBirds] = useState(birdData);
+  // const [birds, setBirds] = useState(birdData);
+  const [cart, setCart] = useState([]);
+  const [discount, setDiscount] = useState(0);
+
+  function updateCart(bird) {
+    setCart([...cart, bird]);
+  }
 
   return (
     <div>
       <Cards birds={birdData} />
+      <Cart bonusItems={bonusItems} cart={cart} discount={discount} />
+      <Checkout />
     </div>
   );
 }

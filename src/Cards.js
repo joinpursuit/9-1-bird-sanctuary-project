@@ -1,4 +1,4 @@
-export default function Cards({ birds }) {
+export default function Cards({ birds, updateCart }) {
   return (
     <div className="birds">
       {birds.map((bird) => {
@@ -9,7 +9,7 @@ export default function Cards({ birds }) {
             <span>Price: ${bird.amount}</span>
             <br />
             <img src={bird.img} alt={bird.name} />
-            <button className="button">ADOPT</button>
+            <button onClick={() => updateCart(bird)}>ADOPT</button>
           </div>
         );
       })}
