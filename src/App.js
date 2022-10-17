@@ -11,11 +11,9 @@
 function App () {
   
   return (
-    <div>
+    <div className="birdInfo">
       <section className="cart">
         <Cart cards={Cards}/>
-      </section>
-      <section className="checkout">
         <Checkout/>
       </section>
       <main>

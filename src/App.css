@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+
+.birdInfo{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+

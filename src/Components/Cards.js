@@ -1,11 +1,11 @@
 import cards from "./Cards.css"
-import {useState} from "react"
-
 
 
 const Cards = ({birdData}) => {
+    // let myString = "Shoebill: $100"
 
-
+    // myString = myString.replace(/\D/g,'')
+    // console.log(Number(myString))
 
  function birdCard(birdId) {
     const li = document.createElement("li")
@@ -19,11 +19,22 @@ const Cards = ({birdData}) => {
      let ol = document.querySelector("ol")
       ol.append(li)
  }
+ 
+ const total = () => {
 
+     let sum = 0
+     const li = document.querySelectorAll("li")
+     li.forEach((list) => {
+     sum += Number(list.textContent.replace(/\D/g,'')) 
+     return (
+        document.querySelector("h4").textContent = `Total: $${sum}`
+     )
+     })
+ }
 
-
+ 
 return (
-    <section>
+    <section className="card">
         {birdData.map(({name , amount, id, img}) => {
             return (
                 <div className="birds" key={id}>
@@ -31,7 +42,10 @@ return (
                     <p>Price: ${amount}</p>
                     <img src={img} alt={img}></img>
                     <br></br>
-                    <button onClick={() => birdOrder(id)}>Apodt</button>
+                    <button onClick={() => {
+          birdOrder(id);
+          total();
+        }}>Apodt</button>
                 </div>
                  )
         })}
