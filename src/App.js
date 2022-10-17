@@ -1,5 +1,6 @@
 import { useState } from "react";
 import birdData from "./data/birds";
+import Cart from "./Components/Cart.js";
 import "./App.css";
 
 function App() {
@@ -14,22 +15,7 @@ function App() {
       </div>
       <main className="main">
         <aside className="aside">
-          <div className="cart">
-            <h2>Cart</h2>
-            <h4>
-              Discount: <span>{discount}%</span>
-            </h4>
-            <h4>
-              Total: <span>${cost}</span>
-            </h4>
-            <ol>
-              <li>Adoped bird</li>
-            </ol>
-            <p>Your Donations have qualified you for the following items:</p>
-            <ol>
-              <li>First discount</li>
-            </ol>
-          </div>
+          <Cart discount={discount} cost={cost} />
           <div className="checkout">Checkout</div>
         </aside>
         <div className="birds">Birds</div>
