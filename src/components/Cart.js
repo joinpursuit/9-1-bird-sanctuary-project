@@ -1,19 +1,23 @@
 import { useState } from "react";
 
-export default function Cart() {
-  const [total, setTotal] = useState(0);
-  const [discount, setDiscount] = useState(0);
-  const [birdList, setBirdList] = useState([]);
-  const [itemList, setItemList] = useState([]);
+export default function Cart({ birdsCart, total, discount }) {
   return (
     <div className="cart">
       <h2>Cart</h2>
-      <h3>Total: ${total}</h3>
+      <h4>Total: ${total}</h4>
       <p>Discount: {discount}%</p>
-      <ol>{birdList}</ol>
-      <ul>
-        Your donations have qualified you for the following items: {itemList}
-      </ul>
+      <ol>
+        {birdsCart.length ? (
+          birdsCart.map((e) => (
+            <li key={e.id}>
+              {e.name}: ${e.amount}
+            </li>
+          ))
+        ) : (
+          <></>
+        )}
+      </ol>
+      <ul>Your donations have qualified you for the following items:</ul>
     </div>
   );
 }

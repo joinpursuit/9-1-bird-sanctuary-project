@@ -17,11 +17,11 @@ main {
   grid-row: 1/2;
 }
 
-.cards {
+.birds {
   grid-row: 1/4;
 }
 
-.cards ul {
+.birds ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
