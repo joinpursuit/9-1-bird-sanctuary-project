@@ -12,10 +12,19 @@ function App() {
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
 
+  function updateCart(bird) {
+    if (cartBirds.includes(bird)) {
+      alert("");
+    }
+    setCartBirds([bird, ...cartBirds]);
+    console.log(bird);
+  }
+
   return (
     <div className="container">
       <div>
         <Cart
+          setTotal={setTotal}
           bonusItems={bonusItems}
           discount={discount}
           total={total}
@@ -23,16 +32,9 @@ function App() {
         />
         <Checkout />
       </div>
-      <div className="birdCards">
+      <div className="card">
         {birds.map((bird) => {
-          return (
-            <Cards
-              birds={birds}
-              bird={bird}
-              setCartBirds={setCartBirds}
-              cartBirds={cartBirds}
-            />
-          );
+          return <Cards birds={birds} bird={bird} updateCart={updateCart} />;
         })}
       </div>
     </div>

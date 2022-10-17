@@ -1,10 +1,6 @@
 import "./Cards.css";
 
-export default function Cards({ birds, bird, setCartBirds, cartBirds }) {
-  function updateCart(bird) {
-    setCartBirds([bird, ...cartBirds]);
-    console.log(bird);
-  }
+export default function Cards({ birds, bird, updateCart }) {
   return (
     <div className="birds" key={bird.id}>
       <h4>{bird.name}</h4>
