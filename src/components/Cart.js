@@ -6,7 +6,7 @@ export default function Cart(props) {
   const [birdList, setBirdList] = useState([]);
   const [itemList, setItemList] = useState([]);
   return (
-    <div>
+    <div className="cart">
       <h2>Cart</h2>
       <h3>Total: ${total}</h3>
       <p>Discount: {discount}%</p>

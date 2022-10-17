@@ -7,12 +7,14 @@ import Checkout from "./components/Checkout";
 import birdData from "./data/birds";
 import bonusItems from "./data/bonusItems";
 
+import "./App.css";
+
 function App() {
   return (
     <main>
       <Cart />
-      <Checkout />
       <Cards birdData={birdData} />
+      <Checkout />
     </main>
   );
 }

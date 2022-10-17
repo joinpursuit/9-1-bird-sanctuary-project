@@ -4,7 +4,7 @@ export default function Checkout() {
     console.log("submitted");
   };
   return (
-    <div>
+    <div className="checkout">
       <h2>Checkout</h2>
       <form onSubmit={formSubmit}>
         <label>
