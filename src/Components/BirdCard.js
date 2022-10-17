@@ -2,7 +2,7 @@ import "./BirdCard.css";
 
 export default function BirdCard({ bird }) {
   return (
-    <li className="birdCard" key={bird.id}>
+    <li className="birdCard">
       <p>{bird.name}</p>
       <p>${bird.amount}</p>
       <img

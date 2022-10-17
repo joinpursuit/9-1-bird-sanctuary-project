@@ -22,7 +22,7 @@ function App() {
         </aside>
         <ul className="birds">
           {birds.map((bird) => {
-            return <BirdCard bird={bird} />;
+            return <BirdCard key={bird.id} bird={bird} />;
           })}
         </ul>
       </main>
