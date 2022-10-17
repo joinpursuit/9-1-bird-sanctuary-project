@@ -36,6 +36,12 @@ const Cards = ({birdData}) => {
      })
  }
 
+ const discount = () => {
+    const li = document.querySelectorAll("li")
+    if(li.length >= 3){
+        document.querySelector(".discount").textContent = `Discount: 10%`
+    }
+ }
 
 return (
     <section className="card">
@@ -49,6 +55,7 @@ return (
                     <button onClick={() => {
           birdOrder(id);
           total();
+          discount();
         }}>Apodt</button>
                 </div>
                  )

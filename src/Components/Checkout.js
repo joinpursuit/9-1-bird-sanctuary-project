@@ -22,6 +22,12 @@ const Checkout = () => {
             email: "",
             zip: "" 
         })
+        document.querySelector("h4").textContent = "Total: "
+        document.querySelector(".discount").textContent = "Discount: 0%"
+        const li = document.querySelectorAll("li")
+        li.forEach((list) => {
+            document.querySelector("ol").removeChild(list)
+        })
     }
 
     const handleSubmit = (event) => {
