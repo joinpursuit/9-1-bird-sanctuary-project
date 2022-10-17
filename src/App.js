@@ -2,6 +2,7 @@ import { useState } from "react";
 import birdData from "./data/birds";
 import Cart from "./Components/Cart.js";
 import Checkout from "./Components/Checkout.js";
+import BirdCard from "./Components/BirdCard";
 import "./App.css";
 
 function App() {
@@ -19,7 +20,13 @@ function App() {
           <Cart discount={discount} cost={cost} />
           <Checkout />
         </aside>
-        <div className="birds">Birds</div>
+        <div className="birds">
+          <ul>
+            {birds.map((bird) => {
+              return <BirdCard bird={bird} />;
+            })}
+          </ul>
+        </div>
       </main>
     </>
   );
