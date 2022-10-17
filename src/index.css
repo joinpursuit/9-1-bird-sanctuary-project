@@ -23,6 +23,7 @@ main {
     column-gap: 10px;
     row-gap: 10px;
     justify-items: center;
+    
 }
 
 div {
@@ -37,7 +38,27 @@ aside {
     grid-template-rows: 1fr 1fr;
     row-gap: 15px;
     justify-items: center;
+    height: 90vh;
+    margin-left: 20px;
 }
+
+aside div {
+    border: 1px solid black;
+    height: 45vh;
+    width: 100%;
+}
+
+.Checkout {
+    overflow: scroll;
+    font-size: small;
+}
+
+.birds {
+    background-color: rgba(192, 252, 232, 0.898);
+    border: 1px solid black;
+    box-shadow: 10px 5px 5px lightgrey;
+}
+
 
 header {
     grid-row: 1;
@@ -47,6 +68,6 @@ header {
 }
 
 img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }

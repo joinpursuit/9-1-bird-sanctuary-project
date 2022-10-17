@@ -22,6 +22,7 @@ function Cards({birdsArr}) {
                 <img 
                 src= {img}
                 alt='' />
+                <br></br>
                 {/* Button Component goes here*/}
                 <Button
                 key = {id}
