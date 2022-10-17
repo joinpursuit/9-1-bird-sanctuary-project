@@ -1,6 +1,6 @@
-export default function Cart({ birdsCart, discount }) {
+export default function Cart({ birdsCart, discount, setDiscount }) {
   const calcTotal = () => {
-    const total = birdsCart.reduce((acc, el) => acc + el.amount, 0);
+    let total = birdsCart.reduce((acc, el) => acc + el.amount, 0);
     if (discount) {
       total *= (100 - discount) / 100;
     }
@@ -11,7 +11,10 @@ export default function Cart({ birdsCart, discount }) {
     <div className="cart">
       <h2>Cart</h2>
       <h4>Total: ${birdsCart.length ? <>{calcTotal()}</> : <>0</>}</h4>
-      <p>Discount: {discount}%</p>
+      <p>
+        Discount: {birdsCart.length > 2 ? setDiscount(10) : setDiscount(0)}
+        {discount}%
+      </p>
       <ol>
         {birdsCart.length ? (
           birdsCart.map((e) => (
