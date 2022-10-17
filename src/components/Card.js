@@ -9,7 +9,7 @@ export default function Card({img, name, amount, id, cart, setCart}) {
             <img src={img} alt={name} width='200px'/>
             <br/>
             <button className="birds"
-            value={id}
+            // value={id}
             onClick={()=>setCart([...cart, {name, amount}])}>Adopt</button>
         </div>
     )

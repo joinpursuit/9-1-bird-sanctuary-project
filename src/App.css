@@ -37,3 +37,9 @@ main {
 .hidden {
     visibility: hidden;
 }
+
+.card{
+    border: groove purple;
+    width:250px;
+
+}

@@ -1,59 +1,56 @@
+import {useState} from 'react'
+export default function Checkout (){
+const [newbuy, setNewBuy] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    zip: '',
+})
 
-export default function Checkout ({setCart}){
-    const submit = (event) =>{
-        event.preventDefault()
-        alert('You have adopted birds. Thank you!')
-        document.getElementById('checkOut').reset();
-        setCart([]);
-        document.getElementById('discount').setAttribute('class', 'hidden')
-    }
+
+ const submit = (e) => {
+    e.preventDefault()
+    alert('You have adopted birds. Thank you!')   
+}
+
 return(
     <div id='checkout'>
-        {/* Might need to be in form*/}
         <>
         <h1>Checkout</h1>
         <form onSubmit={submit}>
             <label for="First Name">
                 <input 
-                /*should have: 
-                Value
-                on change maybe? 
-                id
-                type
-                plae holder*/
+                type="text"
+                value={newbuy.lastName}
+                placeholder="First Name"
+                required
                 />
             </label>
             <label for="Last Name">
                 <input 
-                /*should have: 
-                Value
-                on change maybe? 
-                id
-                type
-                plae holder*/
+                type="text"
+                value={newbuy.lastName}
+                placeholder="Last Name"
+                required
                 />
             </label>
             <label for="EMAIL">
                 <input 
-                /*should have: 
-                Value
-                on change maybe? 
-                id
-                type
-                plae holder*/
+                type="email"
+                value={newbuy.email}
+                placeholder="Email"
+                required
                 />
             </label>
             <label for="ZIP">
                 <input 
-                /*should have: 
-                Value
-                on change maybe? 
-                id
-                type
-                plae holder*/
+               type="text"
+               value={newbuy.zip}
+               placeholder="Zip Code"
+               required
                 />
             </label>
-            <input type='submit' text='Submit'/>
+            <input onSubmit={submit}type='submit' text='Submit'/>
         </form>
         </>
     </div>

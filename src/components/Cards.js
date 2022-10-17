@@ -1,7 +1,7 @@
 import Card from "./Card"
 import React from 'react'
 
-export default function Cards ({birdData, cart, setCart}){
+export default function Cards ({birdData, cart, setCart, nameArray}){
     /*
 
     REMOVE THOSE WHEN GET MAP TO WORK 
@@ -16,21 +16,20 @@ export default function Cards ({birdData, cart, setCart}){
 
     console.log(birdData)
   return(
-    
-   <ul>
+  <>
     {birdData.map(({img, name, amount, id})=>{
-        return(
-            <li  className ="card">
+        return( 
             <Card 
             name={name} 
             amount={amount} 
             id={id}
             img={img} 
             cart={cart} 
-            setCart={setCart}/>
-        </li>
+            setCart={setCart}
+            nameArray={nameArray}
+            />
         )
       })}
-   </ul>
+  </>
   )
 }
