@@ -1,7 +1,26 @@
+
+ import React from "react";
+ import Cards from "./Components/Cards"
+ import Cart from "./Components/Cart"
+ import Checkout from "./Components/Checkout"
+ import birdData from "./data/birds"
+ import "./App.css"
+
+
+
 function App () {
+  
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <section className="cart">
+        <Cart cards={Cards}/>
+      </section>
+      <section className="checkout">
+        <Checkout/>
+      </section>
+      <main>
+        <Cards birdData={birdData}/>
+      </main>
     </div>
   );
 };
