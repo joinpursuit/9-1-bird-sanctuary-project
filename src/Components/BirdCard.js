@@ -5,7 +5,9 @@ export default function BirdCard({ bird }) {
     <li className="birdCard">
       <p>{bird.name}</p>
       <p>${bird.amount}</p>
-      <img src={bird.img} alt="bird"></img>
+      <div className="birdImageContainer">
+        <img className="birdImg" src={bird.img} alt="bird"></img>
+      </div>
       <button>Adopt</button>
     </li>
   );
