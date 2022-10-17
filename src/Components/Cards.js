@@ -1,7 +1,7 @@
 import cards from "./Cards.css"
 
 
-const Cards = ({birdData}) => {
+const Cards = ({birdData,bonusItems }) => {
     // let myString = "Shoebill: $100"
 
     // myString = myString.replace(/\D/g,'')
@@ -9,8 +9,13 @@ const Cards = ({birdData}) => {
 
  function birdCard(birdId) {
     const li = document.createElement("li")
+    li.setAttribute("class", "setBird")
+   
     const index = birdData.findIndex((bird) => birdId === bird.id);
-    li.textContent = `${birdData[index].name}: $${birdData[index].amount}`
+
+    
+     li.textContent = `${birdData[index].name}: $${birdData[index].amount}`
+
     return li
  }
 
@@ -19,32 +24,37 @@ const Cards = ({birdData}) => {
      let ol = document.querySelector("ol")
       ol.append(li)
  }
+
  
  const total = () => {
-
      let sum = 0
+     
      const li = document.querySelectorAll("li")
+     
      li.forEach((list) => {
-     sum += Number(list.textContent.replace(/\D/g,'')) 
-     if(li.length >= 3)
-     return (
-        document.querySelector("h4").textContent = `Total: $${sum *.90}`
-     )
-     else (
-        document.querySelector("h4").textContent = `Total: $${sum}`
-     )
-     })
- }
+         sum += Number(list.textContent.replace(/\D/g,'')) 
+         if(li.length >= 3)
+         return (
+             document.querySelector("h4").textContent = `Total: $${sum *.90}`
+             )
+             else (
+                 document.querySelector("h4").textContent = `Total: $${sum}`
+                 )
+                })
+                
+            }
+            
+            const discount = () => {
+                const li = document.querySelectorAll("li")
+                if(li.length >= 3){
+                    document.querySelector(".discount").textContent = `Discount: 10%`
+                }
+            }
+            
+            
 
- const discount = () => {
-    const li = document.querySelectorAll("li")
-    if(li.length >= 3){
-        document.querySelector(".discount").textContent = `Discount: 10%`
-    }
- }
-
-return (
-    <section className="card">
+            return (
+                <section className="card">
         {birdData.map(({name , amount, id, img}) => {
             return (
                 <div className="birds" key={id}>
@@ -56,7 +66,9 @@ return (
           birdOrder(id);
           total();
           discount();
-        }}>Apodt</button>
+       
+         ;
+        }}>Adopt</button>
                 </div>
                  )
         })}

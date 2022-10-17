@@ -5,10 +5,13 @@ img{
 
 .birds{
     border: black 1px solid;
-    margin-right: 60%
+    
 }
 
 .card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-rows: repeat(3, 1fr);
 }

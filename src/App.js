@@ -4,7 +4,9 @@
  import Cart from "./Components/Cart"
  import Checkout from "./Components/Checkout"
  import birdData from "./data/birds"
+ 
  import "./App.css"
+import bonusItems from "./data/bonusItems";
 
 
 
@@ -12,12 +14,18 @@ function App () {
   
   return (
     <div className="birdInfo">
-      <section className="cart">
-        <Cart cards={Cards}/>
+      <div className="customer">
+        <div className="cart">
+        <Cart/>
+        </div>
+        <br></br>
+        <div className="checkout">
+
         <Checkout/>
-      </section>
+        </div>
+      </div>
       <main>
-        <Cards birdData={birdData}/>
+        <Cards birdData={birdData} bonusItems={bonusItems}/>
       </main>
     </div>
   );
