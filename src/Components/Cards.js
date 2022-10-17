@@ -3,16 +3,20 @@ import { useState } from 'react';
 import Button from './Button';
 
 
-function Cards({birdsArr}) {
+function Cards({birdsArr, setNumofBirds, numOfBirds}) {
     // Create Card state for individual bird data to be passed to button -> passed to Cart
     // Need to update Card Data value to send to button to onClick sends to Cart
-    const [cardData, setCardData] = useState(
-        {
-            name: "",
-            price: 0,
-            id: null,
-        }
-    )
+    
+
+    function addBirdToCart(num) {
+        const addedBird = birdsArr.find(({id}) => +num === id)
+        setNumofBirds([...numOfBirds, addedBird])
+
+    }
+    
+    function findId(e) {
+        addBirdToCart(e.target.value)
+    }
    return birdsArr.map(({name, amount, img, id}) => {
         return (
             <div className='birds' id= {id}>
@@ -24,10 +28,9 @@ function Cards({birdsArr}) {
                 alt='' />
                 <br></br>
                 {/* Button Component goes here*/}
-                <Button
-                key = {id}
-                cardData = {cardData}
-                setCardData = {setCardData} />
+                <button
+                value={id}
+                onClick={(event) => {findId(event)}}>ADOPT</button>
     
             </div>
         );

@@ -10,6 +10,9 @@ import Checkout from "./Components/Checkout";
 function App () {
 // Declare state for birdData [{}]
 const [birdsArr, setBirdsArr] = useState(birdData)
+// Declare state for selected bird id number -> (to cart/ card, card  will lift to App , sent down to cart, to compare it id in array n update cart)
+
+const [numOfBirds, setNumofBirds] = useState([])
 
 
 
@@ -27,14 +30,18 @@ const [birdsArr, setBirdsArr] = useState(birdData)
       <main>
         
         <Cards
-        birdsArr = {birdsArr} />
+        birdsArr = {birdsArr}
+        numOfBirds ={numOfBirds}
+        setNumofBirds = {setNumofBirds} />
         
       </main>
       
       {/* Cart and Checkout */}
       <aside>
         <>
-          <Cart />
+          <Cart
+          birdsArr = {birdsArr}
+          numOfBirds = {numOfBirds} />
         </>
         <>
           <Checkout />
