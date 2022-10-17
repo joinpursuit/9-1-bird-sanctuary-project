@@ -1,0 +1,12 @@
+.Checkout {
+  border: 1px solid rgb(127, 57, 57);
+  padding: 8px;
+}
+
+#submit {
+  background-color: rgb(243, 224, 200);
+}
+
+#submit:hover {
+  background-color: rgb(247, 186, 111);
+}
