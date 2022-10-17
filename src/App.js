@@ -1,9 +1,18 @@
-function App () {
+import { useState } from "react";
+import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems";
+import Cards from "./Cards";
+import Checkout from "./Checkout";
+import Cart from "./Cart";
+
+function App() {
+  const [birds, setBirds] = useState(birdData);
+
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <Cards birds={birdData} />
     </div>
   );
-};
+}
 
 export default App;
