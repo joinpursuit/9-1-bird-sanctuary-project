@@ -1,24 +1,35 @@
+import { useState } from "react";
+
+import birdData from "./data/birds";
+import Cards from "./Components/Cards";
+
+
+
 function App () {
+// Declare state for birdData [{}]
+const [birdsArr, setBirdsArr] = useState(birdData)
+
+
+
+
+
   return (
     <div className="topLevel">
       
+      {/* Header */}
       <header>
         <h1>Bird Sanctuary Project</h1>
       </header>
       
+      {/* Bird Cards */}
       <main>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+        
+        <Cards
+        birdsArr = {birdsArr} />
+        
       </main>
       
+      {/* Cart and Checkout */}
       <aside>
         <div>cart</div>
         <div>checkout</div>
