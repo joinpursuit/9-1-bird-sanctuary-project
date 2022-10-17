@@ -1,6 +1,6 @@
 export default function Adopt() {
     return (
-        <button>
+        <button className="adopt">
             Adopt
         </button>
     );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Cart(props) {
+export default function Cart() {
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [birdList, setBirdList] = useState([]);
