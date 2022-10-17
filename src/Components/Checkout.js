@@ -1,3 +1,5 @@
+import "./Checkout.css";
+
 export default function () {
   return (
     <form className="checkout">
