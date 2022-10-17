@@ -20,13 +20,11 @@ function App() {
           <Cart discount={discount} cost={cost} />
           <Checkout />
         </aside>
-        <div className="birds">
-          <ul>
-            {birds.map((bird) => {
-              return <BirdCard bird={bird} />;
-            })}
-          </ul>
-        </div>
+        <ul className="birds">
+          {birds.map((bird) => {
+            return <BirdCard bird={bird} />;
+          })}
+        </ul>
       </main>
     </>
   );
