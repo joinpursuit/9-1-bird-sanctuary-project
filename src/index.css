@@ -1,0 +1,41 @@
+/* should style individual components */
+
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+.topLevel {
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    border: 2px solid red;
+    grid-template-columns: 20% 80%;
+    row-gap: 15px;
+    column-gap: 15px;
+
+}
+
+main {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
+}
+
+aside {
+    grid-row: 2 ;
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+header {
+    grid-row: 1;
+    grid-column: span 2;
+    justify-self: center;
+    text-decoration: underline;
+}
