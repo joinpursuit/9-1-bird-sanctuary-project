@@ -8,7 +8,7 @@ export default function Cart({ birdsCart, discount, setDiscount }) {
   };
 
   return (
-    <div className="cart">
+    <div className="Cart">
       <h2>Cart</h2>
       <h4>Total: ${birdsCart.length ? <>{calcTotal()}</> : <>0</>}</h4>
       <p>

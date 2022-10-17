@@ -5,7 +5,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 
 import birdData from "./data/birds";
-import bonusItems from "./data/bonusItems";
+// import bonusItems from "./data/bonusItems";
 
 import "./App.css";
 

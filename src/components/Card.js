@@ -3,7 +3,7 @@ export default function Card({ bird, birdsCart, setBirdsCart }) {
     <div className="card">
       <h3>{bird.name}</h3>
       <p>Price: ${bird.amount}</p>
-      <img src={bird.img} height="140" width="140"></img>
+      <img src={bird.img} height="140" width="140" alt="bird"></img>
       <br />
       <button
         onClick={() => {
