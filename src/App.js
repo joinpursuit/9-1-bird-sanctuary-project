@@ -1,6 +1,7 @@
 import { useState } from "react";
 import birdData from "./data/birds";
 import Cart from "./Components/Cart.js";
+import Checkout from "./Components/Checkout.js";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <main className="main">
         <aside className="aside">
           <Cart discount={discount} cost={cost} />
-          <div className="checkout">Checkout</div>
+          <Checkout />
         </aside>
         <div className="birds">Birds</div>
       </main>
