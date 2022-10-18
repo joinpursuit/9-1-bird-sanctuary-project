@@ -1,14 +1,4 @@
-import Card from "./Card";
-export default function Cards({
-  name,
-  // amount,
-  // img,
-  // id,
-  // cartOption,
-  // setCartOption,
-  handleBirdOption,
-  birdData,
-}) {
+export default function Cards({ handleBirdOption, birdData, cartOption }) {
   return (
     <div className="card">
       {birdData.map((bird) => {

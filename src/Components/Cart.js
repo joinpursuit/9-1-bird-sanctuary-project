@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import birdData from "../data/birds";
-// import Cards from "./ Cards";
+
 export default function Cart({
   setCartOption,
   cartOption,
@@ -10,15 +10,17 @@ export default function Cart({
   bird,
 }) {
   // const [birdOption, setBirdOption] = useState({ birdData });
-
   // console.log(birdOption);
-  let total = 0;
+  // let total = 0;
   // setCartOption(amount + 1);
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
+      <span>Discount:{discount}%</span>
+      <br />
+      <br />
       <h4>
-        {/* {console.log(cartOption)} */}
         Total:{" "}
         {/* {cartOption.map((bird) => {
           return total + bird.amount;
@@ -28,7 +30,6 @@ export default function Cart({
           return prevOption + currentOption.amount;
         }, 0)}
       </h4>
-      <span>Discount:{discount}%</span>
       <ol>
         {cartOption.map((bird) => {
           return (

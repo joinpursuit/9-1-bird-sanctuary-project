@@ -1,22 +1,30 @@
 import { useState } from "react";
 
 export default function Cehckout() {
-  const [firstName, setFirtName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (firstName && lastName && email && zipCode) {
+      alert("You have adopted birds. Thank you!");
+    }
+    alert("Please complete the form");
+  };
   return (
     <div className="Checkout">
       <h3>Checkout</h3>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <b>First Name</b>
         <label htmlFor="firstName">
           <input
             type="text"
             placeholder="Enter First Name"
             value={firstName}
-            required
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </label>
         <b>Last Name</b>
@@ -25,7 +33,7 @@ export default function Cehckout() {
             type="text"
             value={lastName}
             placeholder="Enter Last Name"
-            required
+            onChange={(e) => setLastName(e.target.value)}
           />
         </label>
         <b>Email</b>
@@ -34,7 +42,7 @@ export default function Cehckout() {
             value={email}
             type="text"
             placeholder="Enter your e-mail"
-            required
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <b>Zip Code</b>
@@ -43,11 +51,13 @@ export default function Cehckout() {
             value={zipCode}
             type="number"
             placeholder="Enter Zip Code"
-            required
+            onChange={(e) => setZipCode(e.target.value)}
           />
         </label>
         <label htmlFor="submit"></label>
-        <button type="submit">Submit</button>
+        <button onclick={handleSubmit} type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
