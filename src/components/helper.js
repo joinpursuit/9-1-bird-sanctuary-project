@@ -1,4 +1,4 @@
-export const getSums = (birds) => {
+export const getSum = (birds) => {
   const sum = birds.reduce((acc, curr) => {
     return (acc += curr.amount)
   }, 0)
