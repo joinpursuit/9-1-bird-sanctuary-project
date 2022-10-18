@@ -1,6 +1,4 @@
-
 import React from 'react';
-
 
 function Cards({birdsArr, setNumofBirds, numOfBirds}) {
     // select which birds to be added to cart, no duplicate birds, remove if clicked again
@@ -21,9 +19,12 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
         addBirdToCart(e.target.value)
         if(e.target.innerText === `ADOPT`){
             e.target.innerText = `REMOVE`
+            e.target.style.backgroundColor= `rgb(173, 5, 5)`
         }
         else{
             e.target.innerText = `ADOPT`
+            e.target.style.backgroundColor= `rgb(43, 111, 9)`
+            e.target.style.color = `white`
         }
     }
 
@@ -31,7 +32,8 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
    return birdsArr.map(({name, amount, img, id}) => {
 
         return (
-            <div className='birds' id= {id}>
+            
+                <div className='birds' key= {id}>
                 
                 <h5>{name}</h5>
                 <p> Price: ${amount}</p>
@@ -44,6 +46,7 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
                 onClick={(event) => {findId(event)}}>ADOPT</button>
     
             </div>
+            
         );
     })
 

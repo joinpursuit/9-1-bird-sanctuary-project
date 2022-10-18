@@ -13,12 +13,6 @@ const [birdsArr, setBirdsArr] = useState(birdData)
 // keep track of selected birds
 const [numOfBirds, setNumofBirds] = useState([])
 
-
-
-
-
-
-
   return (
     <div className="topLevel">
       
@@ -37,6 +31,7 @@ const [numOfBirds, setNumofBirds] = useState([])
         setNumofBirds = {setNumofBirds}
          />
         </div>
+        
       </main>
       
       {/* Cart and Checkout */}
@@ -46,6 +41,7 @@ const [numOfBirds, setNumofBirds] = useState([])
           numOfBirds = {numOfBirds}
           />
         </div>
+
         <div className="Checkout">
           <Checkout
           setNumofBirds= {setNumofBirds} />

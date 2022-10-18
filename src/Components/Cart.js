@@ -6,14 +6,12 @@ import UList from './UList';
 
 function Cart({numOfBirds}) {
 
-
     return (
         <>
             <h4>Cart</h4>
             <Total 
             numOfBirds={numOfBirds}
              />
-            
             <ol>
                 <OList 
                 numOfBirds = {numOfBirds}

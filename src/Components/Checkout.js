@@ -8,7 +8,7 @@ function Checkout({setNumofBirds}) {
             first: "",
             last: "",
             email: "",
-            zip: null
+            zip: ""
 
         }
     )
