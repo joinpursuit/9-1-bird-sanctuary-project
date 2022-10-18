@@ -1,12 +1,15 @@
-import {useState} from "react";
-import {birdData} from "./data/birds";
-import {checkout} from "./Checkout";
+// import {useState} from "./react";
+import {birdData}from ".src/data/birds";
+// import {checkout} from "./src/checkout";
 
 
 
-function App () 
+function App () {
  
-    // const [bird, setBird] = useState(birdData)
+
+
+ 
+    const [bird, setBird] = useState(birdData)
     
     
     const [newbirds,setnewBirds]= useState ({
@@ -15,11 +18,11 @@ img: "",
 name: "",
 amount: "",
 id: "",
-
+  
  
     });
   
-
+  }
 <form onSubmit={handleSubmit}>
   <label htmlFor="first name">First name:</label>
   <input
@@ -51,7 +54,7 @@ id="firstName"
 
 </form>
 
-
+  
 
 
 
