@@ -27,6 +27,15 @@ function App() {
     } else alert("You have already adopted this bird");
   };
 
+  const calcTotal = (adoptedBirds) => {
+    if (adoptedBirds.length) {
+      const total = adoptedBirds.reduce((acc, bird) => {
+        return acc + bird.amount;
+      }, 0);
+      setCost(total);
+    }
+  };
+
   return (
     <div className="app">
       <header className="header">
@@ -35,6 +44,7 @@ function App() {
       <main className="main">
         <aside className="aside">
           <Cart
+            calcTotal={calcTotal}
             adoptedBirds={adoptedBirds}
             discount={discount}
             bonus={bonus}

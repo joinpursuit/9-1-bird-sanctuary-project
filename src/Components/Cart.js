@@ -1,6 +1,8 @@
 import "./Cart.css";
 
-export default function Cart({ adoptedBirds, discount, cost }) {
+export default function Cart({ calcTotal, adoptedBirds, discount, cost }) {
+  calcTotal(adoptedBirds);
+
   return (
     <div className="cart">
       <h2>Cart</h2>
