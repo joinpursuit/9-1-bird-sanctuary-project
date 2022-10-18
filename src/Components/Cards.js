@@ -1,60 +1,60 @@
 import cards from "./Cards.css"
+import {useState} from "react"
 
+const Cards = ({birdData}) => {
 
-const Cards = ({birdData,bonusItems }) => {
-    // let myString = "Shoebill: $100"
+const [array , setArray] = useState([])
+console.log(array)
+let bird = []
 
-    // myString = myString.replace(/\D/g,'')
-    // console.log(Number(myString))
+array.forEach((arr) => {
+    bird.push(arr.textContent)
+})
+console.log(bird)
 
- function birdCard(birdId) {
-    const li = document.createElement("li")
-    li.setAttribute("class", "setBird")
-   
-    const index = birdData.findIndex((bird) => birdId === bird.id);
-
-    
-     li.textContent = `${birdData[index].name}: $${birdData[index].amount}`
-
-    return li
- }
-
- const birdOrder = (birdId) => {
-      const li = birdCard(birdId)
-     let ol = document.querySelector("ol")
-      ol.append(li)
- }
+      function birdCard(birdId) {
+          const li = document.createElement("li")
+          const ol = document.querySelector("ol")
+       
+          const index = birdData.findIndex((bird) => birdId === bird.id);
+        
+          li.textContent = `${birdData[index].name}: $${birdData[index].amount}`
+          if(!bird.includes(li.textContent)){
+            ol.append(li)
+            return setArray([...array, li])
+            }
+            else{
+             alert("You have already added this bird to the cart")
+            }  
+        }
 
  
- const total = () => {
+  const total = () => {
      let sum = 0
      
-     const li = document.querySelectorAll("li")
-     
-     li.forEach((list) => {
-         sum += Number(list.textContent.replace(/\D/g,'')) 
-         if(li.length >= 3)
-         return (
-             document.querySelector("h4").textContent = `Total: $${sum *.90}`
-             )
-             else (
-                 document.querySelector("h4").textContent = `Total: $${sum}`
-                 )
-                })
-                
+      array.forEach((arr) => {
+          sum += Number(arr.textContent.replace(/\D/g,'')) 
+          if(array.length >= 3)
+          return (
+              document.querySelector("h4").textContent = `Total: $${sum *.90}`
+              )
+              else (
+                   document.querySelector("h4").textContent = `Total: $${sum}`
+
+                   )
+                  })
             }
             
-            const discount = () => {
-                const li = document.querySelectorAll("li")
-                if(li.length >= 3){
-                    document.querySelector(".discount").textContent = `Discount: 10%`
+             const discount = () => {
+                if(array.length >= 3){
+                    document.querySelector(".discount").innerHTML = `Discount: 10%`
                 }
-            }
+             }
             
             
 
             return (
-                <section className="card">
+            <section className="card">
         {birdData.map(({name , amount, id, img}) => {
             return (
                 <div className="birds" key={id}>
@@ -63,15 +63,17 @@ const Cards = ({birdData,bonusItems }) => {
                     <img src={img} alt={img}></img>
                     <br></br>
                     <button onClick={() => {
-          birdOrder(id);
-          total();
+           birdCard(id);
+           total();
           discount();
-       
          ;
         }}>Adopt</button>
+        <br></br>
+        
                 </div>
                  )
-        })}
+                })}
+         
     </section>
 )
 

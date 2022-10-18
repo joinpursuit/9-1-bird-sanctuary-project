@@ -7,10 +7,12 @@
  
  import "./App.css"
 import bonusItems from "./data/bonusItems";
-
+import {useState} from "react"
 
 
 function App () {
+const [bird , setbird] = useState(birdData)
+
   
   return (
     <div className="birdInfo">
@@ -25,7 +27,7 @@ function App () {
         </div>
       </div>
       <main>
-        <Cards birdData={birdData} bonusItems={bonusItems}/>
+        <Cards birdData={bird} bonusItems={bonusItems}/>
       </main>
     </div>
   );

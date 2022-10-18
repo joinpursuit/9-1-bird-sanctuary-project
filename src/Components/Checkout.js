@@ -9,7 +9,7 @@ const Checkout = () => {
         zip: ""
     })
 
-    
+    console.log(form)
     
     const formText = (event) => {
         setForm({...form, [event.target.id]: event.target.value})
