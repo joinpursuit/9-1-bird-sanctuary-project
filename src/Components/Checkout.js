@@ -1,6 +1,6 @@
 import "./Checkout.css";
 
-export default function () {
+export default function Checkout() {
   return (
     <form className="checkout">
       <h2>Checkout</h2>
