@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 function Cards({ bird }) {
-  const [adopt, setAdopt] = useState(false)
+  //   const [adopt, setAdopt] = useState(false)
 
   return (
     <li key={bird.id}>
