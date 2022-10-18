@@ -1,6 +1,6 @@
 import "./Cart.css";
 
-export default function Cart({ discount, cost }) {
+export default function Cart({ adoptedBirds, discount, cost }) {
   return (
     <div className="cart">
       <h2>Cart</h2>
@@ -11,7 +11,9 @@ export default function Cart({ discount, cost }) {
         Total: <span>${cost}</span>
       </h4>
       <ol>
-        <li>Adoped bird</li>
+        {adoptedBirds.map((bird) => (
+          <li key={bird.id}>{bird.name}</li>
+        ))}
       </ol>
       <p>Your Donations have qualified you for the following items:</p>
       <ol>
