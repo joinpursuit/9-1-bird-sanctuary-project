@@ -13,7 +13,15 @@ export default function Cart({ total, discount, bonusItem, cartBirds }) {
         }
       </h4>
       <span>Discount: {discount}%</span>
-      <ol></ol>
+      <ol>
+        {cartBirds.map((bird) => {
+          return (
+            <li key={bird.id}>
+              {bird.name} : ${bird.amount}
+            </li>
+          );
+        })}
+      </ol>
       <p>Your donations have qualified you for the following items:</p>
       <ul></ul>
     </div>

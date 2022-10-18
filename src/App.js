@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>
+      <div id="cart+checkout">
         <Cart
           setTotal={setTotal}
           bonusItems={bonusItems}
@@ -32,7 +32,7 @@ function App() {
         />
         <Checkout />
       </div>
-      <div className="card">
+      <div className="card" id="card">
         {birds.map((bird) => {
           return <Cards birds={birds} bird={bird} updateCart={updateCart} />;
         })}
