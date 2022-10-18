@@ -1,5 +1,5 @@
 import {useState} from 'react'
-export default function Checkout (){
+export default function Checkout(){
 const [newbuy, setNewBuy] = useState({
     firstName: '',
     lastName: '',
@@ -12,9 +12,6 @@ const [newbuy, setNewBuy] = useState({
     setNewBuy({...newbuy, [e.target.id]: e.target.value})
  }
 
-//WITHOUT THIS IT HAS CORRECT FUNCTION BUT DOESNT ACTUALLY INPUT ANYTHING
-
-
  const submit = (e) => {
     e.preventDefault()
     if(!newbuy){
@@ -22,14 +19,14 @@ const [newbuy, setNewBuy] = useState({
     }else{
         alert('You have adopted birds. Thank you!')
         e.target.value.reset()
+        //THIS LINE NOT WORKING FIX LATER
     }
 }
-//Form now resets when finished.
-//FIX HTMLFOR and CALL SetNewBuy 
+
+
 
 return(
-    <div id='Checkout'>
-        <>
+    <div>
         <h4>Checkout</h4>
         <form id="form" onSubmit={submit}>
             <label htmlFor="firstName">
@@ -82,7 +79,6 @@ return(
             </label>
             <input type='submit' text='Submit'/>
         </form>
-        </>
     </div>
 )
 }

@@ -2,18 +2,6 @@ import Card from "./Card"
 import React from 'react'
 
 export default function Cards ({birdData, cart, setCart, nameArray}){
-    /*
-
-    REMOVE THOSE WHEN GET MAP TO WORK 
-
-
-    GRAB BIRD DATA FROM BIRDS.JS
-    Each bird card displays the name, image, and amount (price)
-    Each bird card has a class name of birds
-    Each bird card has an Adopt button
-    The button text should be: Adopt
-    */
-
     console.log(birdData)
   return(
   <div className="birds">

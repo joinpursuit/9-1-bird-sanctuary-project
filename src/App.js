@@ -16,6 +16,8 @@ function App () {
 //  }
  //SEND HERE TO CARD & CALLED ONCLICK SO INFO COMES BACK TO APP MOVE INFO INTO APP JS and DISTRIBUTE FROM HERE. 
 
+ //I DONT LIKE THIS HERE FIGURE OUT HOW TO MAKE WORK IN CART
+
   const [cart, setCart] = useState([])
   const [birdy, setBirdy] = useState(birdData)
   return (
