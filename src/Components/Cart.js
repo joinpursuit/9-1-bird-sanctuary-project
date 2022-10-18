@@ -12,7 +12,7 @@ export default function Cart({ adoptedBirds, discount, cost }) {
       </h4>
       <ol>
         {adoptedBirds.map((bird) => (
-          <li>{bird.name}</li>
+          <li key={bird.id}>{bird.name}</li>
         ))}
       </ol>
       <p>Your Donations have qualified you for the following items:</p>
