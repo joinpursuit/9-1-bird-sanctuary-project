@@ -19,7 +19,7 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
         addBirdToCart(e.target.value)
         if(e.target.innerText === `ADOPT`){
             e.target.innerText = `REMOVE`
-            e.target.style.backgroundColor= `rgb(173, 5, 5)`
+            e.target.style.backgroundColor= `rgb(173, 5, 5)`   
         }
         else{
             e.target.innerText = `ADOPT`

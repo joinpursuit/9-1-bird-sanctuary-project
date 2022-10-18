@@ -8,7 +8,7 @@
 
 .topLevel {
     display: grid;
-    grid-template-rows: 10vh 45vh 45vh;
+    grid-template-rows: 5% 45% 45%;
     border: 2px solid red;
     grid-template-columns: 20% 80%;
     row-gap: 15px;
@@ -16,15 +16,22 @@
 
 }
 
+main {
+    grid-column: 2;
+    grid-row: span 3;
+}
+
 .card {
     grid-row: 2/4;
     grid-column: 2;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,250px);
     column-gap: 10px;
     row-gap: 10px;
     justify-items: center;
-    /* height: 90vh; */
+    align-items: center;
+    height: 100%;
     
     
 }
@@ -46,10 +53,10 @@ aside div {
     width: 100%;
 }
 
-.Checkout {
+/* .Checkout {
     overflow: scroll;
     font-size: small;
-}
+} */
 
 .birds {
     background-color: rgba(192, 252, 232, 0.898);
@@ -99,4 +106,5 @@ h5 {
     text-decoration: underline;
     font-family: Aboreto ;
     margin: 0;
+    margin-top: 10px;
 }
