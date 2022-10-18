@@ -16,9 +16,9 @@ function App() {
 
   return (
     <div>
-      <Cards birds={birdData} />
       <Cart bonusItems={bonusItems} cart={cart} discount={discount} />
       <Checkout />
+      <Cards birds={birdData} updateCart={updateCart} />
     </div>
   );
 }

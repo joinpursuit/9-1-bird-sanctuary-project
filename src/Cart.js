@@ -1,4 +1,4 @@
-export default function Carts({ cart, discount }) {
+export default function Cart({ cart, discount }) {
   return (
     <div className="Cart">
       <h2>Cart</h2>
@@ -9,6 +9,9 @@ export default function Carts({ cart, discount }) {
         }, 0)}
       </h4>
       <span>Discount: {discount}</span>
+      <ol></ol>
+      <span>Your donations have qualified you for the following items:</span>
+      <ul></ul>
     </div>
   );
 }
