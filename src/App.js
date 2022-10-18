@@ -37,7 +37,9 @@ const [total, setTotal] = useState(0)
         <Cards
         birdsArr = {birdsArr}
         numOfBirds ={numOfBirds}
-        setNumofBirds = {setNumofBirds} />
+        setNumofBirds = {setNumofBirds}
+        setDiscount = {setDiscount}
+        setTotal = {setTotal} />
         
       </main>
       
