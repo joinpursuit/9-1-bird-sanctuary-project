@@ -10,14 +10,13 @@ function Cart({birdsArr, numOfBirds}) {
 
     console.log(numOfBirds)
     // Functions
-    function handleDiscount() {
-        if(numOfBirds.length >= 3){
+   function handleDiscount() {
             setDiscount(10)
         }
-        else{
-            setDiscount(0)
-        }
-    }
+        // if(numOfBirds.length >= 3){
+        //     handleDiscount()
+        // }
+    
 
     function calculateTotal () {
        const totalPrice = numOfBirds.reduce((acc, {amount}) => 
@@ -25,6 +24,7 @@ function Cart({birdsArr, numOfBirds}) {
         ,0)
         setTotal(totalPrice)
         }
+        console.log(total)
 
     function updateBirdListItems() {
 
@@ -37,13 +37,15 @@ function Cart({birdsArr, numOfBirds}) {
     return (
         <div className='cart'>
             <h6>Cart</h6>
-            <p>Discount: {discount} %</p>
+            <p>Discount: {discount}%</p>
             <p>Total: ${total}</p>
             
             <ol>
-                <li>
-                    birds
-                </li>
+            {numOfBirds.map(({name, amount}) => {
+                        return(
+                            <li>{name} ${amount}</li>
+                        )
+                    })}
             </ol>
 
             <ul>
