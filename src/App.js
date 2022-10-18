@@ -18,7 +18,7 @@ const [numOfBirds, setNumofBirds] = useState([])
       
       {/* Header */}
       <header>
-        <h1>Bird Sanctuary Project</h1>
+        <h1>Destiny's Bird Sanctuary Project</h1>
       </header>
       
       {/* Bird Cards */}
@@ -31,7 +31,7 @@ const [numOfBirds, setNumofBirds] = useState([])
         setNumofBirds = {setNumofBirds}
          />
         </div>
-        
+
       </main>
       
       {/* Cart and Checkout */}

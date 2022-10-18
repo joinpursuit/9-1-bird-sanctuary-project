@@ -42,7 +42,7 @@ function Checkout({setNumofBirds}) {
 
     return (
         <div className='Checkout'>
-            <h6>Checkout</h6>
+            <h3>Checkout</h3>
 
             <form onSubmit={(event) => {handleSubmit(event)}}>
 
@@ -82,7 +82,9 @@ function Checkout({setNumofBirds}) {
                 onChange = {(event) => {handleUserInput(event)}}
                 />
 
-                <input type = 'submit' />
+                <input 
+                type = 'submit'
+                 />
                 
             </form>
             

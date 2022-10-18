@@ -9,7 +9,7 @@ function Total({numOfBirds}) {
    
     return (
         <>
-            <p>Discount: {length >= 3 ? 10 : 0}%</p>
+            <h6>Discount: {length >= 3 ? 10 : 0}%</h6>
             <h4>Total: ${length < 3 ? currentTotal : discountedTotal}</h4>
         </>
     );

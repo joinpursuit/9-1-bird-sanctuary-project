@@ -8,7 +8,7 @@ function Cart({numOfBirds}) {
 
     return (
         <>
-            <h4>Cart</h4>
+            <h3>Cart</h3>
             <Total 
             numOfBirds={numOfBirds}
              />
@@ -19,6 +19,7 @@ function Cart({numOfBirds}) {
             </ol>
 
             <ul>
+               <p>***BONUS REWARDS***</p>
                 <UList 
                 numOfBirds ={numOfBirds}
                  />
