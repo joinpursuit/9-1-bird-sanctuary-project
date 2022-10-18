@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Cehckout() {
+export default function Cehckout({ setCartOption }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,6 +13,11 @@ export default function Cehckout() {
       alert("You have adopted birds. Thank you!");
     }
     alert("Please complete the form");
+    setCartOption([]);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setZipCode("");
   };
   return (
     <div className="Checkout">
