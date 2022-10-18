@@ -24,7 +24,7 @@ function App() {
   const adoptBird = (bird) => {
     if (!adoptedBirds.includes(bird)) {
       setAdoptedBirds([...adoptedBirds, bird]);
-    } else alert("You have already adotped this bird");
+    } else alert("You have already adopted this bird");
   };
 
   return (
