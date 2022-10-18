@@ -15,7 +15,7 @@ function Cards({ bird }) {
             <img src={bird.img} alt={bird.name} />
           </p>
         </span>
-        <button>ADOPT</button>
+        <button onClick={(e) => handleSelectChange(e)}>ADOPT</button>
       </div>
     </li>
   )

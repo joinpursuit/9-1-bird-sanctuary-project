@@ -22,7 +22,7 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault()
     resetForm()
-    alert("submitted")
+    alert("You have adopted birds. Thank You!")
   }
   function resetForm() {
     setUser({
@@ -37,10 +37,12 @@ function App() {
     <div>
       <h1>Bird Sanctuary!</h1>
       <Cart />
-      <Checkout
-        handleTextChange={handleTextChange}
-        handleSubmit={handleSubmit}
-      />
+      <div className="Checkouts">
+        <Checkout
+          handleTextChange={handleTextChange}
+          handleSubmit={handleSubmit}
+        />
+      </div>
       <ul>
         {birds.map((bird) => {
           return <Cards bird={bird} key={bird.id} />
