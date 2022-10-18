@@ -38,18 +38,18 @@ aside {
     grid-template-rows: 1fr 1fr;
     row-gap: 15px;
     justify-items: center;
-    height: 90vh;
+    /* height: 90vh; */
     margin-left: 20px;
 }
 
 aside div {
     border: 1px solid black;
-    height: 45vh;
+    /* height: 45vh; */
     width: 100%;
 }
 
 .Checkout {
-    overflow: scroll;
+    /* overflow: scroll; */
     font-size: small;
 }
 

@@ -10,7 +10,11 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
 
     function addBirdToCart(num) {
         const addedBird = birdsArr.find(({id}) => +num === id)
-        setNumofBirds([...numOfBirds, addedBird])
+        const exist = numOfBirds.some(({id}) => +num === id)
+        if(!exist){
+            setNumofBirds([...numOfBirds, addedBird])
+        }
+        
 
     }
     
