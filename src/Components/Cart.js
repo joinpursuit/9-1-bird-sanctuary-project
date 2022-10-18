@@ -7,28 +7,33 @@ export default function Cart({
   amount,
   setDiscount,
   discount,
+  // discountP,
   name,
   bird,
 }) {
-  // const [birdOption, setBirdOption] = useState({ birdData });
-  // console.log(birdOption);
-  // let discount = 0;
-
-  // setCartOption(amount + 1);
-
-  const total = cartOption.reduce((prevOption, currentOption) => {
+  //Js here
+  let total = cartOption.reduce((prevOption, currentOption) => {
     return prevOption + currentOption.amount;
   }, 0);
+  let price = 0;
+  const reducedPrice = cartOption.map((bird) => {
+    if (cartOption.length > 2) {
+      price += bird.amount * 0.9;
+    } else {
+      price += bird.amount;
+    }
+  });
+
+  //!
   return (
     <div className="Cart">
       <h2>Cart</h2>
       <span>
-        Discount:{cartOption.length > 3 ? (discount = 10) : (discount = 0)}%
+        Discount:{cartOption.length > 2 ? (discount = 10) : (discount = 0)}%
       </span>
-
       <br />
       <br />
-      <h4>Total: ${total}</h4>
+      <h4>Total: ${price}</h4>
       <ol>
         {cartOption.map((bird) => {
           return (
