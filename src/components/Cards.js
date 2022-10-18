@@ -4,7 +4,6 @@ export default function Cards({
   birdData,
   birdsCart,
   setBirdsCart,
-  discount,
   setDiscount,
 }) {
   return (
@@ -17,7 +16,6 @@ export default function Cards({
               bird={bird}
               birdsCart={birdsCart}
               setBirdsCart={setBirdsCart}
-              discount={discount}
               setDiscount={setDiscount}
             />
           );

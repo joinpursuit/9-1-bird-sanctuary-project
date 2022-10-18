@@ -5,7 +5,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 
 import birdData from "./data/birds";
-// import bonusItems from "./data/bonusItems";
+import bonusItems from "./data/bonusItems";
 
 import "./App.css";
 
@@ -15,12 +15,11 @@ function App() {
 
   return (
     <main>
-      <Cart birdsCart={birdsCart} discount={discount} />
+      <Cart birdsCart={birdsCart} discount={discount} bonusItems={bonusItems} />
       <Cards
         birdData={birdData}
         birdsCart={birdsCart}
         setBirdsCart={setBirdsCart}
-        discount={discount}
         setDiscount={setDiscount}
       />
       <Checkout />
