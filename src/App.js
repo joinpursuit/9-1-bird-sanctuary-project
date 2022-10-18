@@ -7,8 +7,15 @@ import "./App.css";
 
 function App() {
   const [birds, setBirds] = useState([...birdData]);
+  const [adoptedBirds, setAdoptedBirds] = useState([]);
   const [cost, setCost] = useState(0);
   const [discount, setDiscount] = useState(0);
+
+  const adoptBird = (bird) => {
+    if (!adoptedBirds.includes(bird)) {
+      setAdoptedBirds([...adoptedBirds, bird]);
+    } else alert("You have already adotped this bird");
+  };
 
   return (
     <div className="app">
@@ -17,12 +24,12 @@ function App() {
       </div>
       <main className="main">
         <aside className="aside">
-          <Cart discount={discount} cost={cost} />
+          <Cart adoptedBirds={adoptedBirds} discount={discount} cost={cost} />
           <Checkout />
         </aside>
         <ul className="birds">
           {birds.map((bird) => {
-            return <BirdCard key={bird.id} bird={bird} />;
+            return <BirdCard adoptBird={adoptBird} key={bird.id} bird={bird} />;
           })}
         </ul>
       </main>
