@@ -72,16 +72,16 @@ function Checkout(props) {
                 onChange = {(event) => {handleUserInput(event)}}
                 />
 
-                <label htmlFor='zipcode'>Zipcode</label>
+                <label htmlFor='zipcode'>Zip Code</label>
                 <input
-                type = "number"
+                type = "zipCode"
                 id = "zip"
                 value= {userInput.zip}
                 name= "zip"
                 onChange = {(event) => {handleUserInput(event)}}
                 />
 
-                <button type= 'submit'>SUBMIT</button>
+                <input type= "submit" value= "submit"/>
                 
             </form>
             

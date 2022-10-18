@@ -1,16 +1,14 @@
 
 import React from 'react';
-// import { useState } from 'react';
-// import Button from './Button';
+import { useState } from 'react';
+
 
 
 function Cards({birdsArr, setNumofBirds, numOfBirds}) {
     // select which birds to be added to cart, no duplicate birds, remove if clicked again
-    
     function addBirdToCart(num) {
         const addedBird = birdsArr.find(({id}) => +num === id)
         const exist = numOfBirds.some(({id}) => +num === id)
-        
         if(!exist){
             setNumofBirds([...numOfBirds, addedBird])
         }
@@ -21,10 +19,10 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
     }
 
     // some function that adds clicked prop to object and toggles true and false
-    
+
+    // On click function for button
     function findId(e) {
         addBirdToCart(e.target.value)
-        
     }
 
 
@@ -39,7 +37,6 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
                 src= {img}
                 alt='' />
                 <br></br>
-                {/* Button Component goes here*/}
                 <button
                 value={id}
                 onClick={(event) => {findId(event)}}>ADOPT</button>

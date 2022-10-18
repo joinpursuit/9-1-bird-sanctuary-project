@@ -4,9 +4,11 @@ import bonusItems from '../data/bonusItems';
 import { bonusRewards } from '../data/helperFunctions';
 
 
-function UList({total,bonus}) {
-    console.log(bonus)
-   return bonusItems.map((item,index) => {
+function UList({numOfBirds}) {
+const total = numOfBirds.reduce((acc,{amount}) => amount +acc ,0)
+const bonus = bonusRewards(total)
+  
+return bonusItems.map((item,index) => {
         if(index < bonus){
             return(
                 <li>{item}</li>
