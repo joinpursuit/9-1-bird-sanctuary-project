@@ -1,10 +1,12 @@
-export default function Checkout() {
+export default function Checkout({ setBirdsCart, setDiscount }) {
   const formSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    alert("You have adopted birds. Thank you!");
+    setBirdsCart([]);
+    setDiscount(0);
   };
   return (
-    <div className="checkout">
+    <div className="Checkout">
       <h2>Checkout</h2>
       <form onSubmit={formSubmit}>
         <label>

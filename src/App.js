@@ -22,7 +22,7 @@ function App() {
         setBirdsCart={setBirdsCart}
         setDiscount={setDiscount}
       />
-      <Checkout />
+      <Checkout setBirdsCart={setBirdsCart} setDiscount={setDiscount} />
     </main>
   );
 }

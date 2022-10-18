@@ -6,7 +6,7 @@ main {
 }
 
 .Cart,
-.checkout,
+.Checkout,
 .card {
   border: 1px solid black;
   margin: 8px;
@@ -43,7 +43,7 @@ main {
   width: 100px;
 }
 
-.checkout {
+.Checkout {
   grid-column: 1/2;
   grid-row: 2/3;
 }
