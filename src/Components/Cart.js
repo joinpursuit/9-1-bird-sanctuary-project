@@ -3,9 +3,11 @@ import React from 'react';
 import { useState } from 'react';
 import bonusItems from '../data/bonusItems';
 import OList from './OList';
+import UList from './UList';
 
 function Cart({numOfBirds, total, discount,setTotal,setDiscount}) {
 
+const [bonus, setBonus] = useState(0)
 
     return (
         <div className='cart'>
@@ -15,15 +17,17 @@ function Cart({numOfBirds, total, discount,setTotal,setDiscount}) {
             
             <ol>
                 <OList 
-                numOfBirds= {numOfBirds}
+                numOfBirds = {numOfBirds}
                 setDiscount = {setDiscount}
-                setTotal = {setTotal} /> 
+                setTotal = {setTotal}
+                setBonus = {setBonus} /> 
             </ol>
 
             <ul>
-                <li>
-                    bonuses displayed here
-                </li>
+                <UList 
+                total = {total}
+                bonus = {bonus}
+                 />
             </ul>
         </div>
     );

@@ -50,7 +50,7 @@ const [total, setTotal] = useState(0)
           numOfBirds = {numOfBirds}
           discount = {discount}
           total = {total}
-          setDiscount ={setDiscount} />
+          setDiscount = {setDiscount} />
         </>
         <>
           <Checkout />
