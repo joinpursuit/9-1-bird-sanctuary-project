@@ -17,6 +17,7 @@ function App() {
   // console.log(birds)
   function handleTextChange(e) {
     setUser({ ...user, [e.target.id]: e.target.value })
+    console.log(setUser)
   }
 
   function handleSubmit(event) {
