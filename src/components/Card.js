@@ -8,8 +8,8 @@ export default function Card({img, name, amount, id, cart, setCart}) {
             <p>${amount}</p>
             <img src={img} alt={name} width='200px'/>
             <br/>
-            <button className="birds"
-            // value={id}
+            <button 
+            value={id}
             onClick={()=>setCart([...cart, {name, amount}])}>Adopt</button>
         </div>
     )

@@ -5,52 +5,78 @@ const [newbuy, setNewBuy] = useState({
     lastName: '',
     email: '',
     zip: '',
+
 })
+
+ const enter = (e) => {
+    setNewBuy({...newbuy, [e.target.id]: e.target.value})
+ }
+
+//WITHOUT THIS IT HAS CORRECT FUNCTION BUT DOESNT ACTUALLY INPUT ANYTHING
 
 
  const submit = (e) => {
     e.preventDefault()
-    alert('You have adopted birds. Thank you!')   
+    alert('You have adopted birds. Thank you!') 
+    e.target.value.reset()
 }
+//Form now resets when finished.
+//FIX HTMLFOR and CALL SetNewBuy 
 
 return(
-    <div id='checkout'>
+    <div id='Checkout'>
         <>
-        <h1>Checkout</h1>
-        <form onSubmit={submit}>
-            <label for="First Name">
+        <h4>Checkout</h4>
+        <form id="form" onSubmit={submit}>
+            <label htmlFor="firstName">
+                First Name
+                <br/>
                 <input 
+                id='firstName'
                 type="text"
-                value={newbuy.lastName}
+                value={newbuy.firstName}
                 placeholder="First Name"
+                onChange={enter}
                 required
                 />
             </label>
-            <label for="Last Name">
+            <label htmlFor="lastName">
+                Last Name
+                <br/>
                 <input 
+                id='lastName'
                 type="text"
                 value={newbuy.lastName}
                 placeholder="Last Name"
+                onChange={enter}
                 required
                 />
             </label>
-            <label for="EMAIL">
+            <label htmlFor="email">
+                Email
+                <br/>
                 <input 
+                id='email'
                 type="email"
                 value={newbuy.email}
                 placeholder="Email"
+                onChange={enter}
                 required
                 />
             </label>
-            <label for="ZIP">
+            <label htmlFor="zip">
+                Zip Code 
+                <br/>
                 <input 
+               id='zip'
                type="text"
                value={newbuy.zip}
                placeholder="Zip Code"
+               onChange={enter}
                required
                 />
             </label>
-            <input onSubmit={submit}type='submit' text='Submit'/>
+            <input type='submit' text='Submit'/>
         </form>
         </>
     </div>

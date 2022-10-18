@@ -1,8 +1,6 @@
 import {useState} from 'react'
 
 export default function Cart ({ total, discount, bonusItems, cart, birdData}){
-// const [birdy, setBird] = useState(birdData)
-
 cart.length >= 3 ? (discount = 10) : (discount = 0);
   //Does cart go over 3 if so discount if not no
 
@@ -52,25 +50,20 @@ cart.length >= 3 ? (discount = 10) : (discount = 0);
     }
  } 
 
- function removeBird(e){
-    // const killBird = birdy.filter((b) => b.id !== e)
-    // setBird(killBird)
-    e.target.value.remove()
- }
+
 //THIS REMOVES BUTTON BUT NOT WORDS FIX LATER
 
  return(
     <div className='Cart'>
         <h2>Cart</h2>
-        <h3>Discount:{discount}%</h3>
-        <h4>Total:{total}</h4>
+        <h4>Discount: {discount}%</h4>
+        <h4>Total: {total}</h4>
         <ol>
             {cart.map((bird) =>{
                     return (
-                        <li>
+                        <li id="detail">
                         {bird.name} ${bird.amount}
-                        <button 
-                        onClick={() => removeBird(bird.id)}>Remove Bird</button>
+                        <button>Remove Bird</button>
                         </li>
                     )
             })}

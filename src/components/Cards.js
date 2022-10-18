@@ -16,7 +16,7 @@ export default function Cards ({birdData, cart, setCart, nameArray}){
 
     console.log(birdData)
   return(
-  <>
+  <div className="birds">
     {birdData.map(({img, name, amount, id})=>{
         return( 
             <Card 
@@ -28,8 +28,8 @@ export default function Cards ({birdData, cart, setCart, nameArray}){
             setCart={setCart}
             nameArray={nameArray}
             />
-        )
-      })}
-  </>
+            )
+          })}
+  </div>
   )
 }
