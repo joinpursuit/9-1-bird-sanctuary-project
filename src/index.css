@@ -1,5 +1,11 @@
 .Main {
+  text-align: center;
+  display: grid;
   background-color: lightsalmon;
+  padding: 23px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  gap: 17px;
 }
 img {
   width: 420px;
@@ -7,4 +13,21 @@ img {
 button {
   color: grey;
   background-color: brown;
+}
+.Cart {
+  border: 3px solid black;
+  grid-row: 1/1;
+}
+.Checkout {
+  border: 3px solid black;
+  grid-row: 2/3;
+  /* grid-row-start: 2;
+  grid-row-end: 3; */
+}
+
+.card {
+  grid-column-start: 2;
+  border: 1px solid red;
+
+  /* grid-column: 5; */
 }

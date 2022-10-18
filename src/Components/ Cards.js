@@ -1,19 +1,28 @@
-import birdData from "../data/birds";
 import Card from "./Card";
 export default function Cards({
-  id,
   name,
-  img,
-  amount,
-  birdsData,
-  cart,
-  setCart,
+  // amount,
+  // img,
+  // id,
+  // cartOption,
+  // setCartOption,
+  handleBirdOption,
+  birdData,
 }) {
-  return birdData.map(({ name, amount, img }) => {
-    return (
-      <div className="birds">
-        <Card name={name} amount={amount} img={img} />
-      </div>
-    );
-  });
+  return (
+    <div className="card">
+      {birdData.map((bird) => {
+        return (
+          <div key={bird.id} className="birds">
+            <h5>{bird.name}</h5>
+            <img src={bird.img} alt={bird.name} />
+            <p>Price: $ {bird.amount}</p>
+            <button value={bird.id} onClick={() => handleBirdOption(bird)}>
+              Adopt
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
