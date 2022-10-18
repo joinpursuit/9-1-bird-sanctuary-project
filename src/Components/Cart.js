@@ -2,6 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import bonusItems from '../data/bonusItems';
+import OList from './OList';
 
 function Cart({numOfBirds, total, discount,setTotal,setDiscount}) {
 
@@ -13,22 +14,10 @@ function Cart({numOfBirds, total, discount,setTotal,setDiscount}) {
             <p>Total: ${total}</p>
             
             <ol>
-            {numOfBirds.map(({name, amount, id},i) => {
-                const currentTotal = numOfBirds.reduce((acc,{amount}) => amount +acc ,0)
-                if(i >= 2 ){
-                    setDiscount(10)
-                    setTotal(currentTotal - (currentTotal * .1))
-                }
-                else{
-                    setDiscount(0)
-                    setTotal(currentTotal)
-                }
-                
-
-                        return(
-                            <li key = {id}>{name} ${amount}</li>
-                        )
-                    })}
+                <OList 
+                numOfBirds= {numOfBirds}
+                setDiscount = {setDiscount}
+                setTotal = {setTotal} /> 
             </ol>
 
             <ul>

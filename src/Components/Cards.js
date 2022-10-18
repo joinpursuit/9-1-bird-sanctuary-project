@@ -5,8 +5,7 @@ import React from 'react';
 
 
 function Cards({birdsArr, setNumofBirds, numOfBirds}) {
-    // Create Card state for individual bird data to be passed to button -> passed to Cart
-    // Need to update Card Data value to send to button to onClick sends to Cart
+    // select which birds to be added to cart, no duplicate birds, remove if clicked again
     
     function addBirdToCart(num) {
         const addedBird = birdsArr.find(({id}) => +num === id)
@@ -20,6 +19,8 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
           setNumofBirds(remove)
         }
     }
+
+    // some function that adds clicked prop to object and toggles true and false
     
     function findId(e) {
         addBirdToCart(e.target.value)
