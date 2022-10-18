@@ -57,11 +57,11 @@ cart.length >= 3 ? (discount = 10) : (discount = 0);
     <div className='Cart'>
         <h2>Cart</h2>
         <h4>Discount: {discount}%</h4>
-        <h4>Total: {total}</h4>
+        <h4>Total: ${total}</h4>
         <ol>
             {cart.map((bird) =>{
                     return (
-                        <li id="detail">
+                        <li>
                         {bird.name} ${bird.amount}
                         <button>Remove Bird</button>
                         </li>
