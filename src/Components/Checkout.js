@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Checkout(props) {
+function Checkout({setNumofBirds}) {
     //  Declare State for user Inputs
     const [userInput, setUserInput] = useState(
         {
@@ -37,6 +37,7 @@ function Checkout(props) {
         e.preventDefault()
         alert(`You have adopted birds. Thank you!`)
         resetCheckoutForm()
+        setNumofBirds([])
     }
 
     return (
@@ -74,14 +75,14 @@ function Checkout(props) {
 
                 <label htmlFor='zipcode'>Zip Code</label>
                 <input
-                type = "zipCode"
-                id = "zip"
+                type = "number"
+                id = "zipcode"
                 value= {userInput.zip}
                 name= "zip"
                 onChange = {(event) => {handleUserInput(event)}}
                 />
 
-                <input type= "submit" value= "submit"/>
+                <input type = 'submit' />
                 
             </form>
             

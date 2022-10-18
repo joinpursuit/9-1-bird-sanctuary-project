@@ -8,7 +8,7 @@ function Cart({numOfBirds}) {
 
 
     return (
-        <div className='Cart'>
+        <>
             <h4>Cart</h4>
             <Total 
             numOfBirds={numOfBirds}
@@ -25,7 +25,7 @@ function Cart({numOfBirds}) {
                 numOfBirds ={numOfBirds}
                  />
             </ul>
-        </div>
+        </>
     );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import bonusItems from '../data/bonusItems';
 import { bonusRewards } from '../data/helperFunctions';
 

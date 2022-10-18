@@ -29,25 +29,27 @@ const [numOfBirds, setNumofBirds] = useState([])
       
       {/* Bird Cards */}
       <main>
-        
+
+        <div className="card">
         <Cards
         birdsArr = {birdsArr}
         numOfBirds ={numOfBirds}
         setNumofBirds = {setNumofBirds}
          />
-        
+        </div>
       </main>
       
       {/* Cart and Checkout */}
       <aside>
-        <>
+        <div className="Cart">
           <Cart
           numOfBirds = {numOfBirds}
           />
-        </>
-        <>
-          <Checkout />
-        </>
+        </div>
+        <div className="Checkout">
+          <Checkout
+          setNumofBirds= {setNumofBirds} />
+        </div>
       </aside>
       
     </div>

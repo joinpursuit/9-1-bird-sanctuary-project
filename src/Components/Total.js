@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+
 
 function Total({numOfBirds}) {
     
@@ -10,7 +10,7 @@ function Total({numOfBirds}) {
     return (
         <>
             <p>Discount: {length >= 3 ? 10 : 0}%</p>
-            <p>Total: ${length < 3 ? discountedTotal : currentTotal}</p>
+            <h4>Total: ${length < 3 ? currentTotal : discountedTotal}</h4>
         </>
     );
 }

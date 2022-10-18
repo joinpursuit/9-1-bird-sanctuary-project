@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { useState } from 'react';
-
 
 
 function Cards({birdsArr, setNumofBirds, numOfBirds}) {
@@ -18,11 +16,15 @@ function Cards({birdsArr, setNumofBirds, numOfBirds}) {
         }
     }
 
-    // some function that adds clicked prop to object and toggles true and false
-
     // On click function for button
     function findId(e) {
         addBirdToCart(e.target.value)
+        if(e.target.innerText === `ADOPT`){
+            e.target.innerText = `REMOVE`
+        }
+        else{
+            e.target.innerText = `ADOPT`
+        }
     }
 
 

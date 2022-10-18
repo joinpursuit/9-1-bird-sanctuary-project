@@ -15,7 +15,7 @@
 
 }
 
-main {
+.card {
     grid-row: 2;
     grid-column: 2;
     display: grid;
