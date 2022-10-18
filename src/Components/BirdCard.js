@@ -3,12 +3,14 @@ import "./BirdCard.css";
 export default function BirdCard({ bird }) {
   return (
     <li className="birdCard">
-      <p>{bird.name}</p>
+      <p className="birdName">{bird.name}</p>
       <p>${bird.amount}</p>
       <div className="birdImageContainer">
         <img className="birdImg" src={bird.img} alt="bird"></img>
       </div>
-      <button>Adopt</button>
+      <div className="adoptButtonContainer">
+        <button className="adoptButton">Adopt</button>
+      </div>
     </li>
   );
 }

@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.app {
+    margin: 60px;
+    border-bottom: 4px solid black;
+}
+
 .main {
     display: grid;
     grid-template-columns: minmax(300px, 25%) minmax(800px, 75%);
@@ -11,6 +16,7 @@
 
 .birds {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: minmax(30%, auto);
+    gap: 30px;
 }

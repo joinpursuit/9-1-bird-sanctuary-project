@@ -1,7 +1,7 @@
 .birdCard {
     list-style: none;
     border: 3px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 15px 15px rgba(32, 32, 32, 0.667)
 }
 
@@ -14,4 +14,12 @@
 
 .birdImageContainer {
     height: 50%;
+}
+
+.adoptButtonContainer {
+    height: 25%;
+}
+
+.adoptButton {
+    margin: auto;
 }

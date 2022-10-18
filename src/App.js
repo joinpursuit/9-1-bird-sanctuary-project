@@ -11,7 +11,7 @@ function App() {
   const [discount, setDiscount] = useState(0);
 
   return (
-    <>
+    <div className="app">
       <div className="header">
         <h1>Bird Sanctuary Project</h1>
       </div>
@@ -26,7 +26,7 @@ function App() {
           })}
         </ul>
       </main>
-    </>
+    </div>
   );
 }
 
