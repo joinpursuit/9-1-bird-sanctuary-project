@@ -1,6 +1,6 @@
 import "./BirdCard.css";
 
-export default function BirdCard({ bird, adoptBird, adoptedBirds }) {
+export default function BirdCard({ bird, adoptBird }) {
   return (
     <li className="birdCard">
       <p className="birdName">{bird.name}</p>
