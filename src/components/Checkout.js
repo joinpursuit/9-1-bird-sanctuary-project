@@ -39,6 +39,7 @@ export default function Checkout({ setBirdsCart, setDiscount }) {
           <input
             type="text"
             name="lName"
+            required={true}
             onChange={(e) => {
               setLName(e.target.value);
             }}
@@ -51,6 +52,7 @@ export default function Checkout({ setBirdsCart, setDiscount }) {
           <input
             type="email"
             name="email"
+            required={true}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -63,6 +65,7 @@ export default function Checkout({ setBirdsCart, setDiscount }) {
           <input
             type="number"
             name="zipCode"
+            required={true}
             onChange={(e) => {
               setZip(e.target.value);
             }}
