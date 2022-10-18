@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { useState } from 'react';
-import Button from './Button';
+// import { useState } from 'react';
+// import Button from './Button';
 
 
-function Cards({birdsArr, setNumofBirds, numOfBirds,setDiscount, setTotal}) {
+function Cards({birdsArr, setNumofBirds, numOfBirds}) {
     // Create Card state for individual bird data to be passed to button -> passed to Cart
     // Need to update Card Data value to send to button to onClick sends to Cart
     
@@ -14,18 +14,11 @@ function Cards({birdsArr, setNumofBirds, numOfBirds,setDiscount, setTotal}) {
         
         if(!exist){
             setNumofBirds([...numOfBirds, addedBird])
-            calculateTotal()
         }
         else{
           const remove =  numOfBirds.filter(({id}) => id !== +num )
           setNumofBirds(remove)
-          calculateTotal()
         }
-    }
-
-    function calculateTotal() {
-        const currentTotal = numOfBirds.reduce((acc,{amount}) => amount +acc ,0)
-            setTotal(currentTotal)
     }
     
     function findId(e) {

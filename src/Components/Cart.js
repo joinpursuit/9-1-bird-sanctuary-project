@@ -3,45 +3,28 @@ import React from 'react';
 import { useState } from 'react';
 import bonusItems from '../data/bonusItems';
 
-function Cart({birdsArr, numOfBirds, total}) {
-    // Declare state for Cart info (discount, total, keep track of number of birds(li items), need access to bonuses array)
-    // const [discount, setDiscount] = useState(0)
-    // const [total, setTotal] = useState(0)
-
-    console.log(`numofbirds`,numOfBirds)
-    // Functions
-//    function handleDiscount() {
-//             setDiscount(10)
-//         }
-        // if(numOfBirds.length >= 3){
-        //     handleDiscount()
-        // }
-    
-
-    // function calculateTotal () {
-    //    const totalPrice = numOfBirds.reduce((acc, {amount}) => 
-    //         acc + amount
-    //     ,0)
-    //     setTotal(totalPrice)
-    //     }
-    //     console.log(total)
-
-    function updateBirdListItems() {
-
-    }
-       
-    
-
+function Cart({numOfBirds, total, discount,setTotal,setDiscount}) {
 
 
     return (
         <div className='cart'>
             <h6>Cart</h6>
-            <p>Discount: {}%</p>
+            <p>Discount: {discount}%</p>
             <p>Total: ${total}</p>
             
             <ol>
-            {numOfBirds.map(({name, amount, id}) => {
+            {numOfBirds.map(({name, amount, id},i) => {
+                const currentTotal = numOfBirds.reduce((acc,{amount}) => amount +acc ,0)
+                if(i >= 2 ){
+                    setDiscount(10)
+                    setTotal(currentTotal - (currentTotal * .1))
+                }
+                else{
+                    setDiscount(0)
+                    setTotal(currentTotal)
+                }
+                
+
                         return(
                             <li key = {id}>{name} ${amount}</li>
                         )

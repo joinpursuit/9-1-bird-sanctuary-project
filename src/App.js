@@ -38,8 +38,7 @@ const [total, setTotal] = useState(0)
         birdsArr = {birdsArr}
         numOfBirds ={numOfBirds}
         setNumofBirds = {setNumofBirds}
-        setDiscount = {setDiscount}
-        setTotal = {setTotal} />
+         />
         
       </main>
       
@@ -47,10 +46,11 @@ const [total, setTotal] = useState(0)
       <aside>
         <>
           <Cart
-          birdsArr = {birdsArr}
+          setTotal = {setTotal}
           numOfBirds = {numOfBirds}
           discount = {discount}
-          total = {total} />
+          total = {total}
+          setDiscount ={setDiscount} />
         </>
         <>
           <Checkout />
