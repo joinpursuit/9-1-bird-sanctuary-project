@@ -1,9 +1,13 @@
-function App () {
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
+import birdData from "./data/birds";
+import Cards from "./Components/Cards";
+
+function App() {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <Cards birds={birdData} />
     </div>
   );
-};
+}
 
 export default App;
