@@ -1,8 +1,6 @@
 import {useState} from 'react'
 
-export default function Cart ({ total, discount, bonusItems, cart}){
-cart.length >= 3 ? (discount = 10) : (discount = 0);
-  //Does cart go over 3 if so discount if not no
+export default function Cart ({ total, bonusItems, cart}){
 
  total = 0
   cart.map((bird) => {
@@ -53,7 +51,7 @@ cart.length >= 3 ? (discount = 10) : (discount = 0);
  return(
     <div className='Cart'>
         <h2>Cart</h2>
-        <h4>Discount: {discount}%</h4>
+        <p>Discount: {cart.length >= 3 ? 10 : 0}%</p>
         <h4>Total: ${total}</h4>
         <ol>
             {cart.map((bird) =>{
