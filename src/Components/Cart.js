@@ -1,6 +1,12 @@
 import "./Cart.css";
 
-export default function Cart({ total, discount, bonusItem, cartBirds }) {
+export default function Cart({
+  total,
+  discount,
+  setDiscount,
+  bonusItem,
+  cartBirds,
+}) {
   return (
     <div className="Cart">
       <h2>Cart</h2>
@@ -8,6 +14,10 @@ export default function Cart({ total, discount, bonusItem, cartBirds }) {
         Total: ${" "}
         {
           (total = cartBirds.reduce((accu, bird) => {
+            if (cartBirds.length >= 3) {
+              discount = 10;
+              return total * 0.9;
+            }
             return accu + bird.amount;
           }, 0))
         }

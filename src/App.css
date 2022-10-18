@@ -9,3 +9,7 @@
   justify-content: center;
   text-align: center;
 }
+
+body {
+  background-color: rgb(233, 226, 233);
+}
