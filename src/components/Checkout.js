@@ -17,8 +17,12 @@ const [newbuy, setNewBuy] = useState({
 
  const submit = (e) => {
     e.preventDefault()
-    alert('You have adopted birds. Thank you!') 
-    e.target.value.reset()
+    if(!newbuy){
+        alert("Please complete form")
+    }else{
+        alert('You have adopted birds. Thank you!')
+        e.target.value.reset()
+    }
 }
 //Form now resets when finished.
 //FIX HTMLFOR and CALL SetNewBuy 

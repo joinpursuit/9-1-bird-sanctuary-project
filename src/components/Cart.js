@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export default function Cart ({ total, discount, bonusItems, cart, birdData}){
+export default function Cart ({ total, discount, bonusItems, cart}){
 cart.length >= 3 ? (discount = 10) : (discount = 0);
   //Does cart go over 3 if so discount if not no
 
