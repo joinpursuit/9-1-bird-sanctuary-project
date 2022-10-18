@@ -12,7 +12,6 @@ export default function BirdCard({ bird, adoptBird, adoptedBirds }) {
         <button
           onClick={() => {
             adoptBird(bird);
-            console.log("clicked");
           }}
           className="adoptButton"
         >
