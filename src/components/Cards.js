@@ -1,8 +1,4 @@
-import React, { useState } from "react"
-
 function Cards({ bird }) {
-  //   const [adopt, setAdopt] = useState(false)
-
   return (
     <li key={bird.id}>
       <div className="birds">
@@ -15,7 +11,7 @@ function Cards({ bird }) {
             <img src={bird.img} alt={bird.name} />
           </p>
         </span>
-        <button onClick={(e) => handleSelectChange(e)}>ADOPT</button>
+        <button>ADOPT</button>
       </div>
     </li>
   )
