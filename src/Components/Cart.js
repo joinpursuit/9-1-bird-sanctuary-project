@@ -1,6 +1,12 @@
+import cart from "./cart.css"
 
-const Cart = () => {
-    
+
+const Cart = ({bonusItems}) => {
+//     const [bonuses, setBonuses] = useState([])
+//     bonusItems.forEach((b) => {
+//         bonuses.push(b) 
+//      })
+// console.log(bonuses)
     return(
         <section>
             <h2>Cart</h2>
@@ -9,7 +15,11 @@ const Cart = () => {
             <ol></ol>
             <p>Your donations have qualitfied you for the following items:</p>
             <ul>
-                
+                {bonusItems.map((item) => {
+                    return(
+                        <li key={item}className="items hidden">{item}</li>
+                    )
+                })}
             </ul>
         </section>
     )

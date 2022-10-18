@@ -11,14 +11,15 @@ import {useState} from "react"
 
 
 function App () {
-const [bird , setbird] = useState(birdData)
+const [bird] = useState(birdData)
+const [bonus] = useState(bonusItems)
 
   
   return (
     <div className="birdInfo">
       <div className="customer">
         <div className="cart">
-        <Cart/>
+        <Cart bonusItems={bonus}/>
         </div>
         <br></br>
         <div className="checkout">
@@ -27,7 +28,7 @@ const [bird , setbird] = useState(birdData)
         </div>
       </div>
       <main>
-        <Cards birdData={bird} bonusItems={bonusItems}/>
+        <Cards birdData={bird} bonusItems={bonus}/>
       </main>
     </div>
   );
