@@ -15,15 +15,13 @@ function App() {
 
   return (
     <main>
-      <Cart
-        birdsCart={birdsCart}
-        discount={discount}
-        setDiscount={setDiscount}
-      />
+      <Cart birdsCart={birdsCart} discount={discount} />
       <Cards
         birdData={birdData}
         birdsCart={birdsCart}
         setBirdsCart={setBirdsCart}
+        discount={discount}
+        setDiscount={setDiscount}
       />
       <Checkout />
     </main>
