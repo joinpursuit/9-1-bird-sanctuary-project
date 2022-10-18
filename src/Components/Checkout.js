@@ -24,9 +24,13 @@ const Checkout = () => {
         })
         document.querySelector("h4").textContent = "Total: "
         document.querySelector(".discount").textContent = "Discount: 0%"
-        const li = document.querySelectorAll("li")
+        const li = document.querySelectorAll(".birContent")
         li.forEach((list) => {
             document.querySelector("ol").removeChild(list)
+        })
+        const items = document.querySelectorAll(".items")
+        items.forEach((i) => {
+            document.querySelector("ul").removeChild(i)
         })
     }
 

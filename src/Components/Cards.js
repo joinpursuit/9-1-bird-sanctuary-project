@@ -4,10 +4,8 @@ import {useState} from "react"
 const Cards = ({birdData, bonusItems}) => {
 
 const [array , setArray] = useState([])
-const [bonuses, setBonuses] = useState([])
 
 let bird = []
-
 
 array.forEach((arr) => {
     bird.push(arr.textContent)
