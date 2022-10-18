@@ -1,6 +1,6 @@
-// import {useState} from "./react";
-import {birdData}from ".src/data/birds";
-// import {checkout} from "./src/checkout";
+ import {useState} from "react";
+import {birdData} from "./birds";
+import {checkout} from "./checkout";
 
 
 
@@ -22,6 +22,11 @@ id: "",
  
     });
   
+  }
+
+  function handleSubmit(event){
+    event.preventDefault();
+    console.log("form submitted");
   }
 <form onSubmit={handleSubmit}>
   <label htmlFor="first name">First name:</label>
@@ -52,14 +57,29 @@ id="firstName"
 
 
 
-</form>
+</form>;
 
-  
+ function handleTextChange(event) {
+  console.log(event.target.value);
+ } 
 
 
 
 
 
+
+function resetForm(){
+  setUser({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zip: "",
+    id: "",
+  });
+}
+ 
+  resetForm();
+ 
   
 
     // <div>
