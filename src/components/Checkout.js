@@ -1,7 +1,33 @@
 import React from "react"
 import { useState } from "react"
 
-function Checkout({ handleSubmit, handleTextChange }) {
+function Checkout() {
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: "",
+  })
+
+  function handleTextChange(e) {
+    setUser({ ...user, [e.target.id]: e.target.value })
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    resetForm()
+    alert("You have adopted birds. Thank You!")
+  }
+
+  function resetForm() {
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zipCode: "",
+    })
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Checkout</h2>

@@ -7,46 +7,37 @@ import { useState } from "react"
 
 function App() {
   const [birds, setBirds] = useState(birdData)
-  const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    zipCode: "",
-  })
 
-  // console.log(birds)
-  function handleTextChange(e) {
-    setUser({ ...user, [e.target.id]: e.target.value })
-    console.log(setUser)
+  function addAdopted() {
+    const adopted = {
+      name: "",
+      amount: 0,
+      id: "",
+    }
+    setBirds([adopted, ...birds])
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    resetForm()
-    alert("You have adopted birds. Thank You!")
-  }
-  function resetForm() {
-    setUser({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zipCode: "",
-    })
+  const getSum = (birds) => {
+    const sum = birds.reduce((acc, curr) => {
+      return (acc += curr.amount)
+    }, 0)
+    return sum
   }
 
   return (
     <div>
       <h1>Bird Sanctuary!</h1>
-      <Cart />
+
+      <div className="Carts">
+        <Cart getSum={getSum} />
+      </div>
+
       <div className="Checkouts">
-        <Checkout
-          handleTextChange={handleTextChange}
-          handleSubmit={handleSubmit}
-        />
+        <Checkout />
       </div>
       <ul>
         {birds.map((bird) => {
-          return <Cards bird={bird} key={bird.id} />
+          return <Cards bird={bird} />
         })}
       </ul>
     </div>
