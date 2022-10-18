@@ -9,14 +9,14 @@
 
 .main {
     display: grid;
-    grid-template-columns: minmax(300px, 25%) minmax(800px, 75%);
-    margin: 60px;
-    gap: 60px;
+    grid-template-columns: 400px minmax(900px, auto);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    gap: 80px;
 }
 
 .birds {
     display: grid;
-    grid-template-columns: repeat(3, 30%);
-    grid-template-rows: minmax(30%, auto);
+    grid-template-columns: repeat(3, 300px);
     gap: 30px;
 }
