@@ -1,12 +1,5 @@
-import {useState} from 'react'
-
-export default function Cart ({ total, bonusItems, cart}){
-
- total = 0
-  cart.map((bird) => {
-    cart.length >= 3 ? (total += bird.amount * 0.9) : (total += bird.amount);
-  });
-    //TOTAL IS READING AS NAN FIX LATER
+export default function Cart ({ total, bonusItems, cart, removeBird}){
+total = cart.reduce((a, bird) => a + bird.amount, 0)
 
  function bonus(){
     if(total > 1000){
@@ -54,13 +47,12 @@ export default function Cart ({ total, bonusItems, cart}){
         <p>Discount: {cart.length >= 3 ? 10 : 0}%</p>
         <h4>Total: ${total}</h4>
         <ol>
-            {cart.map((bird) =>{
+            {cart.map((bird, index) =>{
                     return (
-                        <li>
+                        <li key={index}>
                         {bird.name} ${bird.amount}
-                        <button>Remove Bird</button>
+                    <button onClick={()=>{removeBird(index)}}>Remove Bird</button>
                         </li>
-                        //TEST DOES NOT LIKE LI
                     )
             })}
         </ol>

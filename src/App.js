@@ -8,18 +8,14 @@ import birdData from './data/birds'
 import bonusItems from './data/bonusItems'
 
 function App () {
-//   function removeBird(e){
-//     // const killBird = birdy.filter((bird) => bird.id !== e)
-//     // setBird(killBird)
-//     // document.getElementById("detail").remove()
-//     // e.target.id.remove()
-//  }
- //SEND HERE TO CARD & CALLED ONCLICK SO INFO COMES BACK TO APP MOVE INFO INTO APP JS and DISTRIBUTE FROM HERE. 
-
- //I DONT LIKE THIS HERE FIGURE OUT HOW TO MAKE WORK IN CART
-
   const [cart, setCart] = useState([])
-  const [birdy, setBirdy] = useState(birdData)
+  const [birdy] = useState(birdData)
+
+  const removeBird = (index) => {
+    cart.splice(index, 1)
+    setCart([...cart])
+  }
+
   return (
     <div className='bird-cards'>
       <Cards
@@ -30,6 +26,7 @@ function App () {
       cart={cart} 
       setCart={setCart}
       bonusItems={bonusItems}
+      removeBird={removeBird}
       />
       <Checkout 
       cart={cart}
