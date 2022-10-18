@@ -27,7 +27,12 @@ function App() {
 
   return (
     <div>
-      <Cart bonusItems={bonusItems} cart={cart} discount={discount} />
+      <Cart
+        bonusItems={bonusItems}
+        cart={cart}
+        discount={discount}
+        setDiscount={setDiscount}
+      />
       <Checkout
         firstName={firstName}
         setFirstName={setFirstName}
