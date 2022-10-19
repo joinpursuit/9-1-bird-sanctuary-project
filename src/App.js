@@ -17,11 +17,15 @@ function App() {
       return alert("You have already added this bird to the cart");
     } else {
       setCartBirds([...cartBirds, bird]);
-      console.log(bird);
-      calcDiscount();
+      // console.log(bird);
+      calcDiscount(bird);
     }
-    // calcTotal()
   }
+  // calcTotal()
+  //   (total = cartBirds.reduce((accu, bird) => {
+  //     return accu + bird.amount;
+  //   }, 0))
+  // }
   // function calcTotal() {
   //   let num =cartBirds.reduce((accu, bird) => {
   //     return accu + bird.amount;
@@ -30,11 +34,13 @@ function App() {
   //   return num
   // }
 
-  function calcDiscount() {
+  function calcDiscount(bird) {
     if (cartBirds.length + 1 > 2) {
       console.log("calcDiscount", total);
       setDiscount(10);
-      setTotal((total *= 0.9));
+      setTotal((total += bird.amount) * 0.9);
+    } else {
+      setTotal((total += bird.amount));
     }
   }
 
@@ -49,11 +55,22 @@ function App() {
           total={total}
           cartBirds={cartBirds}
         />
-        <Checkout />
+        <Checkout
+          setCartBirds={setCartBirds}
+          setTotal={setTotal}
+          setDiscount={setDiscount}
+        />
       </div>
       <div className="card" id="card">
         {birds.map((bird) => {
-          return <Cards birds={birds} bird={bird} updateCart={updateCart} />;
+          return (
+            <Cards
+              birds={birds}
+              bird={bird}
+              updateCart={updateCart}
+              key={bird.id}
+            />
+          );
         })}
       </div>
     </div>
