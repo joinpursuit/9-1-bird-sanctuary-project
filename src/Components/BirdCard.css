@@ -46,4 +46,5 @@ p {
     font-size: 12px;
     padding-bottom: 0px;
     border-bottom: 3px solid red;
+    background-color: rgb(255, 182, 182);
 }
