@@ -38,12 +38,7 @@ function App() {
     e.preventDefault();
     alert("You have adopted birds. Thank you!");
     setCartBirds([]);
-    setAdopter({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zipCode: "",
-    });
+    setAdopter({ firstName: "", lastName: "", email: "", zipCode: "" });
   };
 
   //********** CART TOTAL ********/
@@ -72,7 +67,12 @@ function App() {
 
   return (
     <div>
-      <Cart bonuses={bonusItems} cartBirds={cartBirds} cartTotal={cartTotal} />
+      <Cart
+        bonuses={bonusItems}
+        cartBirds={cartBirds}
+        cartTotal={cartTotal}
+        setCartBirds={setCartBirds}
+      />
       <Checkout
         adopter={adopter}
         handleChange={handleChange}

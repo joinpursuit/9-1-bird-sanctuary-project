@@ -1,16 +1,7 @@
 import { useState } from "react";
 
-const Checkout = ({ handleSubmit }) => {
-  const [adopter, setAdopter] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    zipCode: "",
-  });
-
-  const handleChange = (e) => {
-    setAdopter({ ...adopter, [e.target.id]: e.target.value });
-  };
+const Checkout = ({ adopter, handleSubmit, handleChange }) => {
+  
 
   return (
     <div>
