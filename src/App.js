@@ -6,7 +6,6 @@ import Checkout from "./Checkout";
 import Cart from "./Cart";
 
 function App() {
-  // const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
   const [discount, setDiscount] = useState(0);
   const [firstName, setFirstName] = useState("");
