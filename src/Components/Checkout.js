@@ -1,8 +1,10 @@
 import "./Checkout.css";
 
-export default function Checkout() {
+export default function Checkout({ clearCart, user }) {
   const handleSubmit = (e) => {
     e.preventDefault();
+    clearCart();
+    alert("You have adopted birds. Thank you!");
   };
 
   return (
@@ -13,15 +15,19 @@ export default function Checkout() {
       }}
     >
       <h2>Checkout</h2>
-      <label htmlFor="firsName">First Name:</label>
-      <input type="text" id="firstName" />
-      <label htmlFor="lastName">Last Name:</label>
-      <input type="text" id="lastName" />
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" />
-      <label htmlFor="zipcode">Zip Code:</label>
-      <input type="number" id="zipcode" />
-      <button>Submit</button>
+      <label htmlFor="firsName">
+        First Name: <input type="text" id="firstName" onChange={null} />
+      </label>
+      <label htmlFor="lastName">
+        Last Name: <input type="text" id="lastName" />
+      </label>
+      <label htmlFor="email">
+        Email: <input type="email" id="email" />
+      </label>
+      <label htmlFor="zipcode">
+        Zip Code: <input type="number" id="zipcode" />
+      </label>
+      <input type="submit"></input>
     </form>
   );
 }

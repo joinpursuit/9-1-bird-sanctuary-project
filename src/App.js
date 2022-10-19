@@ -13,6 +13,12 @@ import "./App.css";
 function App() {
   // State hooks
   const [adoptedBirds, setAdoptedBirds] = useState([]);
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipcode: null,
+  });
 
   // Data variables
   const birds = [...birdData];
@@ -32,10 +38,22 @@ function App() {
     } else alert("You have already added this bird to the cart");
   };
 
+  const clearCart = () => {
+    setAdoptedBirds([]);
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zipcode: null,
+    });
+  };
+
   return (
     <div className="app">
       <header className="header">
-        <h1>Bird Sanctuary Project</h1>
+        <h1>
+          <span id="appTitle">Bird Sanctuary</span> Project
+        </h1>
       </header>
       <main className="main">
         <aside className="aside">
@@ -44,7 +62,7 @@ function App() {
             adoptedBirds={adoptedBirds}
             bonus={bonus}
           />
-          <Checkout />
+          <Checkout user={user} clearCart={clearCart} />
         </aside>
         <ul className="birds">
           {birds.map((bird) => {
