@@ -3,48 +3,43 @@ import birdData from "./data/birds";
 import Card from "./Components/Card";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
-import bonusItems from "./data/bonusItems";
-
+import './App.css';
 
 function App () {
 const [birds,setBirds] = useState(birdData)
-const [bonusItem,setBonusItem] = useState(bonusItems)
 const [cart, setCart]= useState([])
-const [discount, setDiscount] = useState(0)
-
-// function AddedBonus() {
-//   if (cart.length <= 3) {
-//     setBonus(10%)
-//   }
-// }
 
 function updateCart(bird) {
+  if(cart.includes(bird)){
+    alert('You have already added this bird to the cart') 
+    return;
+  }
   setCart([...cart, bird ])
 }
 
-function addDiscount() {
-  console.log(cart.length)
-
-  if (cart.length > 3) {
-      console.log(discount)
-      setDiscount(10)
-  }
-  // else{
-  //     setDiscountAmount((0))
-  // }
+function removeBird(BirdID) {
+  const filteredBirdArray = cart.filter((bird) => bird.id !== BirdID);
+  setCart(filteredBirdArray);
 }
-
 
 function resetCart() {
   setCart([]);
 }
 
-
   return (
-    <div>
-    <Card birds={birds} updateCart={updateCart}/>
-    <Cart cart={cart} bonusItem={bonusItem} addDiscount={addDiscount}/>
+    <div className="main">
+      <div>
+       <div className="Cart">
+    <Cart cart={cart} removeBird={removeBird}/>
+       </div>
+       <div className="Checkout">
     <Checkout resetCart={resetCart}/>
+    </div>
+      </div>
+      <div className="Card">
+    <Card birds={birds} updateCart={updateCart} cart={cart} />
+      </div>
+    
     </div>
   );
 };

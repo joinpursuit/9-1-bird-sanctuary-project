@@ -14,7 +14,7 @@ function submit(e) {
 }
 
     return(
-        <div className="Checkout">
+        <>
             <h3>Checkout</h3>
             <form onSubmit={submit}>
                 <label htmlFor="firstName">First Name</label>
@@ -26,8 +26,8 @@ function submit(e) {
                 <label htmlFor="zipCode">Zip Code</label>
                 <input id="zipCode" type="number" placeholder="Zip Code" value={form.zipCode} onChange={handleChange}></input>
                 <br></br>
-                <input type="submit"></input>
+                <input id="submit" type="submit"></input>
             </form>
-        </div>
+        </>
     )
 }

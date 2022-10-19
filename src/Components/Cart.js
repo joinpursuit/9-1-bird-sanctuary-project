@@ -1,72 +1,20 @@
-import { useState } from "react"
+import bonusItems from "../data/bonusItems";
 
-export default function Cart({cart, bonusItem}) {
-    const [discount, setDiscount] = useState(0)
-
-    function totalCost() {
-        let total = 0
-        for (let i = 0; i < cart.length; i++) {
-           total += cart[i].amount
-        }
-        return total
-      }
-
-      function addDiscount() {
-        // console.log(cart.length)
-
-        if (cart.length > 3) {
-            console.log('hi')
-        //    return setDiscount(10)
-        }
-        // else{
-        //     setDiscountAmount((0))
-        // }
-      }
-
-      function addBonus() {
-        // console.log(totalCost())
-        if (cart.length === 0) {
-            return null;
-        }
-        // console.log(cart)
-        // if (cart[0].amount >= 100 && cart[0].amount < 299 ) {
-        //     return(
-        //     <>
-        //     <li>{bonusItem[0]}</li>
-        //     </>)
-        // }
-         if (cart.length === 2 && totalCost() >= 300 && totalCost() < 499 ) {
-            return(
-            <>
-            <li>{bonusItem[0]}</li>
-            <li>{bonusItem[1]}</li>
-            </>)
-        }
-        // if (cart[0].amount >= 100 && cart[0].amount < 299 ) {
-        //     return(
-        //     <>
-        //     <li>{bonusItem[0]}</li>
-        //     </>)
-        // }
-        // if (cart[0].amount >= 100 && cart[0].amount < 299 ) {
-        //     return(
-        //     <>
-        //     <li>{bonusItem[0]}</li>
-        //     </>)
-        // }
-      }
-
+export default function Cart({cart,removeBird}) {
+    const total = cart.reduce((acc,bird)=> acc + bird.amount, 0)
+    
     return(
-        <div className="Cart">
+        <>
       <h2>Cart</h2>
-          <h3>Discount: {addDiscount()} %</h3>
-          <h4>Total: ${totalCost()}</h4>
+          <h3>Discount: {cart.length >= 3 ? 10 : 0}%</h3>
+          <h4>Total: ${cart.length >= 3 ? total * .9 : total}</h4>
       <ol>
         {cart.map((birds) =>{
             return(
                 <div>
                         <li key={birds.id}>
                         <h6>{birds.name} ${birds.amount}</h6>
+                        <button className="button" onClick={() => removeBird(birds.id)}>Delete bird</button>
                         </li>
                 </div>
             )
@@ -74,14 +22,11 @@ export default function Cart({cart, bonusItem}) {
       </ol>
         <p>Your donation has qualified you for the following bonus</p>
         <ul>
-        {
-        // cart.map((bird) => {
-            // console.log(bird)
-           addBonus()
-        // })
-    }
+        {total >= 100 && <li className="bonus">{bonusItems[0]}</li>}
+        {total >= 300 && <li className="bonus">{bonusItems[1]}</li>}
+        {total >= 500 && <li className="bonus">{bonusItems[2]}</li>}
+        {total >= 1000 && <li className="bonus">{bonusItems[3]}</li>}
         </ul>
-
-    </div>
+        </>
     )
 }
