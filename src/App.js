@@ -1,18 +1,12 @@
  import {useState} from "react";
-import {birdData} from "./birds";
-import {checkout} from "./checkout";
+import birdData from "./data/birds";
+// import {checkout} from "./checkout";
 
 
 
 function App () {
- 
-
-
- 
-    const [bird, setBird] = useState(birdData)
-    
-    
-    const [newbirds,setnewBirds]= useState ({
+  const [bird, setBird] = useState(birdData)
+  const [newbirds,setnewBirds]= useState ({
 
 img: "",
 name: "",
@@ -20,14 +14,24 @@ amount: "",
 id: "",
   
  
-    });
+    }
   
-  }
+  
+  
 
-  function handleSubmit(event){
-    event.preventDefault();
-    console.log("form submitted");
-  }
+    const [user, setUser] = useState("");
+      firstName: "",
+      lastName: "",
+      zipCode: "",
+      email: "",
+
+    
+};
+    
+    function handleTextChange = (event) {
+      console.log(event.target.value)
+    }
+  
 <form onSubmit={handleSubmit}>
   <label htmlFor="first name">First name:</label>
   <input
@@ -54,14 +58,20 @@ id="firstName"
     id="email"
     />
     <input type="submit"/>
+    
+    
+  
+   
+
+   function handleSubmit(event) {
+   console.log("form submitted")
+   }
 
 
+  
 
-</form>;
-
- function handleTextChange(event) {
-  console.log(event.target.value);
- } 
+ 
+ 
 
 
 
@@ -82,10 +92,7 @@ function resetForm(){
  
   
 
-    // <div>
-    //   <h1>Hello, world!</h1>
-    // </div>
-  
-
+   
+    </form>
 
 export default App;
