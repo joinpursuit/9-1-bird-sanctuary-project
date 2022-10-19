@@ -38,7 +38,7 @@ function Cards({birdsArr, setNumofBirds, numOfBirds, setTotal,setDiscount}) {
 
     // function for calculating/updating total/ discount
     function calculateTotal(arr) {
-        const value = arr.reduce((acc,{amount}) => amount +acc ,0)
+        const value = arr.reduce((acc,{amount}) => amount + acc ,0)
         const discountedTotal = value - (value * .1)
         const length = arr.length
         if(length >= 3){
