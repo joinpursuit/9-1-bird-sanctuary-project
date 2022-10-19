@@ -4,7 +4,7 @@
     column-gap: 4px;
 }
 
-.card{
+.birds{
     display: inline-block;
     height: 350px;
     width: 400px;
@@ -23,7 +23,7 @@ img{
 
 }
 
-.cart{
+.Cart{
     display:inline-block;
     background-color: lightpink;
     grid-template: auto;
