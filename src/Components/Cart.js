@@ -20,14 +20,17 @@ export default function Cart({ adoptedBirds, removeBird }) {
       </h4>
       <ol>
         {adoptedBirds.map((bird) => (
-          <li
-            onClick={() => {
-              totalWithRemovedBird(bird);
-              removeBird(bird);
-            }}
-            key={bird.id}
-          >
+          <li className="cartItem" key={bird.id}>
             {bird.name}
+            <button
+              id="removeBirdButton"
+              onClick={() => {
+                totalWithRemovedBird(bird);
+                removeBird(bird);
+              }}
+            >
+              Remove
+            </button>
           </li>
         ))}
       </ol>
