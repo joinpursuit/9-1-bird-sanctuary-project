@@ -1,4 +1,10 @@
-export default function Cart({ birdsCart, discount, bonusItems }) {
+export default function Cart({
+  birdsCart,
+  setBirdsCart,
+  discount,
+  setDiscount,
+  bonusItems,
+}) {
   // maybe make total a state variable
   let total = 0;
 
@@ -10,6 +16,12 @@ export default function Cart({ birdsCart, discount, bonusItems }) {
     return total;
   };
 
+  const removeElement = (key) => {
+    const cartUpdate = birdsCart.filter((e) => key !== e.id);
+    setBirdsCart([...cartUpdate]);
+    cartUpdate.length < 3 ? setDiscount(0) : setDiscount(10);
+  };
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
@@ -19,7 +31,10 @@ export default function Cart({ birdsCart, discount, bonusItems }) {
         {birdsCart.length ? (
           birdsCart.map((e) => (
             <li key={e.id}>
-              {e.name}: ${e.amount}
+              {e.name}: ${e.amount}{" "}
+              <button className="remove" onClick={() => removeElement(e.id)}>
+                X
+              </button>
             </li>
           ))
         ) : (
