@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Checkout({ setBirdsCart, setDiscount }) {
+export default function Checkout({ birdsCart, setBirdsCart, setDiscount }) {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,14 +8,19 @@ export default function Checkout({ setBirdsCart, setDiscount }) {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    alert("You have adopted birds. Thank you!");
-    setBirdsCart([]);
-    setDiscount(0);
-    setFName("");
-    setLName("");
-    setEmail("");
-    setZip("");
+    if (birdsCart.length > 0) {
+      alert("You have adopted birds. Thank you!");
+      setBirdsCart([]);
+      setDiscount(0);
+      setFName("");
+      setLName("");
+      setEmail("");
+      setZip("");
+    } else {
+      alert("Add at least a bird to the cart before submitting.");
+    }
   };
+
   return (
     <div className="Checkout">
       <h2>Checkout</h2>
