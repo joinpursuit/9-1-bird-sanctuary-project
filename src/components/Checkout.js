@@ -1,5 +1,5 @@
 import {useState} from 'react'
-export default function Checkout({setCart, bonus}){
+export default function Checkout({setCart}){
 const [newbuy, setNewBuy] = useState({
     firstName: '',
     lastName: '',
@@ -16,15 +16,14 @@ const [newbuy, setNewBuy] = useState({
     alert('You have adopted birds. Thank you!')
     setCart([])
     setNewBuy('')
-    // bonus('')
 }
 
 
 
 return(
     <div>
-        <h4>Checkout</h4>
         <form className="Checkout" onSubmit={submit}>
+        <h4>Checkout</h4>
             <label htmlFor="firstName">
                 First Name
                 <br/>

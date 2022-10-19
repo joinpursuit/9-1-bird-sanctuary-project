@@ -12,5 +12,6 @@ export default function Card({img, name, amount, id, cart, setCart}) {
             value={id}
             onClick={()=>setCart([...cart, {name, amount}])}>Adopt</button>
         </div>
+        //Combining my cards fix Cards/Card issue
     )
 }

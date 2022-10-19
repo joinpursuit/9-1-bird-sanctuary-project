@@ -17,11 +17,14 @@ function App () {
   }
 
   return (
-    <div className='bird-cards'>
+    <div className='app'>
+      <div className='right'>
       <Cards
       birdData={birdy}
       cart={cart} 
       setCart={setCart}/>
+      </div>
+      <div className='left'>
       <Cart 
       cart={cart} 
       setCart={setCart}
@@ -31,6 +34,7 @@ function App () {
       <Checkout 
       cart={cart}
       setCart={setCart}/>
+      </div>
     </div>
   );
 };

@@ -56,3 +56,4 @@ total = cart.reduce((a, bird) => a + bird.amount, 0)
     </div>
  )
 }
+//Figure out how to Make it not click twice
