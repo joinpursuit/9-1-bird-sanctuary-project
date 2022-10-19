@@ -1,3 +1,4 @@
+import "./Checkout.css";
 export default function Checkout({
   firstName,
   setFirstName,
@@ -11,6 +12,7 @@ export default function Checkout({
 }) {
   return (
     <div className="Checkout">
+      <h2>Checkout</h2>
       <form>
         <label htmlFor="fName">First Name: </label>
         <input
@@ -43,7 +45,7 @@ export default function Checkout({
           value={zip}
           onChange={(e) => setZip(e.target.value)}
         />
-
+        <br />
         <button onClick={clickSubmit}>SUBMIT</button>
       </form>
     </div>

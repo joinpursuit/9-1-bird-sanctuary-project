@@ -4,6 +4,7 @@ import bonusItems from "./data/bonusItems";
 import Cards from "./Cards";
 import Checkout from "./Checkout";
 import Cart from "./Cart";
+import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -44,27 +45,38 @@ function App() {
   }
 
   return (
-    <div>
-      <Cart
-        bonusItems={bonusItems}
-        cart={cart}
-        discount={discount}
-        setDiscount={setDiscount}
-        removeBird={removeBird}
-      />
-      <Checkout
-        firstName={firstName}
-        setFirstName={setFirstName}
-        lastName={lastName}
-        setLastName={setLastName}
-        email={email}
-        setEmail={setEmail}
-        zip={zip}
-        setZip={setZip}
-        clickSubmit={clickSubmit}
-        resetForm={resetForm}
-      />
-      <Cards birds={birdData} updateCart={updateCart} />
+    <div className="all">
+      <div className="title">
+        <h1>🦜 Salina's Bird Sanctuary 🦜</h1>
+      </div>
+      <div className="cartCheckout">
+        <div className="cart">
+          <Cart
+            bonusItems={bonusItems}
+            cart={cart}
+            discount={discount}
+            setDiscount={setDiscount}
+            removeBird={removeBird}
+          />
+        </div>
+        <div className="checkout">
+          <Checkout
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            email={email}
+            setEmail={setEmail}
+            zip={zip}
+            setZip={setZip}
+            clickSubmit={clickSubmit}
+            resetForm={resetForm}
+          />
+        </div>
+      </div>
+      <div className="cards">
+        <Cards birds={birdData} updateCart={updateCart} />
+      </div>
     </div>
   );
 }

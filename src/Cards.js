@@ -1,14 +1,16 @@
+import "./Cards.css";
 export default function Cards({ birds, updateCart }) {
   return (
     <div className="birds">
       {birds.map((bird) => {
         return (
           <div key={bird.id}>
-            <h5>{bird.name}</h5>
+            <h4>{bird.name}</h4>
             <br />
-            <span>Price: ${bird.amount}</span>
+            <p>Price: ${bird.amount}</p>
             <br />
             <img src={bird.img} alt={bird.name} />
+            <br />
             <button onClick={() => updateCart(bird)}>ADOPT</button>
           </div>
         );

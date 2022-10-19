@@ -1,3 +1,4 @@
+import "./Cart.css";
 export default function Cart({ cart, discount, bonusItems, removeBird }) {
   const total = cart.reduce((acc, curr) => {
     return acc + curr.amount;
@@ -6,6 +7,7 @@ export default function Cart({ cart, discount, bonusItems, removeBird }) {
     return (
       <li key={el.id}>
         {el.name}: ${el.amount}
+        <br />
         <button
           key={el.id}
           className="delete"
