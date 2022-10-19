@@ -12,14 +12,14 @@ const [birdsArr, setBirdsArr] = useState(birdData)
 const [numOfBirds, setNumofBirds] = useState([])
 // Declare state for total
 const [total, setTotal] = useState(0)
-// Declare State for Discount
+// Declare State for discount
 const [discount, setDiscount] = useState(false)
 
   return (
     <div className="topLevel">
       
       {/* Header */}
-     <Header />
+      <Header />
       
       {/* Bird Cards */}
       <main>

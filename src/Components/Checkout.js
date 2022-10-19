@@ -19,7 +19,7 @@ function Checkout({setNumofBirds,total,setDiscount, setTotal}) {
         setUserInput({...userInput, [e.target.name] : value})
     }
 
-    // function for form reset (needs access to cart data/ states to reset values on submit as well)
+    // function for form reset 
     function resetCheckoutForm() {
         setUserInput(
             {

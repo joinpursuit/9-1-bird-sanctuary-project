@@ -22,7 +22,6 @@ function Cards({birdsArr, setNumofBirds, numOfBirds, setTotal,setDiscount}) {
 
     // On click function for button
     function findId(e) {
-        
         addBirdToCart(e.target.value)
         // Tried using State to toggle a class with corressponding CSS (ternary in className) but that would trigger class change for all the birds, so just defaulted to hardcoding here
         if(e.target.innerText === `ADOPT`){
