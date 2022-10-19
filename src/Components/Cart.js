@@ -17,7 +17,7 @@ let sum = 0
     return(
         <section>
             <h2>Cart</h2>
-            <h4>Total: ${sum}</h4>
+            <h4>{data.length >= 3 ? `Total: $${sum * .9}`: `Total: $${sum}`}</h4>
             <p className="discount">{data.length >= 3 ? `Discount: 10%`: `Discount: 0%`}</p>
             <ol>
             {data.map((dt) => {
