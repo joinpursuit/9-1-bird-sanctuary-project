@@ -1,14 +1,18 @@
 import "./Cart.css";
 
-export default function Cart({ adoptedBirds, discount, cost }) {
+export default function Cart({ adoptedBirds }) {
+  const total = adoptedBirds.reduce((acc, bird) => {
+    return acc + bird.amount;
+  }, 0);
+
   return (
     <div className="cart">
       <h2>Cart</h2>
       <h4>
-        Discount: <span>{discount}%</span>
+        Discount: <span>{adoptedBirds.length >= 3 ? 10 : 0}%</span>
       </h4>
       <h4>
-        Total: <span>${cost}</span>
+        Total: <span>${adoptedBirds.length >= 3 ? 0.9 * total : total}</span>
       </h4>
       <ol>
         {adoptedBirds.map((bird) => (

@@ -13,10 +13,8 @@ import "./App.css";
 function App() {
   // State hooks
   const [adoptedBirds, setAdoptedBirds] = useState([]);
-  const [cost, setCost] = useState(0);
-  const [discount, setDiscount] = useState(0);
 
-  // Variables
+  // Data
   const birds = [...birdData];
   const bonus = [...bonusItems];
 
@@ -24,7 +22,7 @@ function App() {
   const adoptBird = (bird) => {
     if (!adoptedBirds.includes(bird)) {
       setAdoptedBirds([...adoptedBirds, bird]);
-    } else alert("You have already adopted this bird");
+    } else alert("You have already added this bird to the cart");
   };
 
   return (
@@ -34,17 +32,12 @@ function App() {
       </header>
       <main className="main">
         <aside className="aside">
-          <Cart
-            adoptedBirds={adoptedBirds}
-            discount={discount}
-            bonus={bonus}
-            cost={cost}
-          />
+          <Cart adoptedBirds={adoptedBirds} bonus={bonus} />
           <Checkout />
         </aside>
         <ul className="birds">
           {birds.map((bird) => {
-            return <BirdCard adoptBird={adoptBird} key={bird.id} bird={bird} />;
+            return <BirdCard key={bird.id} adoptBird={adoptBird} bird={bird} />;
           })}
         </ul>
       </main>
