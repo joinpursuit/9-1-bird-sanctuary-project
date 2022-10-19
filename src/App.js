@@ -3,7 +3,7 @@ import BirdCards from './Components/BirdCards'
 import Cart from './Components/Cart'
 import Form from './Components/Form'
 import birdData from "./data/birds";
-// import bonusItems from "./data/bonusItems";
+import bonusItems from "./data/bonusItems";
 
 import './App.css'
 

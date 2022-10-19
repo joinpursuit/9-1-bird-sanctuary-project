@@ -15,6 +15,7 @@ export default function getCart({userCart}){
             )
         }
         </ol>
+        
         <p>Discount: 0%</p>
         <p>Your donations have qualified you for the following items:</p>
          </div>
