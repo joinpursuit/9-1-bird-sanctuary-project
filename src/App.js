@@ -12,8 +12,9 @@ function App () {
   const [birdy] = useState(birdData)
 
   const removeBird = (index) => {
-    cart.splice(index, 1)
-    setCart([...cart])
+    let newCart = cart
+    newCart.splice(index, 1)
+    setCart([...newCart])
   }
 
   return (
