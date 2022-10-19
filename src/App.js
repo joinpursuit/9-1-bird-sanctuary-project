@@ -7,11 +7,17 @@ import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 
 function App() {
+  const [cartBirds, setCartBirds] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
+  const [discout, setDiscount] = useState(0);
+
   const [birds, setBirds] = useState([birdData]);
 
   const [bonus, setBonus] = useState([bonusItems]);
 
-  const addBird = () => {};
+  const addBird = (birdId) => {
+    console.log(birdId);
+  };
   return (
     <div>
       <Cart bonuses={bonusItems} />
