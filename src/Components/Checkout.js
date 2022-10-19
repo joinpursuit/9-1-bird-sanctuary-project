@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Checkout({setNumofBirds}) {
+function Checkout({setNumofBirds,total,setDiscount, setTotal}) {
     //  Declare State for user Inputs
     const [userInput, setUserInput] = useState(
         {
@@ -35,9 +35,17 @@ function Checkout({setNumofBirds}) {
     // handleSubmit function for form
     function handleSubmit(e) {
         e.preventDefault()
-        alert(`You have adopted birds. Thank you!`)
+        if(total === 0){
+            alert(`No adoption today? Maybe next time. :) `)
+        }
+        else{
+            alert(`You have adopted birds. Thank you!`)
+        }
+        
         resetCheckoutForm()
         setNumofBirds([])
+        setTotal(0)
+        setDiscount(false)
     }
 
     return (
@@ -48,6 +56,7 @@ function Checkout({setNumofBirds}) {
 
                 <label htmlFor='firstName'>First Name</label>
                 <input
+                required
                 type = "text"
                 id = "firstName"
                 value= {userInput.first}
@@ -57,6 +66,7 @@ function Checkout({setNumofBirds}) {
 
                 <label htmlFor='lastName'>Last Name</label>
                 <input
+                required
                 type = "text"
                 id = "lastName"
                 value= {userInput.last}
@@ -66,6 +76,7 @@ function Checkout({setNumofBirds}) {
 
                 <label htmlFor='email'>Email</label>
                 <input
+                required
                 type = "email"
                 id = "email"
                 value= {userInput.email}
@@ -75,6 +86,7 @@ function Checkout({setNumofBirds}) {
 
                 <label htmlFor='zipcode'>Zip Code</label>
                 <input
+                required
                 type = "number"
                 id = "zipcode"
                 value= {userInput.zip}

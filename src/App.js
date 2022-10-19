@@ -52,7 +52,10 @@ const [discount, setDiscount] = useState(false)
 
         <div className="Checkout">
           <Checkout
-          setNumofBirds= {setNumofBirds} />
+          setNumofBirds= {setNumofBirds}
+          total = {total}
+          setTotal= {setTotal}
+          setDiscount = {setDiscount} />
         </div>
       </aside>
       
