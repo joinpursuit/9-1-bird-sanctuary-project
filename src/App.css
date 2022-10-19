@@ -3,20 +3,20 @@
 }
 
 .app {
-    margin: 80px;
-    width: 90%;
+    border: 1px solid black;
+    margin: 100px;
 }
 
 .main {
     display: grid;
-    grid-template-columns: 400px 900px;
+    grid-template-columns: 300px 600px;
     margin: auto;
-    gap: 80px;
+    margin-top: 100px;
+    gap: 100px;
 }
 
 .birds {
     display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 325px);
     gap: 30px;
 }
