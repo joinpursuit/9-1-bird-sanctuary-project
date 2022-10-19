@@ -2,7 +2,7 @@ import "./BirdCard.css";
 
 export default function BirdCard({ bird, adoptBird }) {
   return (
-    <li className="birdCard">
+    <li className="card">
       <p className="birdName">
         <strong>{bird.name}</strong>
       </p>

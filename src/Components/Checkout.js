@@ -3,7 +3,6 @@ import "./Checkout.css";
 export default function Checkout() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.resetForm();
   };
 
   return (
