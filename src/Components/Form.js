@@ -10,6 +10,7 @@ export default function AdoptBird(){
       
       const handleChange = (e) =>{
         setUserInfo({...userInfo,[e.target.id]:e.target.value})
+        console.log(userInfo)
       }
       
      
@@ -50,14 +51,14 @@ export default function AdoptBird(){
 
                 
                 <label htmlFor='zip'> Zip </label>
-                    <input id='Zip'
+                    <input id='zip'
                     type='text'
                     placeholder='Zip' 
                     value={userInfo.zip}
                     onChange={handleChange}/>
                 
 
-                <button type="submit">Submit</button>
+                
             </form>
         </div>
     )
