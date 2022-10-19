@@ -19,10 +19,26 @@ function App() {
     if (firstName && lastName && email && zip) {
       alert("You have adopted birds. Thank you!");
     }
+    setCart([]);
+    resetForm();
+  }
+
+  function resetForm() {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setZip("");
   }
 
   function updateCart(bird) {
     setCart([...cart, bird]);
+  }
+
+  function removeBird(id) {
+    let filterBird = cart.filter((bird) => {
+      return bird.id !== id;
+    });
+    setCart(filterBird);
   }
 
   return (
@@ -32,6 +48,7 @@ function App() {
         cart={cart}
         discount={discount}
         setDiscount={setDiscount}
+        removeBird={removeBird}
       />
       <Checkout
         firstName={firstName}
@@ -43,6 +60,7 @@ function App() {
         zip={zip}
         setZip={setZip}
         clickSubmit={clickSubmit}
+        resetForm={resetForm}
       />
       <Cards birds={birdData} updateCart={updateCart} />
     </div>

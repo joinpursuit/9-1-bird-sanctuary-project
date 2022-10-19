@@ -1,4 +1,4 @@
-export default function Cart({ cart, discount, bonusItems }) {
+export default function Cart({ cart, discount, bonusItems, removeBird }) {
   // console.log(cart.length)
   const total = cart.reduce((acc, curr) => {
     return acc + curr.amount;
@@ -7,9 +7,19 @@ export default function Cart({ cart, discount, bonusItems }) {
     return (
       <li key={el.id}>
         {el.name}: ${el.amount}
+        <button
+          key={el.id}
+          className="delItem"
+          onClick={() => removeBird(el.id)}
+          id="delete"
+          type="submit"
+        >
+          DELETE
+        </button>
       </li>
     );
   });
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
