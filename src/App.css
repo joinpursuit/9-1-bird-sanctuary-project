@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.birdInfo{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 20px;
+}
+
+.customer{
+    
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.cart{
+    border: 1px black solid
+}
+
+.checkout{
+    border: 1px solid black
+}
+main{
+    margin-top: 10px;
+}
