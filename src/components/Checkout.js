@@ -6,7 +6,7 @@ function Checkout() {
     firstName: "",
     lastName: "",
     email: "",
-    zipCode: "",
+    zip: "",
   })
 
   function handleTextChange(e) {
@@ -24,7 +24,7 @@ function Checkout() {
       firstName: "",
       lastName: "",
       email: "",
-      zipCode: "",
+      zip: " ",
     })
   }
 
@@ -37,7 +37,6 @@ function Checkout() {
         <input
           type="text"
           id="firstName"
-          placeholder="First Name"
           value={user.firstName}
           onChange={handleTextChange}
         />

@@ -1,12 +1,11 @@
 import React from "react"
-import Cards from "./Cards"
 
-function Cart({ getSum }) {
+function Cart({ cartSum, bird }) {
   return (
     <div className="Cart">
       <h3>Cart</h3>
-      <h4>Total:${getSum}</h4>
-      <span>Discount:{}</span>
+      <h4>Total:${cartSum}</h4>
+      <span>Discount:</span>
       <ol></ol>
       <p>Your donations have qualified you for the following items:</p>
       <ul></ul>

@@ -1,17 +1,18 @@
-function Cards({ bird }) {
+function Cards({ bird, handleaddBirds }) {
   return (
     <li key={bird.id}>
       <div className="birds">
         <span>
-          <p>
-            <h4>{bird.name}</h4>
-          </p>
-          <p>Price:$ {bird.amount}</p>
-          <p>
-            <img src={bird.img} alt={bird.name} />
-          </p>
+          <h4>{bird.name}</h4>
+
+          <p>Price:${bird.amount}</p>
+
+          <img src={bird.img} alt={bird.name} />
         </span>
-        <button>ADOPT</button>
+
+        <div key={bird.id}>
+          {<button onClick={handleaddBirds}>ADOPT</button>}
+        </div>
       </div>
     </li>
   )
