@@ -1,11 +1,10 @@
 import {useState} from 'react'
-export default function Checkout(){
+export default function Checkout({setCart}){
 const [newbuy, setNewBuy] = useState({
     firstName: '',
     lastName: '',
     email: '',
     zip: '',
-
 })
 
  const enter = (e) => {
@@ -14,13 +13,8 @@ const [newbuy, setNewBuy] = useState({
 
  const submit = (e) => {
     e.preventDefault()
-    if(!newbuy){
-        alert("Please complete form")
-    }else{
-        alert('You have adopted birds. Thank you!')
-        e.target.value.reset()
-        //THIS LINE NOT WORKING FIX LATER
-    }
+    alert('You have adopted birds. Thank you!')
+    setCart([])
 }
 
 
@@ -28,7 +22,7 @@ const [newbuy, setNewBuy] = useState({
 return(
     <div>
         <h4>Checkout</h4>
-        <form id="form" onSubmit={submit}>
+        <form className="Checkout" onSubmit={submit}>
             <label htmlFor="firstName">
                 First Name
                 <br/>
