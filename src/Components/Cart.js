@@ -1,34 +1,33 @@
-import { useState } from "react"
+import bonusItems from '../data/bonusItems'
 
-export default function Cart ({ adoptedBirds, selectedBird, setAdoptedBirds }) {
-    const [total, setTotal] = useState(0)
+
+export default function Cart ({ adoptedBirds, total }) {
 
     return (
         <aside className="Cart">
             <h2>Cart</h2>
-            <h3>Discount: </h3>
-            <h4>Total: ${
-                // adoptedBirds.reduce((acc, curr) => {
-                //     return acc.amount += curr.amount
-                // }, 0)
-                }
+            {adoptedBirds.length < 3 && <h3>Discount: 0%</h3>}
+            {adoptedBirds.length >= 3 && <h3>Discount: 10%</h3>}            
+            <h4>Total: ${ total }
             </h4>
-            <ol>{
-                adoptedBirds.map((bird, index) => {
-                    console.log(selectedBird)
-                    // if(bird.name === selectedBird.name){
-                    //     return alert('You have already added this bird to the cart')
-                    // } else {
-                    //     setAdoptedBirds([...adoptedBirds, selectedBird])
+            <ol>
+                {
+                    adoptedBirds.map((bird, index) => {
                         return (
-                            <li key={index} onChange={() => setAdoptedBirds([...adoptedBirds])}>
+                            <li key={index}>
                                 {bird.name}: ${bird.amount}
                             </li>
-                        )
-                    // }
-                })
-            }
+                            )
+                        })
+                }
             </ol>
+            <p>Your donations have qualified you for the following items:</p>
+            <ul>
+                {total >= 100 && <li>{bonusItems[0]}</li>}
+                {total >= 300 && <li>{bonusItems[1]}</li>}
+                {total >= 500 && <li>{bonusItems[2]}</li>}
+                {total >= 1000 && <li>{bonusItems[3]}</li>}
+            </ul>
         </aside>
     )
 }

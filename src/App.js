@@ -8,33 +8,15 @@ import './App.css'
 function App () {
 
   const [adoptedBirds, setAdoptedBirds] = useState([])
-  // const [selectedBird, setSelectedBird] = useState({})
+  const [total, setTotal] = useState(0)
 
-  const handleClick = (e) => {
-    const selectedBird = {
-      name: e.target.name,
-      amount: e.target.value,
+  const handleClick = (bird) => {
+    if (adoptedBirds.includes(bird)){
+      return alert('You have already added this bird to the cart')
+    } else {
+      setAdoptedBirds([...adoptedBirds, bird])
+      setTotal(total + Number(bird.amount))
     }
-
-    // setSelectedBird(selectBird)
-    updateBirds(selectedBird)
-
-  }
-
-  const updateBirds = (selectedBird) => {
-    console.log(selectedBird)
-    // console.log(selectedBird)
-  //   console.log(adoptedBirds)
-
-    adoptedBirds.map((bird) => {
-      if(bird.name === selectedBird.name){
-        return alert('You have already added this bird to the cart')
-      } else {
-        return setAdoptedBirds([...adoptedBirds, selectedBird])
-      }
-    })
-      
-    setAdoptedBirds([...adoptedBirds, selectedBird])
   }
 
   return (
@@ -42,7 +24,7 @@ function App () {
       <aside>
         <Cart
           adoptedBirds={adoptedBirds}
-          setAdoptedBirds={setAdoptedBirds}
+          total={total}
         />
         <Checkout />
       </aside>
