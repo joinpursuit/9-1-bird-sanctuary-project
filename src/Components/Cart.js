@@ -9,11 +9,16 @@ const remove = (dataContent) => {
     setData(filter)
 }
 
+let sum = 0 
+    data.forEach((total) => {
+     sum += Number(total.replace(/[^\d.-]/g, ''))
+     
+    })
     return(
         <section>
             <h2>Cart</h2>
-            <h4>Total: $0</h4>
-            <p className="discount">Discount: 0%</p>
+            <h4>Total: ${sum}</h4>
+            <p className="discount">{data.length >= 3 ? `Discount: 10%`: `Discount: 0%`}</p>
             <ol>
             {data.map((dt) => {
                 return (
@@ -22,13 +27,13 @@ const remove = (dataContent) => {
             })}
             </ol>
             <p>Your donations have qualitfied you for the following items:</p>
-            {/* <ul>
+             <ul>
                 {bonusItems.map((item) => {
                     return(
                         <li key={item}className="items hidden">{item}</li>
                     )
                 })}
-            </ul> */}
+            </ul> 
         </section>
     )
 }

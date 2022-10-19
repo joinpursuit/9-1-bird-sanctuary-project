@@ -27,6 +27,10 @@ const Checkout = ({setData}) => {
         document.querySelector("h4").textContent = `Total: $${sum} `
         document.querySelector(".discount").textContent = `Discount: ${sum}%`
         setData([])
+        const item = document.querySelectorAll(".items")
+        item.forEach((i) => {
+           i.classList.add("hidden")
+        })
     }
 
     const handleSubmit = (event) => {

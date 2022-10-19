@@ -14,16 +14,42 @@ console.log(data)
           }
         }
         
-       let sum = 0 
-       data.forEach((total) => {
-        sum += Number(total.replace(/[^\d.-]/g, ''))
-        document.querySelector("h4").innerHTML = `Total: $${sum}`
-        if(data.length >= 3){
-            document.querySelector("h4").innerHTML = `Total: $${sum * .9}`
-            document.querySelector(".discount").innerHTML = `Discount: 10%`
-        }
-       })
+        let sum = 0 
+    data.forEach((total) => {
+     sum += Number(total.replace(/[^\d.-]/g, ''))
+     
+    })
        
+        const itemArray = document.querySelectorAll(".items")
+
+          if(sum >= 100){
+             if(sum <= 299){
+             itemArray[0].classList.remove("hidden")
+             }
+          }
+            
+          if(sum >= 300){
+              if(sum <= 499){
+                itemArray[0].classList.remove("hidden")
+                  itemArray[1].classList.remove("hidden")
+              }
+          }
+          
+          if(sum >= 500){
+              if(sum <= 1000){
+                itemArray[0].classList.remove("hidden")
+                  itemArray[1].classList.remove("hidden")
+                 itemArray[2].classList.remove("hidden")
+              }
+         }
+         
+         if(sum > 1000){
+             itemArray[0].classList.remove("hidden")
+                  itemArray[1].classList.remove("hidden")
+                 itemArray[2].classList.remove("hidden")
+            itemArray[3].classList.remove("hidden")
+       }
+    
             return (
             <section className="card">
         {birdData.map(({name , amount, id, img}) => {
@@ -35,6 +61,7 @@ console.log(data)
                     <br></br>
                     <button onClick={() => {
            birdCard(id);
+      
         }}>Adopt</button>
                 </div>
                  )
