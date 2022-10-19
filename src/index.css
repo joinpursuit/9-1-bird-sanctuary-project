@@ -117,6 +117,8 @@ h5 {
 .Cart p {
     font-family: DynaPuff ;
     color: rgb(11, 154, 20);
+    text-decoration: underline;
+    text-decoration-style: wavy;
 }
 .Cart ul {
     list-style: none;
@@ -127,7 +129,6 @@ h5 {
     font-weight: bold;
     font-family: Comfortaa;
     font-weight: bolder;
-    
 }
 
 .Checkout {

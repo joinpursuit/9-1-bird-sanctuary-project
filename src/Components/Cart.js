@@ -1,17 +1,20 @@
-
+import { useState } from 'react';
 import React from 'react';
 import OList from './OList';
 import Total from './Total';
 import UList from './UList';
 
-function Cart({numOfBirds}) {
+function Cart({numOfBirds,total,discount}) {
+
+
+
 
     return (
         <>
             <h3>Cart</h3>
-            <Total 
-            numOfBirds={numOfBirds}
-             />
+            <Total
+            total ={total}
+            discount= {discount}/>
             <ol>
                 <OList 
                 numOfBirds = {numOfBirds}
@@ -22,6 +25,7 @@ function Cart({numOfBirds}) {
                <p>***BONUS REWARDS***</p>
                 <UList 
                 numOfBirds ={numOfBirds}
+                total= {total}
                  />
             </ul>
         </>

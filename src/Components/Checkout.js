@@ -31,7 +31,7 @@ function Checkout({setNumofBirds}) {
             }
         )
     }
-
+    // 
     // handleSubmit function for form
     function handleSubmit(e) {
         e.preventDefault()

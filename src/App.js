@@ -12,6 +12,10 @@ function App () {
 const [birdsArr, setBirdsArr] = useState(birdData)
 // keep track of selected birds
 const [numOfBirds, setNumofBirds] = useState([])
+// Declare state for total
+const [total, setTotal] = useState(0)
+// Declare State for Discount
+const [discount, setDiscount] = useState(false)
 
   return (
     <div className="topLevel">
@@ -29,6 +33,8 @@ const [numOfBirds, setNumofBirds] = useState([])
         birdsArr = {birdsArr}
         numOfBirds ={numOfBirds}
         setNumofBirds = {setNumofBirds}
+        setTotal= {setTotal}
+        setDiscount ={setDiscount}
          />
         </div>
 
@@ -39,6 +45,8 @@ const [numOfBirds, setNumofBirds] = useState([])
         <div className="Cart">
           <Cart
           numOfBirds = {numOfBirds}
+          total = {total}
+          discount = {discount}
           />
         </div>
 
