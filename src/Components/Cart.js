@@ -32,15 +32,19 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
     <div className="Cart">
       <h2>Cart</h2>
       <h4>
-        <span>Total: ${adoptedBirds.length >= 3 ? 0.9 * total : total}</span>
+        Total:{" "}
+        <span id="total">
+          ${adoptedBirds.length >= 3 ? 0.9 * total : total}
+        </span>
       </h4>
-      <h5>
+      <h4>
         Discount: <span>{adoptedBirds.length >= 3 ? 10 : 0}%</span>
-      </h5>
+      </h4>
+      <br></br>
       <ol>
         {adoptedBirds.map((bird) => (
           <li className="cartItem" key={bird.id}>
-            {`${bird.name} - $${bird.amount}`}
+            {`${bird.name} ($${bird.amount})`}
             <button
               id="removeBirdButton"
               onClick={() => {
