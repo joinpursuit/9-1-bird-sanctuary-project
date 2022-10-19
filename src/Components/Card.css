@@ -1,0 +1,26 @@
+.Card{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+}
+
+.birds{
+    background-color: rgb(119, 214, 181);
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+    margin: 30px auto; 
+    text-align: center;
+    padding: 5px;
+    box-shadow: grey 10px 5px 5px;
+}
+img{
+    display: block;
+    height: 160px;
+    width: 160px;
+    margin: 10px auto;
+}
+button{
+    cursor: pointer;
+}
