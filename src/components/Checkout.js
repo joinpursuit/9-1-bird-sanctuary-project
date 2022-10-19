@@ -1,5 +1,5 @@
 import {useState} from 'react'
-export default function Checkout({setCart}){
+export default function Checkout({setCart, bonus}){
 const [newbuy, setNewBuy] = useState({
     firstName: '',
     lastName: '',
@@ -15,6 +15,8 @@ const [newbuy, setNewBuy] = useState({
     e.preventDefault()
     alert('You have adopted birds. Thank you!')
     setCart([])
+    setNewBuy('')
+    // bonus('')
 }
 
 

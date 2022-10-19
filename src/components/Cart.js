@@ -32,12 +32,6 @@ total = cart.reduce((a, bird) => a + bird.amount, 0)
             <li>{bonusItems[0]}</li>
             </ul>
         )
-    }else{
-        return(
-        <ul className='ul'>
-            <li>{bonusItems[0]}</li>
-            </ul>
-        )
     }
  } 
 
@@ -49,10 +43,10 @@ total = cart.reduce((a, bird) => a + bird.amount, 0)
         <ol>
             {cart.map((bird, index) =>{
                     return (
-                        <li key={index}>
+                    <li key={index}>
                         {bird.name} ${bird.amount}
                     <button onClick={()=>{removeBird(index)}}>Remove Bird</button>
-                        </li>
+                    </li>
                     )
             })}
         </ol>

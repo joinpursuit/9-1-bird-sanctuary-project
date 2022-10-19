@@ -34,12 +34,11 @@ main {
     border: groove purple;
 }
 
-.hidden {
-    visibility: hidden;
-}
 
 .card{
     border: groove purple;
     width:250px;
-
+    box-shadow:  0px 0px 20px black;
+    margin: auto;
+    padding: 10px;
 }
