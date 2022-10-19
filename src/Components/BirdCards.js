@@ -1,15 +1,18 @@
 
+export default  function birdCards({birdData,addBird}){
 
-export default function birdCards({birdData}){
+
     return(
+
     <section>
       {birdData.map((birds)=>{ 
         return(
-          <div class ='card'>
+            
+          <div class ='card' key={birds.id}>
             <h3>{birds.name} </h3>
                 <p>Price: ${birds.amount}</p>
                 <img src={birds.img} alt={birds.img}/>
-               <button>Adopt</button>
+               <button onClick={()=>addBird(birds)}>Adopt</button>
             
             </div>
           )
