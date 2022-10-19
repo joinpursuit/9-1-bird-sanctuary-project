@@ -17,6 +17,13 @@
     margin: 0px;
 }
 
+.bonusItem {
+    text-align: center;
+    font-weight: bold;
+    list-style: none;
+    color: red
+}
+
 h2 {
     font-size: 30px;
     border-bottom: 3px solid black;

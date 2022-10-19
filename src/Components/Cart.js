@@ -22,7 +22,11 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
     }
 
     const res = array.map((item, idx) => {
-      return <li key={idx}>{item}</li>;
+      return (
+        <li className="bonusItem" key={idx}>
+          - {item}
+        </li>
+      );
     });
 
     return res;
@@ -58,6 +62,7 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
         ))}
       </ol>
       <p>Your Donations have qualified you for the following items:</p>
+      <br></br>
       <ul>{bonusAlg(total)}</ul>
     </div>
   );
