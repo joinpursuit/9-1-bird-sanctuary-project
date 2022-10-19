@@ -31,6 +31,9 @@ function App() {
   }
 
   function updateCart(bird) {
+    if (cart.includes(bird)) {
+      return alert("You have already added this bird to the cart");
+    }
     setCart([...cart, bird]);
   }
 
