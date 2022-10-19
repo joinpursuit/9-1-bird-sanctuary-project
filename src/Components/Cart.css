@@ -1,13 +1,29 @@
 .Cart {
     border: 3px solid black;
-    padding: 30px;
+    padding: 15px;
 }
 
 #removeBirdButton {
-    margin-left: 10px;
+    border: none;
+    padding: none;
+    margin: none;
+    font-size: 10px;
+    color: rebeccapurple
 }
 
 .cartItem {
-    text-align: left;
-    margin-left: 40px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 30px;
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+}
+
+h4 {
+    font-size: 19px;
+    margin: 0px;
 }
