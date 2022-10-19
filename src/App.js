@@ -26,6 +26,7 @@ function App() {
         discount={discount}
         cartOption={cartOption}
         bonusItems={bonusItems}
+        setCartOption={setCartOption}
       ></Cart>
       <Checkout setCartOption={setCartOption} />
     </div>

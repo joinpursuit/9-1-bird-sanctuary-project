@@ -13,6 +13,8 @@ img {
 button {
   color: grey;
   background-color: brown;
+  padding: 10px;
+  padding-top: 0;
 }
 .Cart {
   border: 3px solid black;

@@ -1,18 +1,24 @@
-export default function Cart({ bonusItems, cartOption, discount, bird }) {
+export default function Cart({ bonusItems, cartOption, setCartOption }) {
   //*Bonuses
   let total = cartOption.reduce((prevOption, currentOption) => {
     return prevOption + currentOption.amount;
   }, 0);
-
+  //*____________________________________________
+  //*cart price + discount
   let price = 0;
+  let discount = 0;
   cartOption.map((bird) => {
     if (cartOption.length > 2) {
       price += bird.amount * 0.9;
     } else {
       price += bird.amount;
     }
-    console.log(price);
   });
+  //! remove btn
+  function handleRemove(birdID) {
+    const filteredBirdArray = cartOption.filter((bird) => bird.id !== birdID);
+    setCartOption(filteredBirdArray);
+  }
 
   return (
     <div className="Cart">
@@ -28,7 +34,14 @@ export default function Cart({ bonusItems, cartOption, discount, bird }) {
           return (
             <li>
               {bird.name}: ${bird.amount.toFixed(2)}
-              {/* <button>DELET ME</button> */}
+              {/*  //! delete btn */}
+              <button
+                className="Remove"
+                value={bird.id} // identify or matches with bird in cart
+                onClick={() => handleRemove(bird.id)}
+              >
+                X
+              </button>
             </li>
           );
         })}
