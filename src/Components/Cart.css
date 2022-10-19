@@ -1,0 +1,9 @@
+li button {
+  background: rgb(96, 96, 150);
+  padding: 0 0.5rem;
+}
+
+li button:hover {
+  background: aliceblue;
+  color: rgb(96, 96, 150);
+}
