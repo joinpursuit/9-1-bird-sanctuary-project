@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BirdCards from './Components/BirdCards'
 import Cart from './Components/Cart'
-import Form from './Components/Form'
+import Checkout from './Components/Checkout'
 import birdData from "./data/birds";
 import bonusItems from "./data/bonusItems";
 
@@ -45,7 +45,11 @@ function App () {
         bonusItems={bonusItems}
         />
 
-        <Form />
+        <Checkout 
+        setUserCart={setUserCart} 
+        setDiscount={setDiscount}
+        setTotalCart={setTotalCart}
+        />
 
         <BirdCards
         birdData={birdData}

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function AdoptBird(){
+export default function AdoptBird({setUserCart,setTotalCart,setDiscount}){
     const [userInfo,setUserInfo] = useState({
         firstName: "",
         lastName: "",
@@ -22,9 +22,12 @@ export default function AdoptBird(){
         lastName: "",
         email: "",
         zip: ""})
+        setUserCart([])
+        setTotalCart(0)
+        setDiscount(0)
       }
     return(
-        <div className="checkout">
+        <div className="Checkout">
             <h2>Checkout</h2>
             <form onSubmit={handleSubmit}>
                 
@@ -50,14 +53,14 @@ export default function AdoptBird(){
                     onChange={handleChange}/>    
 
                 
-                <label htmlFor='zip'> Zip </label>
+                <label htmlFor='zip'> Zip Code </label>
                     <input id='zip'
                     type='text'
-                    placeholder='Zip' 
+                    placeholder='Zip Code' 
                     value={userInfo.zip}
                     onChange={handleChange}/>
                 
-
+                <input type="submit"Submit />
                 
             </form>
         </div>
