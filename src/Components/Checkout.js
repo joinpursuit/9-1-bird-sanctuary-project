@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = () => {
+const Checkout = ({ handleSubmit }) => {
   const [adopter, setAdopter] = useState({
     firstName: "",
     lastName: "",
@@ -9,11 +9,7 @@ const Checkout = () => {
   });
 
   const handleChange = (e) => {
-    setAdopter({ [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    alert("You have adopted birds. Thank you!");
+    setAdopter({ ...adopter, [e.target.id]: e.target.value });
   };
 
   return (
