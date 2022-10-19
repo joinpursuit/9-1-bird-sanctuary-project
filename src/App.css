@@ -4,19 +4,22 @@
 
 .app {
     /* border: 1px solid black; */
-    margin: 100px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .main {
     display: grid;
-    grid-template-columns: 400px 600px;
+    grid-template-columns: 200px 1fr;
     margin: auto;
-    margin-top: 100px;
-    gap: 100px;
+    margin-top: 25px;
 }
 
 .birds {
     display: grid;
-    grid-template-columns: repeat(3, 325px);
-    gap: 40px;
+    grid-template-columns: repeat(3, 200px);
+    gap: 40px 40px;
+    margin: 40px;
 }
