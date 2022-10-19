@@ -19,20 +19,23 @@ function App() {
 
   return (
     <div className="fullDiv">
-      <div className="Cart">
-        <Cart
-          bonusItems={bonusItems}
-          cart={cart}
-          setCart={setCart}
-          discount={discount}
-          setDiscount={setDiscount}
-        />
+      <div className="asideDiv">
+        <div className="Cart">
+          <Cart
+            bonusItems={bonusItems}
+            cart={cart}
+            setCart={setCart}
+            discount={discount}
+            setDiscount={setDiscount}
+          />
+        </div>
+        <div className="Checkout">
+          <Checkout setCart={setCart} />
+        </div>
       </div>
+
       <div className="Cards">
         <Cards birdData={birdData} updateCart={updateCart} />{' '}
-      </div>
-      <div className="Checkout">
-        <Checkout setCart={setCart} />
       </div>
     </div>
   );

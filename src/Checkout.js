@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import './Checkout.css';
 function Checkout({ setCart }) {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
@@ -19,7 +19,7 @@ function Checkout({ setCart }) {
   }
 
   return (
-    <div className="Checkout">
+    <div className="CheckoutComp">
       <h2>Checkout</h2>
       <form>
         <label htmlFor="firstName">First Name</label>
@@ -54,7 +54,9 @@ function Checkout({ setCart }) {
           value={zipCode}
           onChange={(o) => setZipCode(o.target.value)}
         ></input>
-        <input onClick={doSubmit} type="submit" value="Submit"></input>
+        <button id="buttonForm" onClick={doSubmit} type="submit" value="Submit">
+          Submit
+        </button>
       </form>
     </div>
   );

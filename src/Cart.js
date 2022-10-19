@@ -1,3 +1,5 @@
+import './Cart.css';
+
 function Cart({ bonusItems, discount, cart, setCart }) {
   // console.log(cart.length);
 
@@ -28,7 +30,7 @@ function Cart({ bonusItems, discount, cart, setCart }) {
     );
   });
   return (
-    <div className="Cart">
+    <div className="CartComp">
       <h2>Cart</h2>
       <h4>Total: ${cartTotal}</h4>
       <span>Discount: {cart.length < 3 ? discount : (discount = 10)}%</span>

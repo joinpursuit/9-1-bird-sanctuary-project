@@ -2,15 +2,26 @@ img {
   height: 150px;
   width: 150px;
 }
-.allBirds {
+
+.displayBird {
   display: flex;
-  border: 1px solid blue;
-  /* grid-template-columns: repeat(3, 1fr); */
   flex-flow: row wrap;
   justify-content: center;
   text-align: center;
 }
 
-.birds {
-  grid-template-columns: repeat(3, 1fr);
+.displayBird div {
+  border: 1px solid blue;
+  margin: 30px auto;
+  padding: 5px;
+  height: auto;
+  width: 300px;
+  background-color: lightcoral;
+  color: chartreuse;
+  box-shadow: lightseagreen 10px 5px 5px;
+}
+
+#Adopt {
+  background-color: burlywood;
+  color: darkmagenta;
 }
