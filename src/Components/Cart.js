@@ -1,7 +1,7 @@
 import bonusItems from '../data/bonusItems'
 
 
-export default function Cart ({ adoptedBirds, total }) {
+export default function Cart ({ adoptedBirds, total, removeBird }) {
 
     return (
         <aside className="Cart">
@@ -12,11 +12,14 @@ export default function Cart ({ adoptedBirds, total }) {
             </h4>
             <ol>
                 {
-                    adoptedBirds.map((bird, index) => {
+                    adoptedBirds.map((bird) => {
                         return (
-                            <li key={index}>
-                                {bird.name}: ${bird.amount}
-                            </li>
+                            <>
+                                <li key={bird.id}>
+                                    {bird.name}: ${bird.amount}
+                                </li>
+                                <button onClick={() => removeBird(bird)}>Remove</button>
+                            </>
                             )
                         })
                 }

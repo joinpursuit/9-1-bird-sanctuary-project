@@ -15,8 +15,24 @@ function App () {
       return alert('You have already added this bird to the cart')
     } else {
       setAdoptedBirds([...adoptedBirds, bird])
+      // updateTotal()
       setTotal(total + Number(bird.amount))
     }
+  }
+
+  const updateTotal = () => {
+    const sum = adoptedBirds.reduce((acc, bird) => {
+      return acc + bird.amount
+    }, 0)
+
+    setTotal(sum)
+  }
+
+  const removeBird = (bird) => {
+    let newBirds = adoptedBirds.filter((each) => each.id !== bird.id)
+
+    setAdoptedBirds(newBirds)
+    updateTotal()
   }
 
   return (
@@ -25,8 +41,12 @@ function App () {
         <Cart
           adoptedBirds={adoptedBirds}
           total={total}
+          removeBird={removeBird}
         />
-        <Checkout />
+        <Checkout 
+          setAdoptedBirds={setAdoptedBirds}
+          setTotal={setTotal}
+        />
       </aside>
       <section className='Cards'>
         {
