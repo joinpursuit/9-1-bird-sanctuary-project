@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 function Cards({birdsArr, setNumofBirds, numOfBirds, setTotal,setDiscount}) {
+
     // select which birds to be added to cart, no duplicate birds, remove if clicked again
     function addBirdToCart(num) {
         const addedBird = birdsArr.find(({id}) => +num === id)
@@ -22,7 +24,7 @@ function Cards({birdsArr, setNumofBirds, numOfBirds, setTotal,setDiscount}) {
     function findId(e) {
         
         addBirdToCart(e.target.value)
-        
+        // Tried using State to toggle a class with corressponding CSS (ternary in className) but that would trigger class change for all the birds, so just defaulted to hardcoding here
         if(e.target.innerText === `ADOPT`){
             e.target.innerText = `REMOVE`
             e.target.style.backgroundColor= `rgb(173, 5, 5)`   
@@ -31,8 +33,7 @@ function Cards({birdsArr, setNumofBirds, numOfBirds, setTotal,setDiscount}) {
             e.target.innerText = `ADOPT`
             e.target.style.backgroundColor= `rgb(43, 111, 9)`
             e.target.style.color = `white`
-        }
-        
+        } 
     }
 
     // function for calculating/updating total/ discount

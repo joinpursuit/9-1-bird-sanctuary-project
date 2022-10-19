@@ -31,7 +31,17 @@ function Checkout({setNumofBirds,total,setDiscount, setTotal}) {
             }
         )
     }
-    // 
+    
+    // function for resetting button values on submit
+    function defaultButton() {
+        const buttons = document.querySelectorAll(`.birds button`)
+        buttons.forEach(button => {
+            button.innerHTML = "ADOPT"
+            button.style.backgroundColor= `rgb(43, 111, 9)`
+            }
+        )
+    }
+
     // handleSubmit function for form
     function handleSubmit(e) {
         e.preventDefault()
@@ -46,6 +56,7 @@ function Checkout({setNumofBirds,total,setDiscount, setTotal}) {
         setNumofBirds([])
         setTotal(0)
         setDiscount(false)
+        defaultButton()
     }
 
     return (

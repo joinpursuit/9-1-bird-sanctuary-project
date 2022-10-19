@@ -2,7 +2,7 @@ import React from 'react';
 import bonusItems from '../data/bonusItems';
 import { bonusRewards } from '../data/helperFunctions';
 
-function UList({numOfBirds,total}) {
+function UList({total}) {
     const bonus = bonusRewards(total)
   
     return (
