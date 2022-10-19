@@ -1,9 +1,13 @@
 import "./Cart.css";
 
-export default function Cart({ adoptedBirds }) {
-  const total = adoptedBirds.reduce((acc, bird) => {
+export default function Cart({ adoptedBirds, removeBird }) {
+  let total = adoptedBirds.reduce((acc, bird) => {
     return acc + bird.amount;
   }, 0);
+
+  const totalWithRemovedBird = (bird) => {
+    total -= bird.amount;
+  };
 
   return (
     <div className="cart">
@@ -16,7 +20,15 @@ export default function Cart({ adoptedBirds }) {
       </h4>
       <ol>
         {adoptedBirds.map((bird) => (
-          <li key={bird.id}>{bird.name}</li>
+          <li
+            onClick={() => {
+              totalWithRemovedBird(bird);
+              removeBird(bird);
+            }}
+            key={bird.id}
+          >
+            {bird.name}
+          </li>
         ))}
       </ol>
       <p>Your Donations have qualified you for the following items:</p>

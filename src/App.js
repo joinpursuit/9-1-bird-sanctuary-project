@@ -14,9 +14,18 @@ function App() {
   // State hooks
   const [adoptedBirds, setAdoptedBirds] = useState([]);
 
-  // Data
+  // Data variables
   const birds = [...birdData];
   const bonus = [...bonusItems];
+
+  const removeBird = (birdToRemove) => {
+    console.log("clicked");
+    const filteredBirds = adoptedBirds.filter((bird) => {
+      console.log(bird.id, birdToRemove.id);
+      return birdToRemove.id !== bird.id;
+    });
+    setAdoptedBirds(filteredBirds);
+  };
 
   // Helpers
   const adoptBird = (bird) => {
@@ -32,7 +41,11 @@ function App() {
       </header>
       <main className="main">
         <aside className="aside">
-          <Cart adoptedBirds={adoptedBirds} bonus={bonus} />
+          <Cart
+            removeBird={removeBird}
+            adoptedBirds={adoptedBirds}
+            bonus={bonus}
+          />
           <Checkout />
         </aside>
         <ul className="birds">
