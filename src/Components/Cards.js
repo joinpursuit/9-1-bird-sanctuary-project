@@ -10,7 +10,7 @@ console.log(data)
               handleEvent(birdArray)
           }
           else{
-            alert("Stop")
+            alert("You have already added this bird to the cart")
           }
         }
         
