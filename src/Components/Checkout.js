@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Checkout.css";
 
-export default function Checkout({ setCartBirds, setTotal, setDiscount }) {
+export default function Checkout({ setCartBirds }) {
   const [donorFirst, setDonorFirst] = useState("");
   const [donorLast, setDonorLast] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
@@ -13,8 +13,7 @@ export default function Checkout({ setCartBirds, setTotal, setDiscount }) {
     setDonorEmail("");
     setDonorZip("");
     setCartBirds([]);
-    setTotal(0);
-    setDiscount(0);
+    // setTotal(0);
   }
 
   function handleSubmit(e) {

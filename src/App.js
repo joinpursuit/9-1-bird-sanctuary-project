@@ -7,40 +7,13 @@ import Checkout from "./Components/Checkout";
 import "./App.css";
 
 function App() {
-  const [birds, setBirds] = useState(birdData);
   const [cartBirds, setCartBirds] = useState([]);
-  let [total, setTotal] = useState(0);
-  const [discount, setDiscount] = useState(0);
 
   function updateCart(bird) {
     if (cartBirds.includes(bird)) {
       return alert("You have already added this bird to the cart");
     } else {
       setCartBirds([...cartBirds, bird]);
-      // console.log(bird);
-      calcDiscount(bird);
-    }
-  }
-  // calcTotal()
-  //   (total = cartBirds.reduce((accu, bird) => {
-  //     return accu + bird.amount;
-  //   }, 0))
-  // }
-  // function calcTotal() {
-  //   let num =cartBirds.reduce((accu, bird) => {
-  //     return accu + bird.amount;
-  //   }, 0)
-  //   if()
-  //   return num
-  // }
-
-  function calcDiscount(bird) {
-    if (cartBirds.length + 1 > 2) {
-      console.log("calcDiscount", total);
-      setDiscount(10);
-      setTotal((total += bird.amount) * 0.9);
-    } else {
-      setTotal((total += bird.amount));
     }
   }
 
@@ -48,24 +21,17 @@ function App() {
     <div className="container">
       <div id="cart+checkout">
         <Cart
-          setTotal={setTotal}
           bonusItems={bonusItems}
-          setDiscount={setDiscount}
-          discount={discount}
-          total={total}
           cartBirds={cartBirds}
-        />
-        <Checkout
           setCartBirds={setCartBirds}
-          setTotal={setTotal}
-          setDiscount={setDiscount}
         />
+        <Checkout setCartBirds={setCartBirds} />
       </div>
       <div className="card" id="card">
-        {birds.map((bird) => {
+        {birdData.map((bird) => {
           return (
             <Cards
-              birds={birds}
+              birdData={birdData}
               bird={bird}
               updateCart={updateCart}
               key={bird.id}
