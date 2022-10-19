@@ -19,9 +19,7 @@ function App() {
   const bonus = [...bonusItems];
 
   const removeBird = (birdToRemove) => {
-    console.log("clicked");
     const filteredBirds = adoptedBirds.filter((bird) => {
-      console.log(bird.id, birdToRemove.id);
       return birdToRemove.id !== bird.id;
     });
     setAdoptedBirds(filteredBirds);
