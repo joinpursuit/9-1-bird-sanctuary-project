@@ -1,11 +1,9 @@
 import { useState } from "react";
-
+import Header from "./Components/Header";
 import birdData from "./data/birds";
 import Cards from "./Components/Cards";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
-
-
 
 function App () {
 // Declare state for birdData [{}]
@@ -21,9 +19,7 @@ const [discount, setDiscount] = useState(false)
     <div className="topLevel">
       
       {/* Header */}
-      <header>
-        <h1>Destiny's Bird Sanctuary Project</h1>
-      </header>
+     <Header />
       
       {/* Bird Cards */}
       <main>
