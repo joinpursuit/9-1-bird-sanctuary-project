@@ -2,23 +2,29 @@ import React from 'react';
 import {useState} from "react";
 import birdData from "../data/birds";
 
-
-
-
 const Card = ({birdData}) => {
     const [total, setTotal] = useState(0)
+    const [discount, setDiscount] = useState(0)
     const [birdsInCart, setBirdsInCart] = useState([]);
 
     function handleSubmit(data) {
         console.log(birdsInCart)
+        const discountPrice = 10
         const name = data.name;
         const amount = data.amount;
         const id = data.id
         if(!birdsInCart.find(e => e.name === name || e.amount === amount)) {
             birdsInCart.push({name, amount, id});
+        } else {
+            alert('You have already added this bird to the cart')
         }
+
         setBirdsInCart(birdsInCart)
         setTotal(total + amount)
+
+        if (birdsInCart.length === 3) {
+            setDiscount(discount + discountPrice)
+        }
     }
 
     const birdCart = birdsInCart.map((element) => <li key={element.id}>{element.name}</li>)
@@ -45,7 +51,7 @@ const Card = ({birdData}) => {
 
             <ol>{birdCart}</ol>
            
-            <p>Discount:</p>
+            <p>Discount: {discount}%</p>
             {/* {birds} */}
         </div>
         {bird}</div>
