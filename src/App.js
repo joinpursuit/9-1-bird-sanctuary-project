@@ -1,26 +1,22 @@
 import { useState } from "react";
 import birdData from "./data/birds";
 import Cart from "./Components/Cart";
-import Checkout from "./Components/Cehckout";
+import Checkout from "./Components/Checkout";
 import Cards from "./Components/Cards";
 import bonusItems from "./data/bonusItems";
 
 function App() {
-  //! create a state for cart amount
   const [cartOption, setCartOption] = useState([]); // []
-  const [birdOption, setBirdOption] = useState(birdData);
-  // console.log(birdOption);
-  const [discount, setDiscount] = useState(0);
-
+  // const [birdOption, setBirdOption] = useState(birdData);
+  // const [discount, setDiscount] = useState(0);
+  let discount;
   function handleBirdOption(bird) {
-    // const birdOp = birdOption.map(
-    //   (el) => el.id === birdOption.id && birdOption.name === el.name
-    // );
-    // console.log(birdOp);
-    // alert("You have already added this bird to the cart");
-    // return;
-
-    setCartOption([...cartOption, bird]);
+    if (cartOption.includes(bird)) {
+      // if (cartOption.indexOf(bird) !== -1)
+      return alert("You have already added this bird to the cart");
+    } else {
+      setCartOption([...cartOption, bird]);
+    }
   }
   return (
     <div className="Main">
@@ -31,7 +27,7 @@ function App() {
         cartOption={cartOption}
         bonusItems={bonusItems}
       ></Cart>
-      <Checkout />
+      <Checkout setCartOption={setCartOption} />
     </div>
   );
 }

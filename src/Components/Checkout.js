@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Cehckout({ setCartOption }) {
+export default function Checkout({ setCartOption }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,13 +11,14 @@ export default function Cehckout({ setCartOption }) {
 
     if (firstName && lastName && email && zipCode) {
       alert("You have adopted birds. Thank you!");
+      setCartOption([]);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setZipCode("");
+    } else {
+      alert("Please complete the form");
     }
-    alert("Please complete the form");
-    setCartOption([]);
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setZipCode("");
   };
   return (
     <div className="Checkout">
@@ -60,7 +61,7 @@ export default function Cehckout({ setCartOption }) {
           />
         </label>
         <label htmlFor="submit"></label>
-        <button onclick={handleSubmit} type="submit">
+        <button onSubmit={handleSubmit} type="submit">
           Submit
         </button>
       </form>
