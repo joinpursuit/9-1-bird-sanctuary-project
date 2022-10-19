@@ -1,0 +1,33 @@
+.birds {
+  display: block;
+  width: 300px;
+  height: auto;
+  border: 1px solid maroon;
+  margin: 30px auto;
+  text-align: center;
+  padding: 4px;
+  box-shadow: grey 10px 5px 5px;
+  background-color: rgb(238, 236, 236);
+}
+
+p {
+  display: block;
+}
+
+img {
+  display: block;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  border-radius: 15%;
+}
+
+button {
+  margin-top: 8px;
+  margin-bottom: 7px;
+  border: 1px solid rgb(158, 116, 116);
+  background-color: rgb(247, 209, 209);
+}
+button:hover {
+  background-color: rgb(241, 172, 172);
+}
