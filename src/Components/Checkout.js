@@ -8,7 +8,7 @@ export default function Checkout (){
     }
 
 return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="Checkout">
         <h1>Checkout</h1>
         <label htmlFor="first">First Name</label>
         <input type="text" required/>

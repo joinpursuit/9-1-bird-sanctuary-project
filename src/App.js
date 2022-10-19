@@ -8,28 +8,32 @@ import './App.css'
 function App () {
 
   const [adoptedBirds, setAdoptedBirds] = useState([])
+  // const [selectedBird, setSelectedBird] = useState({})
 
-  const selectBird = (e) => {
+  const handleClick = (e) => {
     const selectedBird = {
       name: e.target.name,
       amount: e.target.value,
     }
 
-    updateBirds(selectedBird, adoptedBirds)
+    // setSelectedBird(selectBird)
+    updateBirds(selectedBird)
+
   }
 
-  const updateBirds = (selectedBird, adoptedBirds) => {
+  const updateBirds = (selectedBird) => {
     console.log(selectedBird)
-    console.log(adoptedBirds)
+    // console.log(selectedBird)
+  //   console.log(adoptedBirds)
 
-    // adoptedBirds.map((bird) => {
-    //   if(bird.name === selectedBird.name){
-    //     return alert('You have already added this bird to the cart')
-    //   } else {
-    //     return setAdoptedBirds([...adoptedBirds, selectedBird])
-    //   }
-    // }) 
-    
+    adoptedBirds.map((bird) => {
+      if(bird.name === selectedBird.name){
+        return alert('You have already added this bird to the cart')
+      } else {
+        return setAdoptedBirds([...adoptedBirds, selectedBird])
+      }
+    })
+      
     setAdoptedBirds([...adoptedBirds, selectedBird])
   }
 
@@ -38,18 +42,19 @@ function App () {
       <aside>
         <Cart
           adoptedBirds={adoptedBirds}
+          setAdoptedBirds={setAdoptedBirds}
         />
         <Checkout />
       </aside>
-      <section>
+      <section className='Cards'>
         {
           birdData.map((bird) => {
             return (
                 <Cards 
                   bird={bird}
-                  selectBird={selectBird}
-                  updateBirds={updateBirds}
                   key={bird.id}
+                  handleClick={handleClick}
+                  adoptedBirds={adoptedBirds}
                 />
             )
           })
