@@ -1,0 +1,16 @@
+img {
+  height: 150px;
+  width: 150px;
+}
+.allBirds {
+  display: flex;
+  border: 1px solid blue;
+  /* grid-template-columns: repeat(3, 1fr); */
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.birds {
+  grid-template-columns: repeat(3, 1fr);
+}

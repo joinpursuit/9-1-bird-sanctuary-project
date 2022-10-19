@@ -1,16 +1,21 @@
 import { useState } from 'react';
 
-function Checkout({}) {
+function Checkout({ setCart }) {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [email, setEmail] = useState('');
   const [zipCode, setZipCode] = useState('');
 
-  function doSubmit() {
-    // event.preventDefault();
+  function doSubmit(event) {
+    event.preventDefault();
     if (first && last && email && zipCode) {
       alert('You have adopted birds. Thank you!');
     }
+    setCart([]);
+    setFirst('');
+    setLast('');
+    setEmail('');
+    setZipCode('');
   }
 
   return (

@@ -1,22 +1,29 @@
-import Cards from './Cards';
-
-function Cart({
-  bonusItems,
-  discount,
-  cart,
-  birdData,
-  //   mappedBirds,
-}) {
-  console.log(cart.length);
+function Cart({ bonusItems, discount, cart, setCart }) {
+  // console.log(cart.length);
 
   const cartTotal = cart.reduce((acc, curr) => {
     return acc + curr.amount;
   }, 0);
 
+  function removeBird(id) {
+    let filterCart = cart.filter((bird) => {
+      return bird.id !== id;
+    });
+    setCart(filterCart);
+  }
   const checkoutBirds = cart.map((element) => {
     return (
       <li key={element.id}>
         {element.name}: ${element.amount}
+        <button
+          key={element.id}
+          className="deleteItem"
+          onClick={() => removeBird(element.id)}
+          id="delete"
+          type="submit"
+        >
+          Delete
+        </button>
       </li>
     );
   });
