@@ -1,10 +1,10 @@
 .birdCard {
     list-style: none;
-    border: 3px solid black;
-    border-radius: 10px;
+    border: 5px solid black;
+    /* border-radius: 40px; */
     box-shadow: 15px 15px rgba(32, 32, 32, 0.667);
-    height: 400px;
-    width: 300px;
+    height: 450px;
+    width: 325px;
 }
 
 .birdImg {
@@ -12,7 +12,8 @@
     margin: auto;
     width: 50%;
     height: 80%;
-    border: 4px solid red;
+    border: 6px solid red;
+    border-radius: 40px;
 }
 
 .birdImageContainer {
@@ -33,6 +34,15 @@
 
 }
 
+.cost {
+    /* border-bottom: 2px solid red;
+    border-top: 2px solid red; */
+    color: red;
+}
+
 .birdName {
+    font-size: 17px;
     margin-top: 40px;
+    padding-bottom: 30px;
+    border-bottom: 5px solid red;
 }
