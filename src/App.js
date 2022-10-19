@@ -24,7 +24,7 @@ function handleEvent(datas){
     <div className="birdInfo">
       <div className="customer">
         <div className="cart">
-        <Cart bonusItems={bonus} birdData={bird} data={data}/>
+        <Cart setData={setData} bonusItems={bonus} birdData={bird} data={data}/>
         </div>
         <br></br>
         <div className="checkout">

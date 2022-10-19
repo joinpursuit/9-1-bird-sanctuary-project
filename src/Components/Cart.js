@@ -1,9 +1,13 @@
 import cart from "./cart.css"
 
 
-const Cart = ({bonusItems, data}) => {
+const Cart = ({bonusItems, data, setData}) => {
 
-
+const remove = (dataContent) => {
+    const filter = data.filter((d) => d !== dataContent);
+    console.log(filter)
+    setData(filter)
+}
 
     return(
         <section>
@@ -13,7 +17,7 @@ const Cart = ({bonusItems, data}) => {
             <ol>
             {data.map((dt) => {
                 return (
-                 <li>{dt}</li>
+                 <li>{dt} <button onClick={() => remove(dt)}>Remove</button></li>
                 )
             })}
             </ol>
