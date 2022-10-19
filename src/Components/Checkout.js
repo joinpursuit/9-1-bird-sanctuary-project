@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-const Checkout = () => {
+const Checkout = ({setData}) => {
 
     const [form , setForm] = useState({
         firtName: "",
@@ -9,12 +9,14 @@ const Checkout = () => {
         zip: ""
     })
 
-    
+   
     
     const formText = (event) => {
         setForm({...form, [event.target.id]: event.target.value})
     }
     
+    let sum = 0
+
     const reset = () => {
         setForm({
             firtName: "",
@@ -22,16 +24,9 @@ const Checkout = () => {
             email: "",
             zip: "" 
         })
-        document.querySelector("h4").textContent = "Total: "
-        document.querySelector(".discount").textContent = "Discount: 0%"
-        const li = document.querySelectorAll(".birContent")
-        li.forEach((list) => {
-            document.querySelector("ol").removeChild(list)
-        })
-        const items = document.querySelectorAll(".items")
-        items.forEach((i) => {
-            document.querySelector("ul").removeChild(i)
-        })
+        document.querySelector("h4").textContent = `Total: $${sum} `
+        document.querySelector(".discount").textContent = `Discount: ${sum}%`
+        setData([])
     }
 
     const handleSubmit = (event) => {
