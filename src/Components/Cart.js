@@ -36,13 +36,14 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
     <div className="Cart">
       <h2>Cart</h2>
       <h4>
+        Discount:{" "}
+        <span id="discount">{adoptedBirds.length >= 3 ? 10 : 0}%</span>
+      </h4>
+      <h4>
         Total:{" "}
         <span id="total">
           ${adoptedBirds.length >= 3 ? 0.9 * total : total}
         </span>
-      </h4>
-      <h4>
-        Discount: <span>{adoptedBirds.length >= 3 ? 10 : 0}%</span>
       </h4>
       <br></br>
       <ol>
