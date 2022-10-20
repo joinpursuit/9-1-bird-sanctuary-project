@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import Bird from './Bird';
+import React from 'react';
 
-function Cards({ birds, handleClick }) {
+
+function Cards({ birdData, handleClick }) {
     
 
     return (
         <div>
-            { birds.map((bird)=>(
-            <Bird key={bird.id} bird={bird} handleClick={handleClick} > </Bird>
+            { birdData.map((bird)=>(
+                <div key={bird.id} className="birds">
+                <h4> {bird.name}</h4>
+                <div>Price: ${bird.amount}</div>
+                <img className='images' src={bird.img} alt={bird.name}></img>
+                <button onClick={()=> handleClick(bird)}>Adopt</button>
+            </div>
             )) }  
         </div>
     );

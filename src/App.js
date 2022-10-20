@@ -3,36 +3,44 @@ import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import birdData from "./data/birds"
 import { useState } from "react"
+import bonusItems from "./data/bonusItems"
+
 
 function App () {
-
-  const [birds, setBirds] = useState(birdData)
   const [cart, setCart]= useState([])
+
+
     const handleClick = (bird) => {
+      if (cart.includes(bird)) {
+        return alert("You have already added this bird to the cart")
+      }
         setCart([...cart, bird])
-        console.log(bird)
+        console.log(bird)  
     }
+    
+    function removeFromCart(id) {
+      let filterCart = cart.filter((bird) => {
+        return bird.id !== id;
+      })
+      setCart(filterCart);
+    }
+
+
+
+    const cartTotal = cart.reduce((i, bird) => {
+      return i + bird.amount
+    }, 0)
   
-  // const addCart = (product) => {
-  //   const exist = cartItems.find(x=> x.id === product.id)
-  //   if(exist){
-  //     setCartItems(cartItems.map(x => x.id === product.id ? {...exist}:x
-  //       ))}
-  //       else {
-  //         setCartItems([...cartItems, {...product}])
-  //       }
-  //   }
-  // const addCart = (bird) => {
-  //   setBirds([bird])
-  // }  
-
-
   return (
     <div>
-      {/* <Cards addCart={addCart}  birds={birds} /> */}
-      {/* <Cart addCart={addCart} cartItems={cartItems}/> */}
-      <Cards handleClick={handleClick} birds={birds} />
-      <Cart  cart={cart} setCart={setCart} birds={birds}/>
+      <Cards handleClick={handleClick} birdData={birdData} />
+      <Cart  
+      removeFromCart={removeFromCart} 
+      cart={cart} 
+      cartTotal={cartTotal}
+      bonusItems={bonusItems}
+      />
+      
       <Checkout />
     </div>
   );
