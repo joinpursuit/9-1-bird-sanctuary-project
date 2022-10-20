@@ -65,6 +65,7 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
           </li>
         ))}
       </ol>
+      <hr></hr>
       <p className="donationsPrompt">
         Your Donations have qualified you for the following items:
       </p>

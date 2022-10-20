@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./BirdCard.css";
 
 export default function BirdCard({ bird, adoptBird }) {
-  const [buttonColor, setButtonColor] = useState("lightgray");
+  const [buttonColor, setButtonColor] = useState("rgb(211, 211, 211)");
   // const [nameColor, setNameColor] = useState("");
 
   return (
@@ -20,10 +20,10 @@ export default function BirdCard({ bird, adoptBird }) {
             adoptBird(bird);
           }}
           onMouseOver={() => {
-            setButtonColor("");
+            setButtonColor("rgba(211, 211, 211, 0.762)");
           }}
           onMouseOut={() => {
-            setButtonColor("lightgray");
+            setButtonColor("rgb(211, 211, 211)");
           }}
           style={{ backgroundColor: buttonColor }}
           className="adoptButton"

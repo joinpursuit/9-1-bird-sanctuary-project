@@ -2,7 +2,7 @@
     list-style: none;
     border: 3px solid black;
     /* border-radius: 40px; */
-    box-shadow: 15px 15px rgba(32, 32, 32, 0.667);
+    box-shadow: 15px 15px 12px rgba(32, 32, 32, 0.667);
     height: 250px;
     width: 175px;
     margin: 0;
@@ -13,7 +13,7 @@
     margin: auto;
     width: 55%;
     height: 88%;
-    border: 4px solid red;
+    border: 3px solid red;
     border-radius: 20px;
 }
 
@@ -28,6 +28,12 @@
     margin-top: 10px;
 } 
 
+.adoptButtonContainer button {
+    color: black;
+    border: none;
+    background-color: rgba(211, 211, 211, 0.762);
+}
+
 p {
     font-family: monospace;
     height: 12.5%;
@@ -39,6 +45,7 @@ p {
 
 .cost {
     font-size:15px;
+    font-weight: bold;
     color: red;
 }
 
