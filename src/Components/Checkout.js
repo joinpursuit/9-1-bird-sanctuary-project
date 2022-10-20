@@ -37,7 +37,7 @@ return (
         <input type="text" name="zip" required />        
         </label>
 
-        <input type="submit" onClick={handleSubmit}></input>
+        <input type="submit" onClick={handleSubmit} id="submit"></input>
     </form>
 )
 }

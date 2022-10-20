@@ -16,24 +16,22 @@ h4 {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 30% auto;
     column-gap: 10px;
     background-color: rgb(189, 232, 241);
-
-    /* background-color: blanchedalmond; */
 }
 
 .birds {
-    height: 430px;
-    width: 320px;
+    height: 350px;
+    width: 280px;
     border: 1px solid black;
     text-align: center;
 }
 
 img {
-    height: 200px;
-    width: 200px;
-    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
     margin: auto;
     display: block;
     padding-bottom: 30px;
@@ -53,8 +51,17 @@ img {
     box-shadow: 10px 10px 10px grey;
 }
 
+.card h1 {
+    font-size: 25px;
+}
+
 .card button {
     background-color: white;
+    padding-bottom: 30px;
+}
+
+:nth-child(7) h1 {
+    font-size: 22px;
 }
 
 .Cart {
@@ -62,6 +69,18 @@ img {
     padding: 10px 20px;
     margin: 20px 20px;
     background-color: mintcream;
+    position: relative;
+}
+
+.Cart button {
+    width: 20px;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    color: red;
+    position: absolute;
+    right: 45px;
+    margin-bottom: 15px;
 }
 
 .Checkout {
@@ -76,12 +95,7 @@ form {
     background-color: mintcream;
 }
 
-.Cart button {
-    width: 20px;
-    height: 30px;
-    text-align: center;
-    font-size: 12px;
-    border: none;
-    color: red;
-    margin-right: 0;
+#submit {
+    background-color: white;
 }
+

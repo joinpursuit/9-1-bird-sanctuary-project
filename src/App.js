@@ -33,6 +33,7 @@ function App () {
         <Cart
           adoptedBirds={adoptedBirds}
           total={total}
+          setTotal={setTotal}
           removeBird={removeBird}
         />
         <Checkout 
