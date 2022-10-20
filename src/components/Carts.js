@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import BonusItemsApplied from './BonusItemsApplied';
 
-function Carts({total, cart}) {
+function Carts({total, cart, setCart}) {
   // using ternary 
   const realTotal = cart.length >= 3 ? total* .9 : total;
   const realPerct = cart.length >= 3 ? 10 : 0;
   const [bonusItems, setBonusItems] = useState ([]);
+
+  const removeBird = (birdId) => {
+    const filteredBirdArr = cart.filter((birdClicked) => birdClicked.id !== birdId)
+    setCart([...filteredBirdArr])
+}
 
   return (
     <div className='Cart'>
@@ -14,9 +19,13 @@ function Carts({total, cart}) {
         <p>Discount: {realPerct}%</p>
         <ol>
             {cart.map((birdClicked) => (
-              <li>
+              <li key={birdClicked.id}>
+                <span>
                 {birdClicked.name}: ${birdClicked.amount}
+                </span>
+                <button className='deletebtn' type='submit' onClick={() =>removeBird(birdClicked.id)}>Delete</button>
               </li>
+              
             ))}
         </ol>
         <p>Your donations have qualifies you for the following items:</p>

@@ -25,6 +25,7 @@ function App() {
           <div>
             <Carts
               setTotal={setTotal}
+              setCart={setCart}
               cart={cart}
               total={total}
               items={bonusItems}

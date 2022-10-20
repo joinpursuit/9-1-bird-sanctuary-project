@@ -49,8 +49,72 @@ body {
   border: 2px solid black;
   padding: 10px;
   margin: 20px 50px 10px 30px;
-  box-shadow: grey 10px 5px 5px;
+  box-shadow: rgb(84, 85, 85) 10px 10px 10px;
 }
+
+
+.adoptbtn{
+  align-items: center;
+  background-color: #f3b1a9;
+  border: 2px solid rgb(207, 248, 176);
+
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 15px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  margin: 0px 10px 10px 80px;
+
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.adoptbtn:after {
+  background-color: rgb(204, 247, 179);
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.adoptbtn:hover:after {
+  transform: translate(0, 0);
+}
+
+.adoptbtn:active {
+  background-color: #67f69e;
+  outline: 0;
+}
+
+.adoptbtn:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .adoptbtn {
+    padding: 0 40px;
+  }
+}
+
 
 h1 {
   color: rgb(212, 137, 137);
@@ -67,7 +131,7 @@ h2 {
   border: 2px solid rgb(0, 0, 0);
   padding: 10px;
   margin: 20px 50px 10px 30px;
-  box-shadow: grey 10px 5px 5px;
+  box-shadow: grey 10px 10px 10px;
 }
 
 .thanks {
@@ -76,7 +140,7 @@ h2 {
   border: 2px solid rgb(21, 21, 20);
   padding: 10px;
   margin: 20px 50px 10px 30px;
-  box-shadow: grey 10px 5px 5px;
+  box-shadow: grey 10px 10px 10px;
 }
 
 .runbirdy {
@@ -92,36 +156,36 @@ h2 {
   margin: -10px 30px 20px 10px;
 }
 
-.adoptbtn {
+ .deletebtn {
   align-items: center;
-  background-color: #f3b1a9;
+  background-color: #bbf28d;
   border: 2px solid #111;
-  box-shadow: grey 10px 5px 5px;
+  box-shadow: rgb(247, 179, 179) 10px 5px 5px;
   border-radius: 8px;
   box-sizing: border-box;
   color: #111;
   cursor: pointer;
   display: flex;
   font-family: Inter, sans-serif;
-  font-size: 16px;
-  height: 48px;
+  font-size: 12px;
+  height: 28px;
   justify-content: center;
   line-height: 24px;
   max-width: 100%;
   padding: 0 25px;
-  margin: 0px 10px 10px 80px;
-  text-align: center;
+margin-left: 10px;  
+text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.adoptbtn:after {
+.deletebtn:after {
   background-color: #111;
-  border-radius: 8px;
+  border-radius: 12px;
   display: block;
-  height: 48px;
+  height: 38px;
   left: 0;
   width: 100%;
   position: absolute;
@@ -131,24 +195,24 @@ h2 {
   z-index: -1;
 }
 
-.adoptbtn:hover:after {
+.deletebtn:hover:after {
   transform: translate(1, 5);
 }
 
-.adoptbtn:active {
+.deletebtn:active {
   background-color: #8a7bea;
   outline: 0;
 }
 
-.adoptbtn:hover {
+.deletebtn:hover {
   outline: 0;
 }
 
 @media (min-width: 768px) {
-  .adoptbtn {
+  .deletebtn {
     padding: 0 40px;
   }
-}
+} 
 
 .birdImg {
   padding-left: 65px;
@@ -166,5 +230,5 @@ h2 {
   margin: 30px auto;
   text-align: center;
   padding: 4px;
-  box-shadow: 5px 5px 5px 2px #96f4b7;
+  box-shadow: 5px 5px 5px 2px #6d6f6e;
 }
