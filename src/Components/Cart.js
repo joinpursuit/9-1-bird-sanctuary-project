@@ -17,6 +17,7 @@ export default function Cart ({ adoptedBirds, total, removeBird }) {
                             <>
                                 <li key={bird.id}>
                                     {bird.name}: ${bird.amount}
+                                <br/>
                                 <button onClick={() => removeBird(bird)}>Remove</button>
                                 </li>
                             </>

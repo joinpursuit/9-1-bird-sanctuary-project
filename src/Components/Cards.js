@@ -1,5 +1,4 @@
 export default function Cards ({ bird, handleClick }) {
-
 return (
     <div className="birds card" key={bird.id}>
         <h1>{bird.name}</h1>
