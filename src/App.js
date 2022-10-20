@@ -30,7 +30,6 @@ function App () {
 
   const removeBird = (bird) => {
     let newBirds = adoptedBirds.filter((each) => each.id !== bird.id)
-    console.log(newBirds)
 
     setAdoptedBirds(newBirds)
     setTotal(total - bird.amount)
