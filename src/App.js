@@ -9,7 +9,10 @@ const App = () => {
       
       <Checkout />
       <Cards />
+     
     </div>
+
+  
   );
 };
 
