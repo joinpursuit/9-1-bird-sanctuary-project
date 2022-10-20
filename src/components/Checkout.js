@@ -17,7 +17,7 @@ export default function Checkout({ birdsCart, setBirdsCart, setDiscount }) {
       setEmail("");
       setZip("");
     } else {
-      alert("Add at least a bird to the cart before submitting.");
+      alert("Please first add a bird to complete checkout.");
     }
   };
 

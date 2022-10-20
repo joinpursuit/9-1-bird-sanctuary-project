@@ -5,7 +5,6 @@ export default function Cart({
   setDiscount,
   bonusItems,
 }) {
-  // maybe make total a state variable
   let total = 0;
 
   const calcTotal = () => {
