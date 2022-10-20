@@ -5,7 +5,7 @@ export default function Cart ({ adoptedBirds, total, removeBird }) {
 
     return (
         <aside className="Cart">
-            <h2>Cart</h2>
+            <h1>Cart</h1>
             {adoptedBirds.length < 3 && <h3>Discount: 0%</h3>}
             {adoptedBirds.length >= 3 && <h3>Discount: 10%</h3>}            
             <h4>Total: ${ total }
@@ -17,8 +17,8 @@ export default function Cart ({ adoptedBirds, total, removeBird }) {
                             <>
                                 <li key={bird.id}>
                                     {bird.name}: ${bird.amount}
-                                </li>
                                 <button onClick={() => removeBird(bird)}>Remove</button>
+                                </li>
                             </>
                             )
                         })
