@@ -4,7 +4,7 @@ import React from "react";
 // import bonusItems from "./data/bonusItems"
 // import Cards from "./Components/Cards";
 import Checkout from "./Components/Checkout";
-// import Cart from "./Components/Cart"
+import Cart from "./Components/Cart"
 
 
 function App () {
@@ -24,8 +24,8 @@ function App () {
   return (
     <div className = "App">
       {/* <h1>Hello, world!</h1>
-      <Cards birdData={birdData}/>
-      <Cart /> */}
+      <Cards birdData={birdData}/>*/}
+      <Cart /> 
       <Checkout /> 
     </div>
   );

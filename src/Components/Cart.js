@@ -1,4 +1,23 @@
 
+export default function Cart(){
+
+
+let total = 0
+const discount = total * 100
+
+    return(
+        <div className="cart">
+            <h3>Cart</h3>
+            <h4>Total: ${total}</h4>
+            <h6>Discount: {discount}%</h6>
+            <p className = "donationLine">Your donations have qualified you for the following items:</p>
+        </div>
+
+
+    )
+}
+
+
 // const Cart = ({birdName, birdPrice, totalAdoptionCost}) => {
 
 // let discount
