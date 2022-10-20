@@ -13,12 +13,6 @@ import "./App.css";
 function App() {
   // State hooks
   const [adoptedBirds, setAdoptedBirds] = useState([]);
-  const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    zipcode: null,
-  });
 
   // Data variables
   const birds = [...birdData];
@@ -31,21 +25,15 @@ function App() {
     setAdoptedBirds(filteredBirds);
   };
 
+  const clearCart = () => {
+    setAdoptedBirds([]);
+  };
+
   // Helpers
   const adoptBird = (bird) => {
     if (!adoptedBirds.includes(bird)) {
       setAdoptedBirds([...adoptedBirds, bird]);
     } else alert("You have already added this bird to the cart");
-  };
-
-  const clearCart = () => {
-    setAdoptedBirds([]);
-    setUser({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zipcode: null,
-    });
   };
 
   return (
@@ -62,7 +50,7 @@ function App() {
             adoptedBirds={adoptedBirds}
             bonus={bonus}
           />
-          <Checkout user={user} clearCart={clearCart} />
+          <Checkout clearCart={clearCart} />
         </aside>
         <ul className="birds">
           {birds.map((bird) => {
