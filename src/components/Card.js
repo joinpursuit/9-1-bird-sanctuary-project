@@ -1,6 +1,6 @@
 function Card ({bird, updateCart}) {
     return (
-        <div className="card">
+        <div className="card" >
             <h2>{bird.name}</h2>
             <p>Price: ${bird.amount}</p>
             <img src={bird.img} alt="Bird"/>
