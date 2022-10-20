@@ -17,6 +17,11 @@
     margin: 0px;
 }
 
+.donationsPrompt {
+    text-shadow: 1px 1px yellow;
+    font-weight: bold;
+}
+
 .bonusItem {
     text-align: center;
     font-weight: bold;
@@ -37,4 +42,9 @@ h4 {
 
 #total {
     color: rgb(0, 197, 0);
+}
+
+#discountedPrice {
+    color: red;
+    text-decoration: line-through;
 }

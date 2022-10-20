@@ -41,6 +41,9 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
       </h4>
       <h4>
         Total:{" "}
+        <span id="discountedPrice">
+          {adoptedBirds.length >= 3 ? `$${total}` : null}{" "}
+        </span>
         <span id="total">
           ${adoptedBirds.length >= 3 ? 0.9 * total : total}
         </span>
@@ -62,7 +65,9 @@ export default function Cart({ adoptedBirds, removeBird, bonus }) {
           </li>
         ))}
       </ol>
-      <p>Your Donations have qualified you for the following items:</p>
+      <p className="donationsPrompt">
+        Your Donations have qualified you for the following items:
+      </p>
       <br></br>
       <ul>{bonusAlg(total)}</ul>
     </div>
