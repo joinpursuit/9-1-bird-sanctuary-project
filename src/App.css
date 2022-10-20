@@ -1,0 +1,75 @@
+#fullPage {
+  display: flex;
+  width: 100%;
+  margin: 0%;
+  grid-template-columns: 1fr 3fr;
+  background-image: url("")
+}
+.title{
+  display: grid;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.Cart {
+  display: grid;
+  text-align: center;
+
+  border: 1px solid black;
+  padding: 10px;
+  margin: 30px 15px 20px 20px;
+  box-shadow: grey 10px 5px 5px;
+  background-image: url("https://i.gifer.com/embedded/download/UDG7.gif")
+}
+
+.Checkout {
+  display: grid;
+  text-align: center;
+  border: 1px solid rgb(154, 154, 150);
+  padding: 10px;
+  margin: 30px 15px 20px 20px;
+  box-shadow: rgb(207, 218, 194) 10px 5px 15px;
+  /* background-image: url("https://i.imgur.com/jMIgWe2.gif") */
+
+}
+
+.thanks{
+  display: grid;
+  text-align: center;
+  border: 1px solid rgb(131, 131, 130);
+  padding: 10px;
+  margin: 30px 15px 20px 20px;
+  height: 400px;
+  box-shadow: rgb(229, 248, 216) 10px 5px 15px;
+}
+
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.birdImg {
+  padding-left: 65px;
+  padding-right: 60px;
+  padding-bottom: 20px;
+  height: 160px;
+  width: 160px;
+}
+
+.birds {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  border: 1px solid black;
+  margin: 30px auto;
+  text-align: center;
+  padding: 10px;
+  /* box-shadow: rgb(210, 240, 184) 10px 5px 5px; */
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px 10px #cfcfcd;
+}
