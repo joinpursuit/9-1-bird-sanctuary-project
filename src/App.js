@@ -51,8 +51,6 @@ function App() {
     }
   };
 
-  //******* BONUSES *******/
-
   //******** DISCOUNT *******/
 
   //   if (cartBirds.length >= 3) {

@@ -4,6 +4,8 @@ const Cart = ({ cartBirds, bonuses, setCartBirds }) => {
   // ******* CART TOTAL ********
   let cartTotal = cartBirds.reduce((total, bird) => (total += bird.amount), 0);
 
+  let [cartBonusArr, setCartBonusArr] = useState([]);
+
   //******* DELETE *******
   //Remove Bird
   const removeBird = (birdId) => {
@@ -22,25 +24,36 @@ const Cart = ({ cartBirds, bonuses, setCartBirds }) => {
   });
 
   //******* BONUSES *******/
-  const cartBonuses = (cartTotal) => {
-    console.log(typeof cartTotal);
-    // return <li>hello</li>;
-    if (cartTotal === 100) {
+  const cartBonuses = () => {
+    if (cartTotal > 99 && cartTotal < 299) {
       return <li>{bonuses[0]}</li>;
     }
-
-    // if (cartTotal > 99 && cartTotal < 299) {
-    //   return <li>{bonuses[0]}</li>;
-    // }
-    // if (cartTotal > 299 && cartTotal < 499) {
-    //   return <li>{bonuses[1]}</li>;
-    // }
-    // if (cartTotal > 499 && cartTotal < 1001) {
-    //   return <li>{bonuses[2]}</li>;
-    // }
-    // if (cartTotal >= 1000) {
-    //   return <li>{bonuses[3]}</li>;
-    // }
+    if (cartTotal > 299 && cartTotal < 499) {
+      return (
+        <>
+          <li>{bonuses[0]}</li> <li>{bonuses[1]}</li>
+        </>
+      );
+    }
+    if (cartTotal > 499 && cartTotal < 1001) {
+      return (
+        <>
+          <li>{bonuses[0]}</li>
+          <li>{bonuses[1]}</li>
+          <li>{bonuses[3]}</li>
+        </>
+      );
+    }
+    if (cartTotal >= 1000) {
+      return (
+        <>
+          <li>{bonuses[0]}</li>
+          <li>{bonuses[1]}</li>
+          <li>{bonuses[3]}</li>
+          <li>{bonuses[4]}</li>
+        </>
+      );
+    }
   };
 
   console.log(cartBonuses);
