@@ -1,0 +1,50 @@
+.Cart {
+    border: 3px solid black;
+    padding: 15px;
+}
+
+#removeBirdButton {
+    border: none;
+    padding: none;
+    margin: none;
+    font-size: 10px;
+    color: rebeccapurple
+}
+
+.cartItem {
+    font-size: 12px;
+    text-align: center;
+    margin: 0px;
+}
+
+.donationsPrompt {
+    text-shadow: 1px 1px yellow;
+    font-weight: bold;
+}
+
+.bonusItem {
+    text-align: center;
+    font-weight: bold;
+    list-style: none;
+    color: red
+}
+
+h2 {
+    font-size: 30px;
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+}
+
+h4 {
+    font-size: 19px;
+    margin: 0px;
+}
+
+#total {
+    color: rgb(0, 197, 0);
+}
+
+#discountedPrice {
+    color: red;
+    text-decoration: line-through;
+}

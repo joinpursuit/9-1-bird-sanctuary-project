@@ -1,0 +1,15 @@
+.Checkout {
+    border: 3px solid black;
+    padding: 15px;
+    margin-top: 30px
+}
+
+button {
+    display: block;
+    margin: auto;
+}
+
+input { 
+    font-size: 15px;
+    width: 200px;
+}

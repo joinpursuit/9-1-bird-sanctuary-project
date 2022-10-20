@@ -1,0 +1,57 @@
+.card {
+    list-style: none;
+    border: 3px solid black;
+    /* border-radius: 40px; */
+    box-shadow: 15px 15px 12px rgba(32, 32, 32, 0.667);
+    height: 250px;
+    width: 175px;
+    margin: 0;
+}
+
+.birdImg {
+    display: block;
+    margin: auto;
+    width: 55%;
+    height: 88%;
+    border: 3px solid red;
+    border-radius: 20px;
+}
+
+.birdImageContainer {
+    height: 40%;
+}
+
+.adoptButtonContainer {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+} 
+
+.adoptButtonContainer button {
+    color: black;
+    border: none;
+    background-color: rgba(211, 211, 211, 0.762);
+}
+
+p {
+    font-family: monospace;
+    height: 12.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.cost {
+    font-size:15px;
+    font-weight: bold;
+    color: red;
+}
+
+.birdName {
+    font-size: 12px;
+    padding-bottom: 0px;
+    border-bottom: 3px solid red;
+    background-color: rgb(255, 182, 182);
+}

@@ -51,7 +51,7 @@ Here is a video of what your app could look like with no CSS:&nbsp;
 1. I can see a total cost of the birds in my cart (5pts)
 1. I can see 0% discount listed as text when I have less than 3 birds in my cart (5pts)
 1. I can see 10% discount listed as text when I have 3 or more birds in my cart (5pts)
-1. I can see a series of bonuses based on the totlas of items I have in my cart (see Cart Bonuses Section Below) (10pts)
+1. I can see a series of bonuses based on the number of items I have in my cart (10pts)
 1. I can use a checkout form with a first name, last name, email and zip code to submit my purchase (10pts)
 1. I can see an alert for successful purchase when I submit a purchase (5pts)
 1. I can see my cart fully reset when I submit my purchase from my form (10pts)
