@@ -1,0 +1,37 @@
+DECONSTRUCTING OBJECTS
+Const userDetails ={
+    name: "Carry Jones",
+    id: 55667,
+    email: "carry.jones@gmail.com,
+};
+
+//convert keys into variables on the left of the equation 
+
+//Now you can use them as props in a component
+<Customer name={name} id={id} email={email}     />
+
+//React Component inside of a map function
+
+//The map function is used to place each product item into an array.  The array is returned in an unordered list (<ul></ul>)
+
+const listItems = products.map(product => {
+    return (
+        <ProductItem
+            name= {product.name}
+            price= {product.price}
+        />
+    )
+})
+return (
+    <div>
+        <ul> {listItems} <ul>
+    </div>
+)
+
+****INTERVIEW QUESTIONS*****
+
+declarative - you just say map through this array but you don't tell the machine how to do item
+JSX won't allow loops - imperative functions.  Declarative functions like Map, Find are allowed - because they return something - map and "for of loop" returns an array
+
+
+imperative - using for of array where you include instructions to tell the machine what to do
