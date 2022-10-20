@@ -26,7 +26,7 @@ function Cards({ birdData, total, setTotal, cart, setCart}) {
           <h4>{bird.name}</h4>
           <p>Price:${bird.amount}</p>
           <img className="birdImg" src={bird.img} alt={bird.name} />
-          <button onClick={() => handleClick(bird, cart)}>Adopt</button>
+          <button className="adoptbtn" onClick={() => handleClick(bird, cart)}>Adopt</button>
         </div>
       ))}
     </div>
