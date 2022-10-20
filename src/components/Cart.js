@@ -22,7 +22,7 @@ function Cart({cart, removeBird, bonusItems}) {
             <ol>
             {cart.map((bird) => {      
                     return (
-                    <><li>{bird.name}: ${bird.amount}</li><button onClick={() => removeBird(bird)}>Remove</button></>
+                    <li key={bird.id}>{bird.name}: ${bird.amount} <button onClick={() => removeBird(bird)}>Remove</button></li>
                     )
                 })}
             </ol>
