@@ -29,11 +29,13 @@ function Cart({ bonusItems, discount, cart, setCart }) {
       </li>
     );
   });
+
   return (
     <div className="CartComp">
       <h2>Cart</h2>
-      <h4>Total: ${cartTotal}</h4>
+      <h4>Total: ${cart.length < 3 ? cartTotal : cartTotal * 0.9}</h4>
       <span>Discount: {cart.length < 3 ? discount : (discount = 10)}%</span>
+      {/* <h4>Total: ${cart.length < 3 ? total : total * 0.9}</h4> */}
       <ol>{checkoutBirds}</ol>
       <span>Your donations have qualifed you for the following items:</span>
       <ul>
