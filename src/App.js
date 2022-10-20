@@ -17,7 +17,11 @@ function App () {
   
 
   function updateCart (bird) {
+    if (cart.includes(bird)) {
+      alert("You have already added this bird to the cart")
+    } else {
     setCart([...cart,bird])
+    }
   }
 
   function removeBird (bird) {
@@ -25,17 +29,31 @@ function App () {
     setCart(filteredCart)
   }
 
-  const handleSubmit = event => {
+  function handleSubmit (event) {
     event.preventDefault();
-    setSubmitInput("")
+    setSubmitInput(
+      {
+        firstName: "",
+        lastName: "",
+        email: "",
+        zipCode: ""
+      }
+    )
+    setCart([])
     alert("You have adopted birds. Thank you!")
   };
-  
 
+  function handleTextChange(event) {
+    setSubmitInput({
+      ...submitInput,
+      [event.target.id]: event.target.value
+    })
+  }
+  
   return (
     <div>
-      <Cart cart={cart} bonusItems={bonusItems} removeBird={removeBird}/>
-      <Checkout handleSubmit={handleSubmit} submitInput={submitInput}/>
+      <Cart cart={cart} bonusItems={bonusItems} removeBird={removeBird} />
+      <Checkout handleSubmit={handleSubmit} submitInput={submitInput} handleTextChange={handleTextChange}/>
       <Cards birds={birdData} updateCart={updateCart} />
     </div>
   );

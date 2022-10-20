@@ -1,6 +1,4 @@
-
-
-function Cart({cart, removeBird}) {
+function Cart({cart, removeBird, bonusItems}) {
     
    function cartSum(cartItems) {
     let cartTotal = 0
@@ -22,15 +20,21 @@ function Cart({cart, removeBird}) {
             <h2>Cart</h2>
             <h4>Total: ${cartSum(cart)}</h4>
             <ol>
-            {cart.map((prop) => {      
+            {cart.map((bird) => {      
                     return (
-                    <><ol>{prop.name}: ${prop.amount}</ol><button onClick={() => removeBird(prop)}>Remove</button></>
+                    <><li>{bird.name}: ${bird.amount}</li><button onClick={() => removeBird(bird)}>Remove</button></>
                     )
                 })}
             </ol>
                 
             <p>Discount: {discount}%</p>
             <p>Your donations have qualified you for the following items:</p>
+            <ul>
+                {cartSum(cart) >= 100 ? <li>{bonusItems[0]}</li> : null}  
+                {cartSum(cart) >= 300 ? <li>{bonusItems[1]}</li> : null}
+                {cartSum(cart) >= 500 ? <li>{bonusItems[2]}</li> : null}
+                {cartSum(cart) >= 1000 ? <li>{bonusItems[3]}</li> : null}
+            </ul>
         </div>
     )
 }
