@@ -27,7 +27,6 @@ function Checkout({ setCart }) {
           onChange={(a) => setFirst(a.target.value)}
           type="text"
           placeholder="First Name"
-          // id="first"
           value={first}
         ></input>
         <label htmlFor="lastName">Last Name</label>
@@ -35,7 +34,6 @@ function Checkout({ setCart }) {
           onChange={(e) => setLast(e.target.value)}
           type="text"
           placeholder="Last Name"
-          // id="last"
           value={last}
         ></input>
         <label htmlFor="email">Email</label>
@@ -43,13 +41,11 @@ function Checkout({ setCart }) {
           onChange={(i) => setEmail(i.target.value)}
           type="text"
           placeholder="Email"
-          // id="email"
           value={email}
         ></input>
         <label htmlFor="zipCode">Zip Code</label>
         <input
           type="number"
-          // id="zipCode"
           placeholder="Zip Code"
           value={zipCode}
           onChange={(o) => setZipCode(o.target.value)}
