@@ -4,8 +4,6 @@ const Cart = ({ cartBirds, bonuses, setCartBirds }) => {
   // ******* CART TOTAL ********
   let cartTotal = cartBirds.reduce((total, bird) => (total += bird.amount), 0);
 
-  let [cartBonusArr, setCartBonusArr] = useState([]);
-
   //******* DELETE *******
   //Remove Bird
   const removeBird = (birdId) => {
@@ -56,13 +54,17 @@ const Cart = ({ cartBirds, bonuses, setCartBirds }) => {
     }
   };
 
-  console.log(cartBonuses);
+  console.log(cartBirds.length);
+  console.log(cartTotal);
+
+  //******* DISCOUNT *******/
+
   //********** RETURN *******/
   return (
     <div className="Cart">
       <h2>Cart</h2>
-      <h4>Total: ${cartTotal}</h4>
-      <span>Discount: 0%</span>
+      <h4>Total: ${cartBirds.length >= 3 ? cartTotal * 0.9 : cartTotal}</h4>
+      <span>Discount: {cartBirds.length < 3 ? "0%" : "10%"} </span>
       <ol>{liBirds}</ol>
       <p>Your donations have qualified you for the following</p>
       <ul>{cartBonuses()}</ul>
