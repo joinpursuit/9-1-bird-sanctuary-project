@@ -7,46 +7,41 @@ import { useState } from "react"
 
 function App() {
   const [birds, setBirds] = useState(birdData)
-  // const [carts, setCart] = useState([])
-  // console.log(carts)
-  // console.log(birds)
+  const [birdCart, setbirdsCart] = useState([])
+  const [cartSum, setCartSum] = useState(0)
 
-  function handleaddBirds(bird) {
-    setBirds([bird, ...birds])
+  function addbirdstoCart(bird) {
+    setCartSum(bird.amount + cartSum)
+
+    setbirdsCart((previous) => {
+      return [...previous, bird]
+    })
   }
 
-  function removeBird(birdsId) {
-    const birdToRemove = birds.filter((bird) => bird.id !== birds.id)
-    setBirds(birdToRemove)
-    if (birdToRemove === -1) {
-      return
-    } else {
-      return [...birds.slice(0, birdToRemove), ...birds.slice(birdToRemove + 1)]
-    }
-  }
-
-  const cartSum = birds.reduce((acc, { currVal = 0 }) => {
-    return acc + currVal
-  }, 0)
+  // function removeBird(birdsId) {
+  //   const birdToRemove = birds.filter((bird) => bird.id !== birds.id)
+  //   setBirds(birdToRemove)
+  //   if (birdToRemove === -1) {
+  //     return
+  //   } else {
+  //     return [...birds.slice(0, birdToRemove), ...birds.slice(birdToRemove + 1)]
+  //   }
+  // }
 
   return (
     <div>
       <h1>Bird Sanctuary!</h1>
       <div className="Carts">
-        <Cart
-          cartSum={cartSum}
-          removeBird={removeBird}
-          handleaddBirds={handleaddBirds}
-        />
+        <Cart cartSum={cartSum} birdCart={birdCart} />
       </div>
       <div className="Checkouts">
-        <Checkout removeBird={removeBird} />
+        <Checkout />
       </div>
       <ul>
         {birds.map((bird) => {
           return (
             <div key={bird.id}>
-              <Cards handleaddBirds={handleaddBirds} bird={bird} />
+              <Cards bird={bird} addbirdstoCart={addbirdstoCart} />
             </div>
           )
         })}
