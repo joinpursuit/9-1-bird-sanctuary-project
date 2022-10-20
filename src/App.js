@@ -10,6 +10,15 @@ function App () {
   const [adoptedBirds, setAdoptedBirds] = useState([])
   const [total, setTotal] = useState(0)
 
+  const [user, setUser] = useState(
+    {
+        first: "",
+        last: "",
+        email: "",
+        zip: ""
+    }
+)
+
   const handleClick = (bird) => {
     if (adoptedBirds.includes(bird)){
       return alert('You have already added this bird to the cart')
@@ -39,6 +48,8 @@ function App () {
         <Checkout 
           setAdoptedBirds={setAdoptedBirds}
           setTotal={setTotal}
+          user={user}
+          setUser={setUser}
         />
       </aside>
       <section className='Cards'>
