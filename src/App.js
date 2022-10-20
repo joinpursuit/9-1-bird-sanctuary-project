@@ -43,25 +43,22 @@ function App() {
 
   //********** CART TOTAL ********/
 
-  let cartTotal = cartBirds.reduce((total, bird) => (total += bird.amount), 0);
-
   const addBird = (bird) => {
     if (cartBirds.includes(bird)) {
       alert("You already have this bird");
     } else {
       setCartBirds([...cartBirds, bird]);
     }
-
-    // if (cartTotal === 100 && cartTotal < 299) {
-
-    // }
-
-    //******* BONUSES *******/
-
-    if (cartBirds.length >= 3) {
-      cartTotal -= cartTotal * 0.1;
-    }
   };
+
+  //******* BONUSES *******/
+
+  //******** DISCOUNT *******/
+
+  //   if (cartBirds.length >= 3) {
+  //     cartTotal -= cartTotal * 0.1;
+  //   }
+  // };
 
   //********** RETURN **********/
 
@@ -70,7 +67,7 @@ function App() {
       <Cart
         bonuses={bonusItems}
         cartBirds={cartBirds}
-        cartTotal={cartTotal}
+        // cartTotal={cartTotal}
         setCartBirds={setCartBirds}
       />
       <Checkout
