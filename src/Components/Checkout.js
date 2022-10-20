@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Checkout = () => {
-
     const [checkoutInfo, setCheckoutInfo] = useState({
         firstName: "",
         lastName: "",
@@ -13,22 +12,16 @@ const Checkout = () => {
       setCheckoutInfo({...checkoutInfo, [e.target.id]: e.target.value})
     }
 
-  
     function handleCheckout(e) {
-    //  e.preventDefault()
-      // setCheckoutInfo(checkoutInfo)
-      // setBirdsInCart(birdsInCart)
-
       alert('Purchase was successful!')
     }
 
     return (
-        <div className="form-container">
+        <div className="Checkout" style={{border: "dashed", borderColor: "green", padding: "20px", margin: "20px"}}>
         <form onSubmit={handleCheckout}>
           <div>
             <h3>Checkout</h3>
           </div>
-
           <div>
             <label htmlFor="firstName">First Name:
             <br></br>
@@ -54,7 +47,6 @@ const Checkout = () => {
             />
             </label>
           </div>
-
           <div>
             <label htmlFor='email'>Email:
             <br></br>
@@ -67,7 +59,6 @@ const Checkout = () => {
             />
             </label>
           </div>
-
           <div>
             <label htmlFor='zipcode'>Zip Code:
             <br></br>
@@ -80,7 +71,6 @@ const Checkout = () => {
             />
             </label>
           </div>
-
           <div>
             <input type="submit"></input>
           </div>

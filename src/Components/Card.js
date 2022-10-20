@@ -1,60 +1,24 @@
 import React from 'react';
-import {useState} from "react";
-import birdData from "../data/birds";
 
-const Card = ({birdData}) => {
-    const [total, setTotal] = useState(0)
-    const [discount, setDiscount] = useState(0)
-    const [birdsInCart, setBirdsInCart] = useState([]);
-
-    function handleSubmit(data) {
-        console.log(birdsInCart)
-        const discountPrice = 10
-        const name = data.name;
-        const amount = data.amount;
-        const id = data.id
-        if(!birdsInCart.find(e => e.name === name || e.amount === amount)) {
-            birdsInCart.push({name, amount, id});
-        } else {
-            alert('You have already added this bird to the cart')
-        }
-
-        setBirdsInCart(birdsInCart)
-        setTotal(total + amount)
-
-        if (birdsInCart.length === 3) {
-            setDiscount(discount + discountPrice)
-        }
-    }
-
-    const birdCart = birdsInCart.map((element) => <li key={element.id}>{element.name}</li>)
-
-    const bird = birdData.map((data) => {
-        // console.log(data)
+const Card = ({birdData, handleSubmit}) => {
+    const birds = birdData.map((data) => {
         return (
-            <div className='container' style={{display:"flex", margin: "30px", padding: "10px 10px", justifyContent: "space-evenly"}}>
-                <div className="card" style={{boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)", margin: "8px"}}>
-                    <h3>{data.name}</h3>
-                    <p>{data.amount}</p>
-                    <img className="photo" src={data.img} key={data.id} style={{width:"100%"}} />
-                    <button onClick={()=>{handleSubmit(data)}}>Adopt!</button>
+                <div className="cards" style={{boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)", margin: "8px", padding: "20px", borderRadius: "8px"}}>
+                    <div className='birds'>
+                        <h3>{data.name}</h3>
+                        <p>Price: ${data.amount}</p>
+                        <img className="photo" src={data.img} alt="" style={{height: "140px", width:"140px"}} />
+                        <button onClick={()=>{handleSubmit(data)}}>Adopt!</button>
+                    </div>
                 </div>
-            </div>
+            
         )
     })
 
     return (
-        <div>
-            <div>
-            <h2>Cart</h2>
-            <p>Total: ${total}</p>
-
-            <ol>{birdCart}</ol>
-           
-            <p>Discount: {discount}%</p>
-            {/* {birds} */}
+        <div className='container' style={{display:"grid", gap: '20px', gridTemplateColumns: 'auto auto auto', justifyContent: "space-evenly"}}>
+            {birds}
         </div>
-        {bird}</div>
     )
 
 };
