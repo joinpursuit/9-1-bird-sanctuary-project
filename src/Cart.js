@@ -24,7 +24,7 @@ export default function Cart({ cart, discount, bonusItems, removeBird }) {
   return (
     <div className="Cart">
       <h2>Cart</h2>
-      <h4>Total: ${total}</h4>
+      <h4>Total: ${cart.length < 3 ? total : total * 0.9}</h4>
       <span>Discount: {cart.length < 3 ? discount : (discount = 10)}%</span>
       <ol>{checkoutInfo}</ol>
       <span>Your donations have qualified you for the following item(s):</span>
