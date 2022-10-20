@@ -1,0 +1,23 @@
+.fullDiv {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: bisque;
+}
+
+.Cart {
+  border: 1px solid black;
+  margin: 30px 10px 0px 20px;
+  padding: 10px;
+  text-align: center;
+  border: 10px;
+  background-color: greenyellow;
+  box-shadow: lightsteelblue 10px 2px 2px;
+}
+.Checkout {
+  border: 1px solid black;
+  margin: 30px 10px 0px 20px;
+  padding: 10px;
+  text-align: center;
+  border: 10px;
+  box-shadow: lightseagreen 10px 5px 5px;
+}
