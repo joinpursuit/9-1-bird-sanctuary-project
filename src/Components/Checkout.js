@@ -27,22 +27,22 @@ return (
         <h1>Checkout</h1>
         <label htmlFor="first">First Name
         <br/>
-        <input type="text" name="first" onChange={handleTextChange} required/>
+        <input type="text" name="first" value={user.first} onChange={handleTextChange} required/>
         </label>
 
         <label htmlFor="last">Last Name
         <br/>
-        <input type="text" name="last" onChange={handleTextChange} required/>
+        <input type="text" name="last" value={user.last} onChange={handleTextChange} required/>
         </label>
 
         <label htmlFor="email">Email
         <br/>
-        <input type="text" name="email" onChange={handleTextChange} required />        
+        <input type="text" name="email" value={user.email} onChange={handleTextChange} required />        
         </label>
 
         <label htmlFor="zip">Zip Code
         <br/>
-        <input type="text" name="zip" onChange={handleTextChange} required />        
+        <input type="text" name="zip" value={user.zip} onChange={handleTextChange} required />        
         </label>
 
         <input type="submit" onClick={handleSubmit} id="submit"></input>
