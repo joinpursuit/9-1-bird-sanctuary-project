@@ -1,6 +1,10 @@
+import { useState } from "react";
 import "./BirdCard.css";
 
 export default function BirdCard({ bird, adoptBird }) {
+  const [buttonColor, setButtonColor] = useState("lightgray");
+  // const [nameColor, setNameColor] = useState("");
+
   return (
     <li className="card">
       <p className="birdName">
@@ -15,6 +19,13 @@ export default function BirdCard({ bird, adoptBird }) {
           onClick={() => {
             adoptBird(bird);
           }}
+          onMouseOver={() => {
+            setButtonColor("");
+          }}
+          onMouseOut={() => {
+            setButtonColor("lightgray");
+          }}
+          style={{ backgroundColor: buttonColor }}
           className="adoptButton"
         >
           Adopt
