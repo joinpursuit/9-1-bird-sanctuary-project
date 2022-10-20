@@ -1,0 +1,9 @@
+form button {
+  background: rgb(96, 96, 150);
+  color: aliceblue;
+}
+
+form button:hover {
+  background: aliceblue;
+  color: rgb(96, 96, 150);
+}

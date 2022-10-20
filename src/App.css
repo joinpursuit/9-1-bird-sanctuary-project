@@ -1,0 +1,31 @@
+.app {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: lavender;
+}
+.title {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.title h1 {
+  background: -webkit-linear-gradient(rgb(252, 89, 252), #050d25);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cart {
+  border: none;
+  padding: 20px;
+  margin: 30px 0px 0px 20px;
+  background: rgb(203, 203, 249);
+  box-shadow: rgb(127, 127, 177) 5px 8px 5px, rgb(127, 127, 177) -1px -2px 3px;
+}
+
+.checkout {
+  border: none;
+  padding: 10px;
+  margin: 40px 0px 0px 20px;
+  background: rgb(203, 203, 249);
+  box-shadow: rgb(127, 127, 177) 5px 8px 5px, rgb(127, 127, 177) -1px -2px 3px;
+}

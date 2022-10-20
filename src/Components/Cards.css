@@ -1,0 +1,49 @@
+.birds {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.birds div {
+  width: 300px;
+  height: auto;
+  border: none;
+  margin: 30px auto;
+  text-align: center;
+  padding: 5px;
+  background: linear-gradient(120deg, rgb(253, 175, 188), rgb(252, 89, 252));
+  box-shadow: rgb(68, 1, 68) 10px 8px 8px, rgb(68, 1, 68) -1px -1px 5px;
+}
+
+img {
+  height: 160px;
+  width: 160px;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+img:hover {
+  animation: fadeIn 1s;
+  width: 180px;
+  height: 180px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  background: purple;
+  color: aliceblue;
+  border: none;
+}
+
+button:hover {
+  background: aliceblue;
+  color: purple;
+}
