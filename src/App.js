@@ -1,7 +1,9 @@
+import Checkout from "./Checkout"
+
 function App () {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <Checkout />
     </div>
   );
 };
