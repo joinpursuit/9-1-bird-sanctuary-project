@@ -9,12 +9,14 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
-#navBar h1{
+
+#navBar h1 {
   padding: 20px;
   margin-bottom: 0px;
   border: 2px solid rgb(199, 155, 155);
   box-shadow: rgb(29, 135, 91) 10px 10px 10px;
 }
+
 .navimg {
   margin-left: 10px;
   margin-right: 0px;
@@ -26,12 +28,6 @@
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 3fr;
-  /* background: rgb(254, 203, 203);
-  background: radial-gradient(
-    circle,
-    rgba(254, 203, 203, 1) 0%,
-    rgba(194, 255, 208, 1) 100%
-  ); */
 }
 
 body {
@@ -39,8 +35,8 @@ body {
   background: rgb(254, 203, 203);
   background: radial-gradient(
     circle,
-    rgba(254, 203, 203, 1) 0%,
-    rgba(194, 255, 208, 1) 100%
+    rgb(239, 162, 162) 0%,
+    rgb(189, 238, 200) 100%
   );
 }
 
@@ -48,22 +44,20 @@ body {
   display: grid;
   border: 2px solid black;
   padding: 10px;
-  margin: 20px 50px 10px 30px;
+  margin: 20px 40px 10px 20px;
   box-shadow: rgb(84, 85, 85) 10px 10px 10px;
 }
 
-
-.adoptbtn{
+.adoptbtn {
   align-items: center;
-  background-color: #f3b1a9;
-  border: 2px solid rgb(207, 248, 176);
-
+  background-color: #f8a4a4;
+  border: 3px solid #bbf28d;
   border-radius: 8px;
   box-sizing: border-box;
   color: rgb(0, 0, 0);
   cursor: pointer;
   display: flex;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 15px;
   height: 48px;
   justify-content: center;
@@ -71,7 +65,7 @@ body {
   max-width: 100%;
   padding: 0 25px;
   position: relative;
-  margin: 0px 10px 10px 80px;
+  margin: 0px 10px 20px 80px;
 
   text-align: center;
   text-decoration: none;
@@ -92,7 +86,7 @@ body {
   position: absolute;
   top: -2px;
   transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
+  transition: transform 0.2s ease-out;
   z-index: -1;
 }
 
@@ -130,8 +124,9 @@ h2 {
   display: grid;
   border: 2px solid rgb(0, 0, 0);
   padding: 10px;
-  margin: 20px 50px 10px 30px;
+  margin: 20px 40px 10px 20px;
   box-shadow: grey 10px 10px 10px;
+  justify-content: center;
 }
 
 .thanks {
@@ -139,7 +134,7 @@ h2 {
   text-align: center;
   border: 2px solid rgb(21, 21, 20);
   padding: 10px;
-  margin: 20px 50px 10px 30px;
+  margin: 20px 40px 10px 20px;
   box-shadow: grey 10px 10px 10px;
 }
 
@@ -153,10 +148,12 @@ h2 {
   justify-content: center;
   text-align: center;
   width: auto;
-  margin: -10px 30px 20px 10px;
+  margin: 0px 30px 20px -15px;
 }
 
- .deletebtn {
+/* delete button */
+
+.deletebtn {
   align-items: center;
   background-color: #bbf28d;
   border: 2px solid #111;
@@ -171,10 +168,12 @@ h2 {
   height: 28px;
   justify-content: center;
   line-height: 24px;
+  position: relative;
+
   max-width: 100%;
   padding: 0 25px;
-margin-left: 10px;  
-text-align: center;
+  margin-left: 10px;
+  text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -184,6 +183,7 @@ text-align: center;
 .deletebtn:after {
   background-color: #111;
   border-radius: 12px;
+
   display: block;
   height: 38px;
   left: 0;
@@ -212,7 +212,8 @@ text-align: center;
   .deletebtn {
     padding: 0 40px;
   }
-} 
+}
+/* deletebtn */
 
 .birdImg {
   padding-left: 65px;
@@ -227,8 +228,53 @@ text-align: center;
   width: 300px;
   height: auto;
   border: 2px solid black;
-  margin: 30px auto;
+  margin: 20px 5px 15px 17px;
   text-align: center;
-  padding: 4px;
+  padding: 5px;
   box-shadow: 5px 5px 5px 2px #6d6f6e;
 }
+
+/* submit button */
+.submitbtn {
+  appearance: none;
+  background-color: #befbdc;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #fba1a1 0 -15px 9px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 5px 50px 10px 50px;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.submitbtn:hover {
+  background-color: #fc8f8f;
+  box-shadow: #9dedbb 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.submitbtn:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .submitbtn {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+

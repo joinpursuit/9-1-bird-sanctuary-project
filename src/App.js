@@ -9,6 +9,7 @@ import bonusItems from "./data/bonusItems";
 function App() {
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState([]);
+
   return (
   
     <div>

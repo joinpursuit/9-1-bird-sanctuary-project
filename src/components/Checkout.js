@@ -12,6 +12,7 @@ function Checkout() {
     e.preventDefault();
   };
 
+
   return (
     <div className="Checkout">
       <h1>Checkout</h1>
@@ -52,6 +53,7 @@ function Checkout() {
         />
       </form>
       <input
+      className="submitbtn"
         value="Submit"
         type={"submit"}
         onClick={() => {

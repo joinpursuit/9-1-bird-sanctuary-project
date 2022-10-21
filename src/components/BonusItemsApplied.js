@@ -29,7 +29,7 @@ function BonusItemsApplied({ total, bonusItems, setBonusItems}) {
   return (
     <ul className='bonus'>
       {bonusItems.map((item) => (
-        <li>
+        <li key={item.id}>
           {item}
         </li>
       ))}

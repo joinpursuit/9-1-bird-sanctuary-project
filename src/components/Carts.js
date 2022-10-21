@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import birdData from '../data/birds';
 import BonusItemsApplied from './BonusItemsApplied';
 
-function Carts({total, cart, setCart}) {
+function Carts({total, cart, setCart, setTotal,birdData}) {
   // using ternary 
   const realTotal = cart.length >= 3 ? total* .9 : total;
   const realPerct = cart.length >= 3 ? 10 : 0;
@@ -23,7 +24,8 @@ function Carts({total, cart, setCart}) {
                 <span>
                 {birdClicked.name}: ${birdClicked.amount}
                 </span>
-                <button className='deletebtn' type='submit' onClick={() =>removeBird(birdClicked.id)}>Delete</button>
+                <button className='deletebtn' type='submit' onClick={() =>
+                   removeBird(birdClicked.id)}>Delete</button>
               </li>
               
             ))}
