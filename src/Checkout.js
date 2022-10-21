@@ -8,14 +8,18 @@ export default function Checkout() {
     const [email, setEmail] = useState();
     const [zipCode, setZipCode] = useState();
 
+    // Using useState to later set the state as an empty string in order to make the form reset later.
+
     const submitAlert = (e) => {
-        e.preventDefault()
+        e.preventDefault() // Prevents page from refreshing upon submit.
         alert("You have adopted birds. Thank you!")
-        setFirstName('')
-        setLastName('')
-        setEmail('')
-        setZipCode('')
+        setFirstName('') // Sets firstName's initial state to an empty string.
+        setLastName('') // Sets lastName's initial state to an empty string.
+        setEmail('') // Sets email's initial state to an empty string.
+        setZipCode('') // Sets zipCode's initial state to an empty string.
     }
+
+    // The above is the initial state that the form will revert to once the form is submitted successfully. 
 
     return (
         <div className="Checkout">
