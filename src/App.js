@@ -29,6 +29,8 @@ function App () {
           console.log(x)
           setDiscount(10)
           setTotalCart(x - (x * (.10)))
+          localStorage.setItem('noDisc', JSON.stringify(x));
+
         }else {setTotalCart(x)
         console.log("x:" ,x)}
       } 
@@ -43,7 +45,9 @@ function App () {
           setUserCart(deleted)
           if(deleted.length<3){
             setDiscount(0)
-          // setTotalCart(totalCart + (bird.amount*.10))
+            const basic = JSON.parse(localStorage.getItem('noDisc'));
+            console.log("price without disc", basic)
+          setTotalCart(basic - (bird.amount))
           }
     }
   return (
