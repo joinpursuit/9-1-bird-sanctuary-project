@@ -7,12 +7,13 @@ import Checkout from "./Checkout";
 
 function App () {
  
+  const [cart, setCart] =useState([])
 
   return (
     <div>
-      <Cart Cart={Cart}/>
-      <Checkout Checkout={Checkout}/>
-      <Cards data={data}/>
+      <Cart cart={cart}/>
+      <Checkout/>
+      <Cards data={data} setCart={setCart} cart={cart}/>
     </div>
   );
 };

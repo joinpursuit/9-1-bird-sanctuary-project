@@ -3,61 +3,86 @@ import { useState } from "react";
 
 
 
-function Checkout({setResult}) {
+function Checkout({cart}) {
 
     // start with input 
     // Declare a state for an input which will hold the value 
     // setUserInput to alter it 
     // useState is storing the intial value which is a empty string
-    const [userInput, setUserInput]= useState("")
-    const [firstName, setFirstName]= useState("")
-    const [lastName, setLastName]= useState("")
-    const [email,setEmail]=useState("")
-    const [zipCode, setZipCode]= useState("")
+
+    const [userInput, setUserInput]= useState({
+        firstName:"",
+        lastName:"",
+        email:"",
+        zipCode:"",
+        })
 
     // Create a function to have the userinput(string) convert it into an array of numbers so we are going to have to use the 
     
+    function handleChange (e){
+        setUserInput({
+            ...userInput,
+            [e.target.id]: e.target.value
+        })
+    }
     
-    
+      
+
     function handleSubmit (e){
-        const ol = document.createElement("ol");
-        ol.textContent = e.target.todo.value
-        ol.classList.add("list")
-        ol.append();
         e.preventDefault()
+       
+        setUserInput({
+        firstName:"",
+        lastName:"",
+        email:"",
+        zipCode:"",
+       })
+       
+       alert("You have adopted birds. Thank you!")
+       
       }
     
     
       return (
         <div>
             <h2>Checkout</h2>
-            <form onSubmit={(event)=> {handleSubmit(event)}}>
+            <form onSubmit={handleSubmit}>
                 <label>First Name</label>
                 <input 
                 name="fName" 
+                id="firstName"
                 type="text" 
-                value={firstName}
-                onChange ={(e)=>{setFirstName(e.target.value)}}/>
+                value={userInput.firstName}
+                onChange ={handleChange}/>
+               
+               
                 <label>Last Name</label>
                 <input 
                 name="lName" 
+                id="lastName"
                 type="text" 
-                value={lastName}
-                onChange ={(e)=>{setLastName(e.target.value)}}/>
+                value={userInput.lastName}
+                onChange ={handleChange}/>
+               
+               
                 <label>Email</label>
                 <input 
                 name="email" 
                 type="text" 
-                value={email}
-                onChange ={(e)=>{setEmail(e.target.value)}}/>
+                id='email'
+                value={userInput.email}
+                onChange ={handleChange}/>
+               
+               
                 <label>Zip Code</label>
                 <input 
                 name="zipCode" 
                 type="text" 
-                value={zipCode}
-                onChange ={(e)=>{setZipCode(e.target.value)}}/>
+                id='zipCode'
+                value={userInput.zipCode}
+                onChange ={handleChange}/>
                 
-                <button type="submit">submit</button>
+                <button>submit</button>
             </form>
         </div>
     );
