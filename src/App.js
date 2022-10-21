@@ -2,7 +2,7 @@
 import birdData from "./data/birds";
 import Cards from "./Cards"
 import Checkout from "./Checkout"
-import Cart from "./Cart"
+
 
 
 function App () {
@@ -25,8 +25,7 @@ return(
      <Checkout />
      <Cards 
      birds={bird}/>
-     
-   <Cart/>
+   
 </div>
 
  
