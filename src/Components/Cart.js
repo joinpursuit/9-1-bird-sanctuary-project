@@ -1,6 +1,6 @@
 import React from "react"
 import bonusItems from "../data/bonusItems"
-//import { v1 as generateUniqueID } from "uuid";
+import { v1 as generateUniqueID } from "uuid";
 
 export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
 
@@ -24,24 +24,34 @@ export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
     
     if(total >= 100 && total <= 299){
         bonus.push(bonusList[0])
-        id = "aejhdi555"
+        // id = "aejhdi555"
+        // id = Math.floor(Math.random() * 108)
+        id = "erkhfgl"
+
+    
 
     } else if (total >=300 && total <500){
+        bonus = []
         bonus.push(bonusList[0], bonusList[1])
         id = "aejhd777"
 
     } else if (total >=500 && total < 1000){
+        bonus = []
         bonus.push(bonusList[0], bonusList[1], bonusList[2])
         id = "aejhdi333"
 
     } else if( total >= 1000){
+        bonus = []
         bonus.push(bonusList[0], bonusList[1], bonusList[2], bonusList[3])
         id = "aejhdi999"
+        
     } 
     
     function removeBird(birdID) {
         const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
         setAdoptedBirds(filteredBirds)
+        let thisLi = document.querySelector(".bonus-rewards")
+        thisLi.remove()
       }
 
 

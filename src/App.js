@@ -15,8 +15,18 @@ function App () {
   
   function addBird (bird){
     console.log("bird= ",bird)
-    setAdoptedBirds([...adoptedBirds, bird])
-  }
+    if(adoptedBirds.find((birdy) => birdy.id === bird.id )){
+      alert("You already adopted this bird. You can only adopt a bird once.")
+    } else {
+    setAdoptedBirds([...adoptedBirds, bird])}
+    }
+  
+
+
+  // function addBird (bird){
+  //   console.log("bird= ",bird)
+  //   setAdoptedBirds([...adoptedBirds, bird])
+  // }
 
   
 //   const bonusShell1 = document.querySelector(".p-hidden")
@@ -50,8 +60,7 @@ function App () {
              adoptedBirds={adoptedBirds}
              setAdoptedBirds = {setAdoptedBirds} /> 
       <Checkout 
-              setAdoptedBirds = {setAdoptedBirds}
-      /> 
+              setAdoptedBirds = {setAdoptedBirds} /> 
     </div>
       <Cards birdData={birdData} 
              addBird={addBird} />

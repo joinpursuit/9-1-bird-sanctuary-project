@@ -27,25 +27,25 @@ export default function Checkout({setAdoptedBirds}) {
    const handleChangeFirstName = (e) => {
       e.preventDefault()
     //console.log("first name input - target value = ", e)
-    setFirstName(e.target.id)
+    setFirstName(e.target.value)
     }
 
     const handleChangeLastName = (e) => {
       e.preventDefault()
     //console.log("Last name input - target value = ", e)
-      setLastName(e.target.id)
+      setLastName(e.target.value)
     }
 
     const handleChangeEmail = (e) => {
       e.preventDefault()
     //console.log("email input - target value = ", e)
-      setEmail(e.target.id)
+      setEmail(e.target.value)
     }
 
     const handleChangeZipCode = (e) => {
       e.preventDefault()
     //console.log("zipCode input - target value = ", e)
-      setZipCode(e.target.id)
+      setZipCode(e.target.value)
     }
 
     const handleSubmitForm = (e) => {
