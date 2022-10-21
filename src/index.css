@@ -1,6 +1,7 @@
 body {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .Carts {
@@ -16,19 +17,25 @@ body {
 }
 
 .Cards {
-  display: flex;
+  display: grid;
+  grid-columns: 2/5;
   flex-flow: row wrap;
   justify-content: center;
   text-align: center;
-  margin-right: 15;
+  margin-right: 25;
 }
 
 .birds {
+  grid-row: 1/2;
   width: 300px;
-  height: auto;
   border: 1px solid black;
   margin: 30px auto;
   text-align: center;
   padding: 5px;
   box-shadow: gray 10px 5px 5px;
+}
+
+img {
+  width: 150px;
+  height: 150px;
 }

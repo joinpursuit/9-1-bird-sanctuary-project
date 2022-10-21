@@ -7,36 +7,41 @@ import { useState } from "react"
 
 function App() {
   const [birds, setBirds] = useState(birdData)
-  const [birdCart, setbirdsCart] = useState([])
+  const [birdsInCart, setBirdsInCart] = useState([])
   const [cartSum, setCartSum] = useState(0)
 
-  function addbirdstoCart(bird) {
+  function addToCart(bird) {
     setCartSum(cartSum + bird.amount)
 
-    setbirdsCart((previous) => {
+    setBirdsInCart((previous) => {
       return [...previous, bird]
     })
   }
 
-  const removeBird = (birdID) => {
-    const cartBird = birds.filter((bird) => bird.id === birdID)
-    setbirdsCart(cartBird)
+  function removeBird(birdID) {
+    let birdscartItem = [...birdsInCart]
+    birdscartItem.filter((birdItem) => birdItem.id !== birdID)
+    setBirds(birdsInCart)
   }
 
   return (
     <div>
       <h1>Bird Sanctuary!</h1>
       <div className="Carts">
-        <Cart cartSum={cartSum} birdCart={birdCart} removeBird={removeBird} />
+        <Cart
+          cartSum={cartSum}
+          cartItems={birdsInCart}
+          removeBird={removeBird}
+        />
       </div>
       <div className="Checkouts">
-        <Checkout birds={birds} birdCart />
+        <Checkout birds={birds} cartItems={birdsInCart} />
       </div>
       <ul>
         {birds.map((bird) => {
           return (
             <div key={bird.id}>
-              <Cards bird={bird} addbirdstoCart={addbirdstoCart} />
+              <Cards bird={bird} handleaddBirds={addToCart} />
             </div>
           )
         })}

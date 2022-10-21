@@ -1,4 +1,4 @@
-function Cards({ bird, addbirdstoCart }) {
+function Cards({ bird, handleaddBirds }) {
   return (
     <li key={bird.id}>
       <div className="birds">
@@ -9,7 +9,7 @@ function Cards({ bird, addbirdstoCart }) {
 
           <img src={bird.img} alt={bird.name} />
         </span>
-        <button onClick={() => addbirdstoCart(bird)}>ADOPT</button>
+        <button onClick={() => handleaddBirds(bird)}>ADOPT</button>
       </div>
     </li>
   )
