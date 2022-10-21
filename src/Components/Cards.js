@@ -1,21 +1,52 @@
-// import birdData from "./data/birds"
-// // // import {bonusItems} from "../data"
-
+import React from "react"
+// import bonusItems from "../data"
 // const [img, name, amount, id] = [birdData]
+ 
 
-// export default function Cards({birdData}) {
+export default function Cards({birdData, addBird}) {
+console.log(birdData)
 
-// return(
-{/* <div>
-img
-name
-amount
-</div> */}
-//    
+    return(
+        <div> 
+             {
+                birdData.map((bird) => {
+                    return(
+                       
+                    <div className="cards">
+                        <div key ={bird.id} className="oneCard" >
+                            <div className ="birdImg"> 
+                                <h3>{bird.name}</h3> 
+                                <p>Price: ${bird.amount} </p>
+                                <img src= {bird.img} alt= "Tropical Bird" />
+                                <button onClick={ () => addBird(bird)} >ADOPT</button>
+                            </div>
+                        </div>
+                    </div>    
+                )})
+            } 
+        </div> 
+    )
+}
 
-// )
 
-// }
+// birds.map((bird, index) => {
+//     return(
+//     <div key={bird[index].id}>
+      
+//        <div 
+//             className ="birdImg">   
+//             <img src= {bird[index].img} 
+//                 alt= "Tropical Bird" />
+//        </div> 
+//        {bird[index].name}
+//        {bird[index].amount}
+//     </div>
+// )})
+
+
+
+
+// const index = dogArray.findIndex((dog) => dogId === dog.id);
 
 //NOTES:
 //Bird Card Layout - all items centered
