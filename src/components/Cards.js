@@ -9,10 +9,9 @@ function Cards({ bird, addbirdstoCart }) {
 
           <img src={bird.img} alt={bird.name} />
         </span>
-        {<button onClick={() => addbirdstoCart(bird)}>ADOPT</button>}
+        <button onClick={() => addbirdstoCart(bird)}>ADOPT</button>
       </div>
     </li>
   )
 }
-
 export default Cards

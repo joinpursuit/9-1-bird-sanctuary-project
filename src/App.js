@@ -11,31 +11,26 @@ function App() {
   const [cartSum, setCartSum] = useState(0)
 
   function addbirdstoCart(bird) {
-    setCartSum(bird.amount + cartSum)
+    setCartSum(cartSum + bird.amount)
 
     setbirdsCart((previous) => {
       return [...previous, bird]
     })
   }
 
-  // function removeBird(birdsId) {
-  //   const birdToRemove = birds.filter((bird) => bird.id !== birds.id)
-  //   setBirds(birdToRemove)
-  //   if (birdToRemove === -1) {
-  //     return
-  //   } else {
-  //     return [...birds.slice(0, birdToRemove), ...birds.slice(birdToRemove + 1)]
-  //   }
-  // }
+  const removeBird = (birdID) => {
+    const cartBird = birds.filter((bird) => bird.id === birdID)
+    setbirdsCart(cartBird)
+  }
 
   return (
     <div>
       <h1>Bird Sanctuary!</h1>
       <div className="Carts">
-        <Cart cartSum={cartSum} birdCart={birdCart} />
+        <Cart cartSum={cartSum} birdCart={birdCart} removeBird={removeBird} />
       </div>
       <div className="Checkouts">
-        <Checkout />
+        <Checkout birds={birds} birdCart />
       </div>
       <ul>
         {birds.map((bird) => {

@@ -1,7 +1,10 @@
 import React from "react"
 import { useState } from "react"
+import birdData from "../data/birds"
 
-function Checkout() {
+function Checkout({ removeBirds }) {
+  const [birds, setBirds] = useState(birdData)
+  const [birdCart, setbirdsCart] = useState([])
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -17,8 +20,11 @@ function Checkout() {
     event.preventDefault()
     resetForm()
     alert("You have adopted birds. Thank You!")
+    removeBirds()
   }
-
+  function removeBirds() {
+    setBirds(birds)
+  }
   function resetForm() {
     setUser({
       firstName: "",
