@@ -1,0 +1,33 @@
+.App{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    column-gap: 4px;
+}
+
+.birds{
+    display: inline-block;
+    height: 350px;
+    width: 400px;
+    background-color: lightblue;
+    border: 5px dotted white;
+    margin: 5px auto 5px auto;
+    text-align: center;
+    
+}
+
+img{
+    display: block;
+    height: 150px;
+    width: 150px;
+   margin: auto;
+
+}
+
+.Cart{
+    display:inline-block;
+    background-color: lightpink;
+    grid-template: auto;
+    height: 350px;
+    width: 400px;
+
+}
