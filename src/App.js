@@ -28,12 +28,24 @@ function App () {
           // console.log(totalCart)
           console.log(x)
           setDiscount(10)
-          setTotalCart(x - (x * .10))
+          setTotalCart(x - (x * (.10)))
         }else {setTotalCart(x)
-        console.log(x)}
+        console.log("x:" ,x)}
       } 
-}
+    }
   
+    const deleteBird = (bird) => {
+      console.log("total",totalCart)
+      // console.log(bird)
+      let deleted = userCart.filter((x) => x.id !== bird.id)
+       console.log(deleted)
+       console.log("bird amount", bird.amount)
+          setUserCart(deleted)
+          if(deleted.length<3){
+            setDiscount(0)
+          // setTotalCart(totalCart + (bird.amount*.10))
+          }
+    }
   return (
     <div className="App">
       <main>
@@ -43,6 +55,7 @@ function App () {
         totalCart={totalCart}
         discount={discount}
         bonusItems={bonusItems}
+        deleteBird={deleteBird}
         />
 
         <Checkout 

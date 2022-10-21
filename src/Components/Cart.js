@@ -1,4 +1,4 @@
-export default function getCart({userCart, totalCart,discount,bonusItems}){
+export default function getCart({userCart, totalCart,discount,bonusItems,deleteBird}){
 
 function addBonus (bonus,total) {
     if(total>=100 && total<=299){
@@ -45,10 +45,15 @@ function addBonus (bonus,total) {
             userCart.map((bird) => 
             {
              return (
-             <li key={bird.id}>
-                    {bird.name}: ${bird.amount}
-              </li>)
-            }
+                <div key={bird.id}>
+                    <li >
+                        
+                        {bird.name}: ${bird.amount};
+                            <button onClick={()=>deleteBird(bird)}>Delete Bird</button>
+                    </li>
+              </div>
+              )
+             }
             )
         }
         </ol>
