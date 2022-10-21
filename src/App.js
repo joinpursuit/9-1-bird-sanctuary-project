@@ -1,19 +1,33 @@
-import React from 'react';
-import birdData from "./data/birds"
-import Checkout from "./Checkout"
+ import  React, {useState} from "react";
+import birdData from "./data/birds";
 import Cards from "./Cards"
+import Checkout from "./Checkout"
 
-const App = () => {
-  return (
-    <div>
-      
-      <Checkout />
-      <Cards />
-     
-    </div>
+
+function App () {
+  const [bird, setBird] = useState = (birdData)
+
+
 
   
-  );
-};
+return(
 
+
+
+
+
+ 
+
+  <div>  
+
+         
+     <Checkout />
+     <Cards 
+     birds={bird}/>
+     
+   
+</div>
+
+ 
+)}
 export default App;
