@@ -44,15 +44,6 @@ export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
         setAdoptedBirds(filteredBirds)
       }
 
-    //   function removeDog(dogID) {
-    //     // use the filter method to remove any dogs that have a matching id
-    //     const filteredDogArray = dogs.filter((dog) => dog.id !== dogID);
-    //     // set the dogs array to the new array that will not have the removed dog
-    //     setDogs(filteredDogArray);
-    //   }
-
-
-
 
 
     // The bonus items are added as list items in an <ul> list item as follows:

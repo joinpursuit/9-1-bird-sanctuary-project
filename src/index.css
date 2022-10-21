@@ -59,7 +59,7 @@ body{
 }
 
 .oneCard{
-    width: 300px;
+    width: 400px;
     height: auto;
     border: 1px solid black;
     margin: 30px auto;
@@ -67,16 +67,18 @@ body{
     padding: 5px;
     box-shadow: grey 10px 5px 5px;
     grid-column: 2/5;
+    justify-content: center;
 }
 
 img{
-    width: 23vw;
-    height: auto;
+    width: 25vw;
+    height: 23vh;
     border: 1px solid black;
     margin: 30px auto;
     text-align: center;
     padding: 5px;
     box-shadow: grey 10px 5px 5px;
+    justify-content: center;
 }
 
 
