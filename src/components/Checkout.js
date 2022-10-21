@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-function Checkout() {
+function Checkout({ cartItems }) {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +17,7 @@ function Checkout() {
     event.preventDefault()
     resetForm()
     alert("You have adopted birds. Thank You!")
+    cartItems([])
   }
 
   function resetForm() {

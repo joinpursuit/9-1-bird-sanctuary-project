@@ -2,8 +2,6 @@ import React from "react"
 import bonusItems from "../data/bonusItems"
 
 function Cart({ cartSum, cartItems, removeBird }) {
-  if (totalBird >= 100 && total <= -299) {
-  }
   return (
     <div className="Carts">
       <h2>Cart</h2>
