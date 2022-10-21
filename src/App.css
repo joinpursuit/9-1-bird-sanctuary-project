@@ -1,0 +1,33 @@
+.landing {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.Main-Content {
+  text-align: right;
+}
+.birds {
+  border: 2px solid black;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+}
+.AdoptCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.image {
+  border: 1px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.cart,
+.checkout {
+  border: 1px solid black;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  text-align: left;
+}
