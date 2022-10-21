@@ -1,10 +1,13 @@
 import React from "react"
+import bonusItems from "../data/bonusItems"
 //import { v1 as generateUniqueID } from "uuid";
 
-export default function Cart({birdData, adoptedBirds}){
+export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
+
 
     let total = 0
     const adoptedBirdsList = adoptedBirds
+
     let adoptedBirdsNum = adoptedBirdsList.length
 
     for (let thisBird of adoptedBirds){
@@ -13,6 +16,50 @@ export default function Cart({birdData, adoptedBirds}){
     if(adoptedBirdsNum >= 3){
         total = total - (total * .1)
     }
+ const bonusList = bonusItems
+ console.log("bonusList = ", bonusList)
+ let key
+ let id = ""
+ let bonus = []
+    
+    if(total >= 100 && total <= 299){
+        bonus.push(bonusList[0])
+        id = "aejhdi555"
+
+    } else if (total >=300 && total <500){
+        bonus.push(bonusList[0], bonusList[1])
+        id = "aejhd777"
+
+    } else if (total >=500 && total < 1000){
+        bonus.push(bonusList[0], bonusList[1], bonusList[2])
+        id = "aejhdi333"
+
+    } else if( total >= 1000){
+        bonus.push(bonusList[0], bonusList[1], bonusList[2], bonusList[3])
+        id = "aejhdi999"
+    } 
+    
+    function removeBird(birdID) {
+        const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
+        setAdoptedBirds(filteredBirds)
+      }
+
+    //   function removeDog(dogID) {
+    //     // use the filter method to remove any dogs that have a matching id
+    //     const filteredDogArray = dogs.filter((dog) => dog.id !== dogID);
+    //     // set the dogs array to the new array that will not have the removed dog
+    //     setDogs(filteredDogArray);
+    //   }
+
+
+
+
+
+    // The bonus items are added as list items in an <ul> list item as follows:
+// 1 bonus (first array item) is given if the total is at least 100 and no more than 299
+// 2 bonuses (first and second array items) are given if the total is at least 300 and no more than 499
+// 3 bonuses are given if the total is at least 500 and no more than 1000
+// 4 bonuses are given if the total is 1000 or more
 
 
     return(
@@ -26,18 +73,32 @@ export default function Cart({birdData, adoptedBirds}){
                   adoptedBirds.map((bird) => {
                      return (
                         < li className="bird-item" key={bird.id}> 
-                            {bird.name} <br/>
-                            ${bird.amount}
+                            {bird.name} - ${bird.amount}
+                            <button onClick={ ()=>removeBird(bird.id)}>Remove</button>
                         </li>
                         )
                      })
                 }
                 </ol>   
+          
+                <p className = "donationLine">Your donations have qualified you for the following items:</p>
+                <ul>
+                {
+                  bonus.map((bonuses) => {
+                     return (
+                        < li className="bonus-rewards" key={id}> 
+                          {bonuses}
+                        </li>
+                        )
+                     })
+                }
+                </ul>   
+
+
                 {/* <p className = "p-hidden" >
                     <ul className ="ul-hidden"></ul>
                 </p> */}
-          
-            <p className = "donationLine">Your donations have qualified you for the following items:</p>
+
         </div>
     )
  }

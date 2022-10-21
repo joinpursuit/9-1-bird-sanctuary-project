@@ -2,7 +2,7 @@
 import { useState } from "react";
 // import { v1 as generateUniqueID } from "uuid";
 
-export default function Checkout() {
+export default function Checkout({setAdoptedBirds}) {
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -54,8 +54,9 @@ export default function Checkout() {
      setLastName(e.target.value)
      setEmail(e.target.value)
      setZipCode(e.target.value)
+     alert( "Thank you for your donation!") 
      resetCheckoutForm()
-     alert("Thank you for your donation!")
+     setAdoptedBirds([])
     }
 
     function resetCheckoutForm() {
@@ -63,6 +64,7 @@ export default function Checkout() {
       setLastName("")
       setEmail("")
       setZipCode("")
+      // setAdoptedBirds([])
     }
 
     
@@ -113,6 +115,7 @@ export default function Checkout() {
             value="Submit"
             onClick={handleSubmitForm}
             />
+            
         </form>
       </div>
     )

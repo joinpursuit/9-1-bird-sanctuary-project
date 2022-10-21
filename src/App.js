@@ -11,16 +11,16 @@ function App () {
   const[birdData, setBirdData] = useState(birds)
   const[adoptedBirds, setAdoptedBirds] = useState([])
   // const[bonusCounter, setBonusCounter] = useState(0)
-  // const bonus = bonusItems
+ 
   
   function addBird (bird){
     console.log("bird= ",bird)
     setAdoptedBirds([...adoptedBirds, bird])
   }
 
-  // handleClickBonus())
-  // const bonusShell1 = document.querySelector(".p-hidden")
-  // const bonusShell2 = document.querySelector('ul-hidden')
+  
+//   const bonusShell1 = document.querySelector(".p-hidden")
+//   const bonusShell2 = document.querySelector('ul-hidden')
   
 //   function handleClickBonus(bonus){
 //     if(bonusCounter <= 4) {
@@ -31,17 +31,27 @@ function App () {
 //         bonusShell2.append(bonusItems)
 //         bonusItem.append(bonus[bonusCounter])
 //         setBonusCounter(bonusCounter+1)  
-//         return bonusItem
 //     }
+//   }
 // }
+// The bonus items are added as list items in an <ul> list item as follows:
+// 1 bonus (first array item) is given if the total is at least 100 and no more than 299
+// 2 bonuses (first and second array items) are given if the total is at least 300 and no more than 499
+// 3 bonuses are given if the total is at least 500 and no more than 1000
+// 4 bonuses are given if the total is 1000 or more
+
+
 
   return (
     <div className = "App">
 
     <div cart-checkout>
       <Cart  birdData={birdData} 
-             adoptedBirds={adoptedBirds} /> 
-      <Checkout /> 
+             adoptedBirds={adoptedBirds}
+             setAdoptedBirds = {setAdoptedBirds} /> 
+      <Checkout 
+              setAdoptedBirds = {setAdoptedBirds}
+      /> 
     </div>
       <Cards birdData={birdData} 
              addBird={addBird} />
