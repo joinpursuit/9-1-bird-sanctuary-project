@@ -20,8 +20,8 @@ function App() {
 
   function removeBird(birdID) {
     let birdscartItem = [...birdsInCart]
-    birdscartItem.filter((birdItem) => birdItem.id !== birdID)
-    setBirds(birdsInCart)
+    const index = birdscartItem.findIndex((birdItem) => birdItem.id === birdID)
+    setBirdsInCart(birdscartItem)
   }
 
   return (
