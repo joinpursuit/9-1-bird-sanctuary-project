@@ -8,7 +8,7 @@ export default function Cart({adoptedBirds, adoptedBirdsNum, bonus, total, remov
     return(
         <div className="cart">
             <h2>Cart</h2>
-            <h4> Discount:{ adoptedBirdsNum < 3 ? 0 : 10}   % </h4>
+            <h4> Discount:  { adoptedBirdsNum < 3 ? 0 : 10}   % </h4>
         
             <h6>Total: ${total}</h6>
                 <ol>
