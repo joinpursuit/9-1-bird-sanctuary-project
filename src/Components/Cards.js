@@ -7,7 +7,7 @@ export default function Cards({birdData, addBird}) {
 console.log(birdData)
 
     return(
-        <div> 
+        <div className="cart-checkout"> 
              {
                 birdData.map((bird) => {
                     return(
@@ -16,9 +16,10 @@ console.log(birdData)
                         <div key ={bird.id} className="oneCard" >
                             <div className ="birdImg"> 
                                 <h3>{bird.name}</h3> 
-                                <p>Price: ${bird.amount} </p>
-                                <img src= {bird.img} alt= "Tropical Bird" />
-                                <button onClick={ () => addBird(bird)} >ADOPT</button>
+                                <div>Price: ${bird.amount} 
+                               <img src= {bird.img} alt= "Tropical Bird" />
+                                <button onClick={ () => addBird(bird)}>ADOPT</button>
+                                </div> 
                             </div>
                         </div>
                     </div>    

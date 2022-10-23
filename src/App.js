@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import birds from "./data/birds"
-// import bonusItems from "./data/bonusItems"
+import bonusItems from "./data/bonusItems"
 import Cards from "./Components/Cards";
 import Checkout from "./Components/Checkout";
 import Cart from "./Components/Cart"
@@ -10,9 +10,47 @@ function App () {
 
   const[birdData, setBirdData] = useState(birds)
   const[adoptedBirds, setAdoptedBirds] = useState([])
-  // const[bonusCounter, setBonusCounter] = useState(0)
- 
+  // const[bonusList, setBonusList] = useState(bonusItems)
+  // setBonusList([...bonusItems])
   
+  
+  let total = 0  
+  const bonusList = bonusItems
+  let bonus = []
+
+
+  
+  const adoptedBirdsList = adoptedBirds
+  //let bonusList2 = bonusList2
+  let adoptedBirdsNum = adoptedBirdsList.length
+
+  
+  for (let thisBird of adoptedBirds){
+      total = total + thisBird.amount 
+  }
+
+  if(adoptedBirdsNum >= 3){
+      total = total - (total * .1)
+  }
+
+  
+    if(total >= 100 && total <= 299){
+        bonus.push(bonusList[0])
+
+    } else if (total >=300 && total <500){
+        bonus = []
+        bonus.push(bonusList[0], bonusList[1])
+
+    } else if (total >=500 && total < 1000){
+        bonus = []
+        bonus.push(bonusList[0], bonusList[1], bonusList[2])
+
+    } else if( total >= 1000){
+        bonus = []
+        bonus.push(bonusList[0], bonusList[1], bonusList[2], bonusList[3])
+    } 
+
+
   function addBird (bird){
     console.log("bird= ",bird)
     if(adoptedBirds.find((birdy) => birdy.id === bird.id )){
@@ -21,9 +59,51 @@ function App () {
     setAdoptedBirds([...adoptedBirds, bird])}
     }
   
+  function removeBird(birdID) {
+    const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
+    setAdoptedBirds(filteredBirds)
+  }
+  // function removeBonus(birdID) {
+  //   const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
+  //   setAdoptedBirds(filteredBirds)
+  //   setBonusList([])
+  // }
+
+  return (
+    <div className = "App">
+
+    <div>
+      <Cart  adoptedBirds={adoptedBirds}
+             setAdoptedBirds = {setAdoptedBirds} 
+             adoptedBirdsNum = {adoptedBirdsNum}
+             total = {total}
+             bonus = {bonus}
+             removeBird = {removeBird}
+             /> 
+      <Checkout 
+              setAdoptedBirds = {setAdoptedBirds} /> 
+    </div  >
+<div className = "showCards">
+      <Cards birdData={birdData} 
+             addBird={addBird} />
+     </div>      
+    </div>
+  );
+};
+
+export default App;
 
 
-  // function addBird (bird){
+
+//handleClickBonus={handleClickBonus} 
+//           <ul>
+//             {birds.map((bird) => {
+//               return <BirdListItem bird={bird} key={bird.id} updateBirdAttendance={updateBirdAttendance}
+//               removeBird={removeBird}/>;
+//             })}
+//         
+
+// function addBird (bird){
   //   console.log("bird= ",bird)
   //   setAdoptedBirds([...adoptedBirds, bird])
   // }
@@ -43,41 +123,24 @@ function App () {
 //         setBonusCounter(bonusCounter+1)  
 //     }
 //   }
-// }
-// The bonus items are added as list items in an <ul> list item as follows:
-// 1 bonus (first array item) is given if the total is at least 100 and no more than 299
-// 2 bonuses (first and second array items) are given if the total is at least 300 and no more than 499
-// 3 bonuses are given if the total is at least 500 and no more than 1000
-// 4 bonuses are given if the total is 1000 or more
+// 
 
 
+ // function handleClickBonus(){
+  //    if(total >= 100 && total <= 299){
+  //       //  bonus.push(bonusList[0])
+  //       setBonusList([bonusItems[0]])
 
-  return (
-    <div className = "App">
-
-    <div cart-checkout>
-      <Cart  birdData={birdData} 
-             adoptedBirds={adoptedBirds}
-             setAdoptedBirds = {setAdoptedBirds} /> 
-      <Checkout 
-              setAdoptedBirds = {setAdoptedBirds} /> 
-    </div>
-      <Cards birdData={birdData} 
-             addBird={addBird} />
-            
-    </div>
-  );
-};
-
-export default App;
-
-     {/* handleClickBonus={handleClickBonus} */} 
-//           <ul>
-//             {birds.map((bird) => {
-//               return <BirdListItem bird={bird} key={bird.id} updateBirdAttendance={updateBirdAttendance}
-//               removeBird={removeBird}/>;
-//             })}
-//         
-
-
-
+  //    } else if (total >=300 && total <500){
+  //       //  bonus.push(bonusList[0], bonusList[1])
+  //       setBonusList([bonusItems[0], bonusItems[1] ])
+ 
+  //    } else if (total >=500 && total < 1000){
+  //       //bonus.push(bonusList[0], bonusList[1], bonusList[2])
+  //       setBonusList([bonusItems[0], bonusItems[1], bonusItems[2] ])
+ 
+  //    } else if( total >= 1000){
+  //        setBonusList([bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3] ])
+         
+  //    } 
+  //   }

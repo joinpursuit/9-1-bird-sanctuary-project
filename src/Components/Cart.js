@@ -1,66 +1,8 @@
 import React from "react"
 import bonusItems from "../data/bonusItems"
-import { v1 as generateUniqueID } from "uuid";
+// import { v1 as generateUniqueID } from "uuid";
 
-export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
-
-
-    let total = 0
-    const adoptedBirdsList = adoptedBirds
-
-    let adoptedBirdsNum = adoptedBirdsList.length
-
-    for (let thisBird of adoptedBirds){
-        total = total + thisBird.amount 
-    }
-    if(adoptedBirdsNum >= 3){
-        total = total - (total * .1)
-    }
- const bonusList = bonusItems
- console.log("bonusList = ", bonusList)
- let key
- let id = ""
- let bonus = []
-    
-    if(total >= 100 && total <= 299){
-        bonus.push(bonusList[0])
-        // id = "aejhdi555"
-        // id = Math.floor(Math.random() * 108)
-        id = "erkhfgl"
-
-    
-
-    } else if (total >=300 && total <500){
-        bonus = []
-        bonus.push(bonusList[0], bonusList[1])
-        id = "aejhd777"
-
-    } else if (total >=500 && total < 1000){
-        bonus = []
-        bonus.push(bonusList[0], bonusList[1], bonusList[2])
-        id = "aejhdi333"
-
-    } else if( total >= 1000){
-        bonus = []
-        bonus.push(bonusList[0], bonusList[1], bonusList[2], bonusList[3])
-        id = "aejhdi999"
-        
-    } 
-    
-    function removeBird(birdID) {
-        const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
-        setAdoptedBirds(filteredBirds)
-        let thisLi = document.querySelector(".bonus-rewards")
-        thisLi.remove()
-      }
-
-
-
-    // The bonus items are added as list items in an <ul> list item as follows:
-// 1 bonus (first array item) is given if the total is at least 100 and no more than 299
-// 2 bonuses (first and second array items) are given if the total is at least 300 and no more than 499
-// 3 bonuses are given if the total is at least 500 and no more than 1000
-// 4 bonuses are given if the total is 1000 or more
+export default function Cart({adoptedBirds, adoptedBirdsNum, bonus, total, removeBird}){
 
 
     return(
@@ -75,7 +17,7 @@ export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
                      return (
                         < li className="bird-item" key={bird.id}> 
                             {bird.name} - ${bird.amount}
-                            <button onClick={ ()=>removeBird(bird.id)}>Remove</button>
+                            <button className="remove" onClick={ ()=>removeBird(bird.id)}>Remove</button>
                         </li>
                         )
                      })
@@ -85,9 +27,9 @@ export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
                 <p className = "donationLine">Your donations have qualified you for the following items:</p>
                 <ul>
                 {
-                  bonus.map((bonuses) => {
+                  bonus.map((bonuses,index) => {
                      return (
-                        < li className="bonus-rewards" key={id}> 
+                        < li className="bonus-rewards" key={index}> 
                           {bonuses}
                         </li>
                         )
@@ -103,4 +45,48 @@ export default function Cart({birdData, adoptedBirds, setAdoptedBirds}){
         </div>
     )
  }
+
+
+
+// moved to App.js   
+//  const bonusList = bonusItems
+//  console.log("bonusList = ", bonusList)
+//  let key
+//  let id = Math.floor(Math.random() * 108)
+//  let bonus = []
+    
+//     if(total >= 100 && total <= 299){
+//         bonus.push(bonusList[0])
+//         // id = "aejhdi555"
+//         // id = 
+//         id = id * .5
+
+
+//     } else if (total >=300 && total <500){
+//         bonus = []
+//         bonus.push(bonusList[0], bonusList[1])
+//         // id = "aejhd777"
+//         id = id * .8
+
+//     } else if (total >=500 && total < 1000){
+//         bonus = []
+//         bonus.push(bonusList[0], bonusList[1], bonusList[2])
+//         // id = "aejhdi333"
+//         id = id * .6
+
+//     } else if( total >= 1000){
+//         bonus = []
+//         bonus.push(bonusList[0], bonusList[1], bonusList[2], bonusList[3])
+//         // id = "aejhdi999"
+//         id = id * .2
+        
+//     } 
+
+     //Moved to App.js
+    // function removeBird(birdID) {
+    //     const filteredBirds = adoptedBirds.filter((bird) => bird.id !== birdID);
+    //     setAdoptedBirds(filteredBirds)
+    //     // let thisLi = document.querySelector(".bonus-rewards")
+    //     // thisLi.remove()
+    //   }
 

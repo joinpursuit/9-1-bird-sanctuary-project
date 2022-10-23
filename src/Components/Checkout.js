@@ -64,7 +64,7 @@ export default function Checkout({setAdoptedBirds}) {
       setLastName("")
       setEmail("")
       setZipCode("")
-      // setAdoptedBirds([])
+      //setBonusList([])
     }
 
     
@@ -72,7 +72,7 @@ export default function Checkout({setAdoptedBirds}) {
       <div className="checkOut">
         <h3>Checkout</h3>
         <form className="checkoutForm">
-          <label htmlFor="firstName">First Name
+          <label htmlFor="firstName">First Name:
               <input
                 id="firstName"
                 type="text"
@@ -83,7 +83,7 @@ export default function Checkout({setAdoptedBirds}) {
               />
           </label>
 
-          <label htmlFor="lastName">Last Name
+          <label htmlFor="lastName">Last Name:   
             <input
               id="lastName"
               type="text"
@@ -92,7 +92,7 @@ export default function Checkout({setAdoptedBirds}) {
             />
           </label>
 
-          <label htmlFor="email">Email
+          <label htmlFor="email">Email:
             <input 
             id="email"
             type="text"
@@ -101,7 +101,7 @@ export default function Checkout({setAdoptedBirds}) {
             />
           </label>
 
-          <label htmlFor="zipCode">Zip Code
+          <label htmlFor="zipCode">Zip Code:
             <input
               id="zipCode"
               type="text" 
