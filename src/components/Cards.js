@@ -9,8 +9,8 @@ setBirds([...birds, bird])
   
   
     <section>
-      {console.log(birds) }
-      <ul className="AdoptCards">
+      {/* {console.log(birds) } */}
+      <ul className="birds">
         {birdData.map((bird) => (
          
          <li className="birds" id={bird.id}>
