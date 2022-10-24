@@ -8,8 +8,8 @@ console.log(birds)
 function App () {
   return (
     <div>
-      <Cards birds={birds}/>
       <Cart/>
+      <Cards birds={birds}/>
       <Checkout/>
     </div>
   );
