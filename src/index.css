@@ -1,0 +1,109 @@
+body{
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #222;
+    background-color: rgba(211, 186, 194, .2);
+    
+}
+
+
+.App{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* grid-template-rows:  */
+}
+
+
+/* .cart-checkout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
+
+.cart{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 30px 0px 20px 20px;
+    width: 40vw;
+    height: max-content;
+    /* grid-column: 1/2
+    grid-row: 1/2; */
+    text-align: center;
+}
+
+.donationLine{
+    font-weight: bold;
+}
+
+.ul-hidden, .p-hidden{
+    display: none;
+}
+
+.checkOut{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px 0px 0px 20px;
+    /* grid-column: 1/2; */
+    /* grid-row: 2/3; */
+}
+
+#firstName {
+    margin-left: 3vh;
+}
+
+#lastname{
+    margin-left: 5vh;
+}
+
+
+#zipCode{
+    margin-left: 5vh;
+}
+
+#email{
+    margin-left: 8vh;
+}
+
+.showCards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    grid-column: 2/3;
+    
+}
+
+
+.oneCard{
+    box-sizing: border-box;
+    width: 250px;
+    height: 350px;
+    border: 1px solid black;
+    margin: 30px auto;
+    text-align: center;
+    padding: 5px;
+    box-shadow: grey 10px 5px 5px;
+    grid-column: 2/5;
+    justify-content: center;
+}
+
+img{
+    box-sizing: border-box;
+    width: fit-content;
+    height: 20vh;
+    border: 1px solid black;
+    margin-right: 1vh;
+    text-align: center;
+    padding: 15px;
+    box-shadow: grey 10px 5px 5px;
+    justify-content: center;
+}
+
+/* .remove{
+    width: 5px;
+    margin-left: 10px;
+
+} */
+
+
