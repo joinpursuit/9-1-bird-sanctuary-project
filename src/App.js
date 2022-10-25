@@ -15,10 +15,16 @@ function App () {
   // create a function that sets the birds
   // console.log(birds)
   function addBird(birdSelectionId){
-    console.log(birdSelectionId)
-    const ourBird = birds.find(bird => bird.id = birdSelectionId)
-    console.log(ourBird)
-    setInCart([...inCart, ourBird])
+    // add condition that checks if cart contains the bird incart some method
+    if(inCart.some(bird => bird.id === birdSelectionId)){
+      alert('That bird is already in the cart!')
+    } else {
+      console.log(birdSelectionId)
+      const ourBird = birds.find(bird => bird.id === birdSelectionId)
+      console.log(ourBird)
+      setInCart([...inCart, ourBird])
+    }
+   
     // setInCart([...inCart, birdSelection])
     // we will need to put logic to regrab the data
   }

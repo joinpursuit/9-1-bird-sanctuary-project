@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartItem = ({birdName, birdId, birdAmount, birdImg}) => {
     return (
-        <p>{birdName}</p>
+        <p>{birdName}: ${birdAmount}</p>
     );
 };
 
