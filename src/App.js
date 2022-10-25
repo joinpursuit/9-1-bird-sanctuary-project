@@ -18,10 +18,10 @@ function App () {
     // add condition that checks if cart contains the bird incart some method
     if(inCart.some(bird => bird.id === birdSelectionId)){
       alert('That bird is already in the cart!')
-    } else {
-      console.log(birdSelectionId)
+    } else { // if the cart does not contained clicked button
+      // console.log(birdSelectionId)
       const ourBird = birds.find(bird => bird.id === birdSelectionId)
-      console.log(ourBird)
+      // console.log(ourBird)
       setInCart([...inCart, ourBird])
     }
    

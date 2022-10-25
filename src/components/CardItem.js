@@ -27,7 +27,7 @@ const CardItem = ({addBird, birdName, birdId, birdAmount, birdImg}) => {
             <p>{birdId}</p>
             <p>Price: ${birdAmount}</p>
             <img src={birdImg}/>
-            <button onClick={()=>addBird(birdId)}>Add to Cart</button>
+            <button className='birds' onClick={()=>addBird(birdId)}>Add to Cart</button>
             {/* <button className={'birds'} onClick={() => addToCart('inCart')}>Add to cart!</button> */}
         </li>
     );
