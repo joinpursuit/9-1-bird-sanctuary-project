@@ -14,6 +14,10 @@ function App () {
 
   // create a function that sets the birds
   // console.log(birds)
+function resetCart(){
+  setInCart([])
+}
+
   function addBird(birdSelectionId){
     // add condition that checks if cart contains the bird incart some method
     if(inCart.some(bird => bird.id === birdSelectionId)){
@@ -33,7 +37,7 @@ function App () {
     <div>
       <Cart inCart={inCart}/>
       <Cards addBird={addBird} birds={birds}/>
-      {/* <Checkout/> */}
+      <Checkout resetCart={resetCart} className="Checkout"/>
     </div>
   );
 };
