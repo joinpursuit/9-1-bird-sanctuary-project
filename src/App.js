@@ -39,7 +39,7 @@ function App () {
     <div 
       style={{ 
         display: 'grid', 
-        gridTemplateColums: '1fr 3fr', 
+        gridTemplateColumns: '1fr 3fr', 
         backgroundColor: 'lavender'}}>
       <div>
         <Cart
@@ -52,8 +52,8 @@ function App () {
       </div>
       <div
         style={{
-          display: 'grid',
-          alignItems: 'spaceBetween',
+          display: 'flex',
+          flexFlow: 'row wrap',
           justifyContent: 'center',
           textAlign: 'center',
         }}>
