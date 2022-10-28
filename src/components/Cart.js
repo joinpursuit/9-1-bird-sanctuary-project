@@ -4,7 +4,11 @@ export default function Cart({selectBirds, cartTotal, percent, bonusItems }) {
         if (cart < 100){
             return null;
         } else if ( cart >= 100 && cart < 300){
-            return <li>{items[0]}</li>;
+            return (
+                <>
+                    <li>{items[0]}</li>
+                </>
+            )
         } else if (cart >= 300 && cart < 500){
             return (
                 <>
@@ -31,12 +35,17 @@ export default function Cart({selectBirds, cartTotal, percent, bonusItems }) {
             )
         }
     }
+
+
+    // const removeBird = (bird) => {
+    //     setSelectBirds(selectBirds.filter(()))
+    //   }
+
     return (
         <div 
             style={{
                 border:'1px solid purple',
-                padding: 10,
-                textAlign: 'center',
+                padding: '10px',
                 margin: '40px 0 30px 30px'
             }}  
             className="Cart"

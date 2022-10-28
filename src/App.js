@@ -33,15 +33,13 @@ function App () {
     setPercent(0)
   }
 
-  const removeBird = (bird) => {
-
-  }
+  
 
   return (
     <div 
       style={{ 
         display: 'grid', 
-        gridTemplateColums: '1fr 4fr', 
+        gridTemplateColums: '1fr 3fr', 
         backgroundColor: 'lavender'}}>
       <div>
         <Cart
