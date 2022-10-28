@@ -17,7 +17,7 @@ function Cart({ birds, setBirds }) {
         Total: $
         {total}
       </h4>
-      {/*birds is a interable collection from the state state(=birds) value 4 birds */}
+      {/*birds is a interable collection from the state state =birds value for birds */}
       <p>Discount: {birds.length >= 3 ? "10%" : "0%"}</p>
       <ol>
         {birds.map((bird) => {
