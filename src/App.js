@@ -6,6 +6,7 @@ import { useState } from "react"
 import bonusItems from "./data/bonusItems"
 
 
+
 function App () {
   const [cart, setCart]= useState([])
 
@@ -32,7 +33,7 @@ function App () {
     }, 0)
   
   return (
-    <div>
+    <div className="entire">
       <Cards handleClick={handleClick} birdData={birdData} />
       <Cart  
       removeFromCart={removeFromCart} 

@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './App.css';
 function Cart({ cart, removeFromCart, cartTotal, bonusItems}) {    
     return (
-        <div>
+        <div className='Cart'>
             <h2>Cart Items</h2>
             <h4>Total: ${cart.length > 2 ? cartTotal * 0.9 : cartTotal}</h4>
       <span>Discount: {cart.length > 2 ? 10 : 0}% </span>
