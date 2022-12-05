@@ -15,10 +15,15 @@ function App() {
     if (exist) {
       return alert("You have already added this bird to the cart")
     } else {
+      // reminder- great way to add while dropping in cart but cant reverse it to subtract from total NAN will appear
+      // have to you use filter and reduce to get out obj and subtract the difference. check Later to see if you
+      //  can use both at the same time
       setCartSum(cartSum + birds.amount)
+
       setBirdsInCart([...birdsInCart, birds])
     }
   }
+  // reminder- (id) in param or whatever param used in the handleclick must be first
   function removeBird(id) {
     const itemRemoved = birdsInCart.filter((bird) => bird.id !== id)
     setBirdsInCart(itemRemoved)
