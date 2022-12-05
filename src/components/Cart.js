@@ -1,7 +1,7 @@
 import React from "react"
 import bonusItems from "../data/bonusItems"
 
-function Cart({ cartSum, cartItems, removeBird, bonusItems, discount }) {
+function Cart({ cartSum, cartItems, removeBird, bonusItems }) {
   const cartTotal = cartItems.reduce((acc, curr) => {
     return acc + curr.amount
   }, 0)
@@ -9,8 +9,11 @@ function Cart({ cartSum, cartItems, removeBird, bonusItems, discount }) {
   return (
     <div className="Carts">
       <h2>Cart</h2>
-      <h4>Total: ${cartTotal}</h4>
-      <span>Discount:{discount ? 10 : 0}</span>
+      <h4>Total: ${cartItems.length > 2 ? cartTotal * 0.1 : cartTotal}</h4>
+      <span>
+        Discount:{""}
+        {cartItems.length > 3 ? 10 : 0}%
+      </span>
       {cartItems.map((bird) => {
         return (
           <>
@@ -24,9 +27,13 @@ function Cart({ cartSum, cartItems, removeBird, bonusItems, discount }) {
         )
       })}
       <p>Your donations have qualified you for the following items:</p>
-      {bonusItems.map((bonus, id) => (
-        <ul key={id}>{bonus}</ul>
-      ))}
+
+      <ul>
+        {cartTotal >= 100 && cartTotal < 299 ? <li>{bonusItems[0]}</li> : null}
+        {cartTotal >= 300 && cartTotal < 499 ? <li>{bonusItems[1]}</li> : null}
+        {cartTotal >= 500 && cartTotal < 999 ? <li>{bonusItems[2]}</li> : null}
+        {cartTotal >= 1000 ? <li>{bonusItems[3]}</li> : null}
+      </ul>
     </div>
   )
 }

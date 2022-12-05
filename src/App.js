@@ -2,14 +2,13 @@ import Cart from "./components/Cart"
 import Cards from "./components/Cards"
 import Checkout from "./components/Checkout"
 import birdData from "./data/birds"
-// import bonusItems from "./data/bonusItems"
+import bonusItems from "./data/bonusItems"
 import { useState } from "react"
 
 function App() {
   const [birds, setBirds] = useState(birdData)
   const [birdsInCart, setBirdsInCart] = useState([])
   const [cartSum, setCartSum] = useState(0)
-  const [discount, setDiscount] = useState(false)
 
   function addToCart(birds) {
     const exist = birdsInCart.find((item) => item.id === birds.id)
@@ -33,7 +32,7 @@ function App() {
           cartSum={cartSum}
           cartItems={birdsInCart}
           removeBird={removeBird}
-          discount={discount}
+          bonusItems={bonusItems}
         />
       </div>
       <div className="Checkouts">
