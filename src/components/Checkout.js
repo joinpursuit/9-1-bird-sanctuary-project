@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-function Checkout({ setBirdsInCart }) {
+function Checkout({ setBirdsInCart, birdsInCart, setCartSum }) {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -16,8 +16,13 @@ function Checkout({ setBirdsInCart }) {
   function handleSubmit(event) {
     event.preventDefault()
     resetForm()
-    alert("You have adopted birds. Thank You!")
+    if (birdsInCart.length === 0) {
+      alert("No Items in the cart")
+    } else {
+      alert("You have adopted birds. Thank You!")
+    }
     setBirdsInCart([])
+    setCartSum(0)
   }
 
   function resetForm() {
