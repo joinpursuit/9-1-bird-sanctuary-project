@@ -9,6 +9,7 @@ function Cart({ cartSum, cartItems, removeBird, bonusItems }) {
   return (
     <div className="Carts">
       <h2>Cart</h2>
+      {/* gotta recheck math? */}
       <h4>Total: ${cartItems.length > 2 ? cartTotal * 0.1 : cartTotal}</h4>
       <span>
         Discount:{""}
