@@ -30,9 +30,11 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Bird Sanctuary!</h1>
-      <div className="Carts">
+    <div className=" sanctuary">
+      <div>
+        <h1 className="header">Bird Sanctuary!</h1>
+      </div>
+      <div className="Cart">
         <Cart
           cartSum={cartSum}
           cartItems={birdsInCart}
@@ -48,7 +50,7 @@ function App() {
           setCartSum={setCartSum}
         />
       </div>
-      <ul>
+      <ul className="Cards">
         {birds.map((bird) => {
           return (
             <div key={bird.id}>

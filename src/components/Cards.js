@@ -9,7 +9,10 @@ function Cards({ bird, handleaddBirds }) {
 
           <img src={bird.img} alt={bird.name} />
         </span>
-        <button onClick={() => handleaddBirds(bird)}>ADOPT</button>
+        <br></br>
+        <button onClick={() => handleaddBirds(bird)} className="Adopt">
+          ADOPT
+        </button>
       </div>
     </li>
   )
