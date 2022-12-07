@@ -12,9 +12,9 @@
   background-image: url("https://i.imgur.com/VGAxKX1.png");
   /* background-position: center; */
   background-size: cover;
-  margin: 60px 10px 20px 20px;
-  height: 110px;
-  text-align: center;
+  margin: 40px 10px 10px 20px;
+  height: 160px;
+  text-align: bottom;
   box-shadow: gray 10px 8px 3px;
 }
 
